@@ -28,6 +28,8 @@ npm run test:e2e
 
 All content and controls are HTML. Animations are enabled throughout, with no motion switch or stored off preference. No autoplay audio, scroll hijacking, fake loader, wallet request, tracking, or runtime third-party font/media request.
 
+The personal file carries a tilted orange “IDENTITY UNKNOWN” stamp. Its two-line lettering reuses the existing local display font and stays visible when details are redacted; responsive spacing keeps it clear of the intro and first file row.
+
 The hero keeps its 600ms architectural arrival, automatic hide/peek/return, 180ms pointer response and fixed text/CTA. Manual hide/peek finishes in 720ms and return in 560ms. The original privacy cinema is restored on desktop: a large image stage beside the heading moves through Peek, Walking and Relaxed scenes with shutter wipes over 175vh of scrolling. Scroll progress responds immediately without scrub lag. Compact screens retain three stacked scenes with scroll-driven mask reveals. The hideout has a 1.4-second horizontal entrance with a shared character/shadow actor and no pawprints. The sticky header keeps navigation available; animations remain enabled. `PrivacyStory.tsx` owns only the privacy stage and loads its ScrollTrigger code near that section; PageMotion and other components retain their own transforms.
 
 The hiding pose uses the original close-up face with a continuation from the existing full-body artwork. Both move in the same wrapper behind the foreground pillar; responsive sizing preserves the original head framing and the lower mask conceals the feet. No additional media request is needed because the body reuses the responsive hero image.

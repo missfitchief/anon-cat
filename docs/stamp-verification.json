@@ -1,0 +1,252 @@
+{
+  "url": "http://127.0.0.1:3001",
+  "checkedAt": "2026-10-01T16:53:47.546Z",
+  "checks": [
+    {
+      "width": 320,
+      "layout": {
+        "copy": {
+          "top": 146.265625,
+          "bottom": 883.0625,
+          "left": 19.1875,
+          "right": 300.8125
+        },
+        "stamp": {
+          "top": 385.2127990722656,
+          "bottom": 482.9747009277344,
+          "left": 133.37594604492188,
+          "right": 294.2490539550781
+        },
+        "label": {
+          "top": 450.0625,
+          "bottom": 462.0625,
+          "left": 19.1875,
+          "right": 97.40625
+        },
+        "intro": {
+          "top": 326.5625,
+          "bottom": 373.0625,
+          "left": 19.1875,
+          "right": 300.8125
+        },
+        "row": {
+          "top": 494.0625,
+          "bottom": 544.0625,
+          "left": 19.1875,
+          "right": 300.8125
+        },
+        "text": "IDENTITY UNKNOWN",
+        "color": "rgb(255, 134, 28)",
+        "overflow": false
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\identity-stamp-320.png",
+      "pageErrors": [],
+      "redactionAndRestore": true
+    },
+    {
+      "width": 390,
+      "layout": {
+        "copy": {
+          "top": 172.984375,
+          "bottom": 857.953125,
+          "left": 23.390625,
+          "right": 366.609375
+        },
+        "stamp": {
+          "top": 358.6691589355469,
+          "bottom": 459.29962158203125,
+          "left": 185.5266876220703,
+          "right": 359.89520263671875
+        },
+        "label": {
+          "top": 424.953125,
+          "bottom": 436.953125,
+          "left": 23.390625,
+          "right": 101.609375
+        },
+        "intro": {
+          "top": 301.453125,
+          "bottom": 347.953125,
+          "left": 23.390625,
+          "right": 366.609375
+        },
+        "row": {
+          "top": 468.953125,
+          "bottom": 518.953125,
+          "left": 23.390625,
+          "right": 366.609375
+        },
+        "text": "IDENTITY UNKNOWN",
+        "color": "rgb(255, 134, 28)",
+        "overflow": false
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\identity-stamp-390.png",
+      "pageErrors": [],
+      "redactionAndRestore": true
+    },
+    {
+      "width": 701,
+      "layout": {
+        "copy": {
+          "top": 158,
+          "bottom": 938.078125,
+          "left": 365.921875,
+          "right": 658.953125
+        },
+        "stamp": {
+          "top": 417.8788757324219,
+          "bottom": 528.02734375,
+          "left": 474.6624450683594,
+          "right": 651.2437744140625
+        },
+        "label": {
+          "top": 491.578125,
+          "bottom": 504.578125,
+          "left": 365.921875,
+          "right": 451.25
+        },
+        "intro": {
+          "top": 356.703125,
+          "bottom": 411.078125,
+          "left": 365.921875,
+          "right": 658.953125
+        },
+        "row": {
+          "top": 540.078125,
+          "bottom": 591.078125,
+          "left": 365.921875,
+          "right": 658.953125
+        },
+        "text": "IDENTITY UNKNOWN",
+        "color": "rgb(255, 134, 28)",
+        "overflow": false
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\identity-stamp-701.png",
+      "pageErrors": [],
+      "redactionAndRestore": true
+    },
+    {
+      "width": 768,
+      "layout": {
+        "copy": {
+          "top": 158,
+          "bottom": 938.078125,
+          "left": 400.890625,
+          "right": 721.921875
+        },
+        "stamp": {
+          "top": 417.8788757324219,
+          "bottom": 528.02734375,
+          "left": 537.6312255859375,
+          "right": 714.2125244140625
+        },
+        "label": {
+          "top": 491.578125,
+          "bottom": 504.578125,
+          "left": 400.890625,
+          "right": 486.21875
+        },
+        "intro": {
+          "top": 356.703125,
+          "bottom": 411.078125,
+          "left": 400.890625,
+          "right": 721.921875
+        },
+        "row": {
+          "top": 540.078125,
+          "bottom": 591.078125,
+          "left": 400.890625,
+          "right": 721.921875
+        },
+        "text": "IDENTITY UNKNOWN",
+        "color": "rgb(255, 134, 28)",
+        "overflow": false
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\identity-stamp-768.png",
+      "pageErrors": [],
+      "redactionAndRestore": true
+    },
+    {
+      "width": 1440,
+      "layout": {
+        "copy": {
+          "top": 158,
+          "bottom": 938.46875,
+          "left": 770.6875,
+          "right": 1353.609375
+        },
+        "stamp": {
+          "top": 404.3614196777344,
+          "bottom": 522.3261108398438,
+          "left": 1132.1357421875,
+          "right": 1345.4892578125
+        },
+        "label": {
+          "top": 481.96875,
+          "bottom": 494.96875,
+          "left": 770.6875,
+          "right": 856.015625
+        },
+        "intro": {
+          "top": 347.09375,
+          "bottom": 401.46875,
+          "left": 770.6875,
+          "right": 1353.609375
+        },
+        "row": {
+          "top": 530.46875,
+          "bottom": 583.46875,
+          "left": 770.6875,
+          "right": 1353.609375
+        },
+        "text": "IDENTITY UNKNOWN",
+        "color": "rgb(255, 134, 28)",
+        "overflow": false
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\identity-stamp-1440.png",
+      "pageErrors": [],
+      "redactionAndRestore": true
+    },
+    {
+      "width": 1920,
+      "layout": {
+        "copy": {
+          "top": 142,
+          "bottom": 953.90625,
+          "left": 1024.5,
+          "right": 1766.40625
+        },
+        "stamp": {
+          "top": 418.925048828125,
+          "bottom": 538.637451171875,
+          "left": 1536.6181640625,
+          "right": 1758.1943359375
+        },
+        "label": {
+          "top": 497.40625,
+          "bottom": 510.40625,
+          "left": 1024.5,
+          "right": 1109.828125
+        },
+        "intro": {
+          "top": 362.53125,
+          "bottom": 416.90625,
+          "left": 1024.5,
+          "right": 1766.40625
+        },
+        "row": {
+          "top": 545.90625,
+          "bottom": 598.90625,
+          "left": 1024.5,
+          "right": 1766.40625
+        },
+        "text": "IDENTITY UNKNOWN",
+        "color": "rgb(255, 134, 28)",
+        "overflow": false
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\identity-stamp-1920.png",
+      "pageErrors": [],
+      "redactionAndRestore": true
+    }
+  ]
+}
