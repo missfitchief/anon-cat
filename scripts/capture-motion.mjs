@@ -26,5 +26,8 @@ for(const progress of [.08,.31,.52,.73,.94]){await glide(storyBounds.start+story
 const art=await page.locator('#artwork').evaluate(el=>el.getBoundingClientRect().top+scrollY-96);await glide(art,650);await page.waitForTimeout(450);
 await page.locator('#artwork[data-trace-ready="true"]').waitFor();await page.waitForTimeout(2100);
 await page.screenshot({path:'docs/screenshots/trace-room-desktop.png'});
+const footer=await page.locator('.footer').evaluate(el=>el.getBoundingClientRect().top+scrollY-96);await glide(footer,700);
+await page.waitForFunction(()=>Array.from(document.querySelectorAll('.footer-peek img')).every(img=>img.complete&&img.naturalWidth>0));await page.waitForTimeout(900);
+await page.locator('.footer').screenshot({path:'docs/screenshots/footer-peek-motion.png'});
 await context.close();await video.saveAs(path.resolve('../anon-cat-motion-preview.webm'));await browser.close();
 console.log('Saved actual production browser recording: ../anon-cat-motion-preview.webm');

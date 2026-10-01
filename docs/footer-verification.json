@@ -1,0 +1,364 @@
+{
+  "url": "http://127.0.0.1:3001",
+  "checkedAt": "2026-10-01T16:46:23.983Z",
+  "checks": [
+    {
+      "width": 320,
+      "height": 800,
+      "fallback": false,
+      "layout": {
+        "scene": {
+          "left": 180.8125,
+          "right": 300.8125,
+          "top": 414.953125,
+          "bottom": 561.234375,
+          "width": 120,
+          "height": 146.28125
+        },
+        "headline": {
+          "left": 19.1875,
+          "right": 168.8125,
+          "top": 456.484375,
+          "bottom": 519.703125,
+          "width": 149.625,
+          "height": 63.21875
+        },
+        "sill": {
+          "left": 189.203125,
+          "right": 280.421875,
+          "top": 545.15625,
+          "bottom": 561.234375,
+          "width": 91.21875,
+          "height": 16.078125
+        },
+        "panel": {
+          "left": 189.203125,
+          "right": 225.203125,
+          "top": 452.984375,
+          "bottom": 561.234375,
+          "width": 36,
+          "height": 108.25
+        },
+        "images": [
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "address": "H9pPKejchJ9LCWpb1P8p4BmrjzCFARUmA7XtJK4pVhCZ"
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\footer-peek-320.png",
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "fallback": false,
+      "layout": {
+        "scene": {
+          "left": 245.71875,
+          "right": 366.609375,
+          "top": 457.09375,
+          "bottom": 604.453125,
+          "width": 120.890625,
+          "height": 147.359375
+        },
+        "headline": {
+          "left": 23.390625,
+          "right": 233.71875,
+          "top": 492.6875,
+          "bottom": 568.84375,
+          "width": 210.328125,
+          "height": 76.15625
+        },
+        "sill": {
+          "left": 254.171875,
+          "right": 346.0625,
+          "top": 588.25,
+          "bottom": 604.453125,
+          "width": 91.890625,
+          "height": 16.203125
+        },
+        "panel": {
+          "left": 254.171875,
+          "right": 290.4375,
+          "top": 495.40625,
+          "bottom": 604.453125,
+          "width": 36.265625,
+          "height": 109.046875
+        },
+        "images": [
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "address": "H9pPKejchJ9LCWpb1P8p4BmrjzCFARUmA7XtJK4pVhCZ"
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\footer-peek-390.png",
+      "pageErrors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "fallback": false,
+      "layout": {
+        "scene": {
+          "left": 545.921875,
+          "right": 721.921875,
+          "top": 626.140625,
+          "bottom": 840.6875,
+          "width": 176,
+          "height": 214.546875
+        },
+        "headline": {
+          "left": 46.078125,
+          "right": 521.921875,
+          "top": 703.65625,
+          "bottom": 763.171875,
+          "width": 475.84375,
+          "height": 59.515625
+        },
+        "sill": {
+          "left": 558.234375,
+          "right": 692.015625,
+          "top": 817.09375,
+          "bottom": 840.6875,
+          "width": 133.78125,
+          "height": 23.59375
+        },
+        "panel": {
+          "left": 558.234375,
+          "right": 611.03125,
+          "top": 681.921875,
+          "bottom": 840.6875,
+          "width": 52.796875,
+          "height": 158.765625
+        },
+        "images": [
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "address": "H9pPKejchJ9LCWpb1P8p4BmrjzCFARUmA7XtJK4pVhCZ"
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\footer-peek-768.png",
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "fallback": false,
+      "layout": {
+        "scene": {
+          "left": 1143.609375,
+          "right": 1353.609375,
+          "top": 460.90625,
+          "bottom": 716.90625,
+          "width": 210,
+          "height": 256
+        },
+        "headline": {
+          "left": 86.390625,
+          "right": 1111.609375,
+          "top": 545.390625,
+          "bottom": 632.421875,
+          "width": 1025.21875,
+          "height": 87.03125
+        },
+        "sill": {
+          "left": 1158.296875,
+          "right": 1317.921875,
+          "top": 688.75,
+          "bottom": 716.90625,
+          "width": 159.625,
+          "height": 28.15625
+        },
+        "panel": {
+          "left": 1158.296875,
+          "right": 1221.296875,
+          "top": 527.453125,
+          "bottom": 716.90625,
+          "width": 63,
+          "height": 189.453125
+        },
+        "images": [
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "address": "H9pPKejchJ9LCWpb1P8p4BmrjzCFARUmA7XtJK4pVhCZ"
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\footer-peek-1440.png",
+      "pageErrors": [],
+      "reentryInFlight": [
+        "matrix(1, 0, 0, 1, -16.0979, 11.4985)",
+        "matrix(1, 0, 0, 1, -16.0979, 11.4985)"
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "fallback": false,
+      "layout": {
+        "scene": {
+          "left": 1556.40625,
+          "right": 1766.40625,
+          "top": 640.875,
+          "bottom": 896.875,
+          "width": 210,
+          "height": 256
+        },
+        "headline": {
+          "left": 153.59375,
+          "right": 1524.40625,
+          "top": 720.515625,
+          "bottom": 817.234375,
+          "width": 1370.8125,
+          "height": 96.71875
+        },
+        "sill": {
+          "left": 1571.09375,
+          "right": 1730.71875,
+          "top": 868.71875,
+          "bottom": 896.875,
+          "width": 159.625,
+          "height": 28.15625
+        },
+        "panel": {
+          "left": 1571.09375,
+          "right": 1634.09375,
+          "top": 707.421875,
+          "bottom": 896.875,
+          "width": 63,
+          "height": 189.453125
+        },
+        "images": [
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+            "width": 557,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "address": "H9pPKejchJ9LCWpb1P8p4BmrjzCFARUmA7XtJK4pVhCZ"
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\footer-peek-1920.png",
+      "pageErrors": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "fallback": true,
+      "layout": {
+        "scene": {
+          "left": 1143.609375,
+          "right": 1353.609375,
+          "top": 460.90625,
+          "bottom": 716.90625,
+          "width": 210,
+          "height": 256
+        },
+        "headline": {
+          "left": 86.390625,
+          "right": 1111.609375,
+          "top": 545.390625,
+          "bottom": 632.421875,
+          "width": 1025.21875,
+          "height": 87.03125
+        },
+        "sill": {
+          "left": 1158.296875,
+          "right": 1317.921875,
+          "top": 688.75,
+          "bottom": 716.90625,
+          "width": 159.625,
+          "height": 28.15625
+        },
+        "panel": {
+          "left": 1158.296875,
+          "right": 1221.296875,
+          "top": 527.453125,
+          "bottom": 716.90625,
+          "width": 63,
+          "height": 189.453125
+        },
+        "images": [
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.png",
+            "width": 891,
+            "transform": "none",
+            "visibility": "visible",
+            "opacity": "1"
+          },
+          {
+            "source": "http://127.0.0.1:3001/assets/character/peek-cat.png",
+            "width": 891,
+            "transform": "none",
+            "visibility": "visible",
+            "opacity": "1"
+          }
+        ],
+        "overflow": false,
+        "address": "H9pPKejchJ9LCWpb1P8p4BmrjzCFARUmA7XtJK4pVhCZ"
+      },
+      "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\footer-peek-1440-fallback.png",
+      "pageErrors": []
+    }
+  ]
+}

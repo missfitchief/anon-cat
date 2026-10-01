@@ -26,6 +26,8 @@ ScrollTrigger is imported only within 800px of this section; its three images ar
 
 ## Ownership and loading
 
+The footer's orange panel and bottom sill remain fixed. The existing peeking cutout is layered behind them, with a clipped duplicate paw above the panel. PageMotion observes their common `.footer-peek` container and waits for both images to decode before a shared 650ms entrance from 28px left and 20px below. Identical transforms preserve paw registration. It replays on viewport re-entry and participates in capture freezing. The unanimated HTML/CSS still displays the complete pose.
+
 - CSS owns architectural arrival on `scene-camera`/foreground; these never share transforms with pointer or character motion.
 - The hero GSAP context owns poses, glance, breathing, travel and the short scene action.
 - Page GSAP owns pointer tilt on `scene-pointer` and repeatable below-fold reveals.

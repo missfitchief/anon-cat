@@ -37,6 +37,8 @@ export default function PageMotion(){
               if(el.matches('.file-art')){
                 gsap.fromTo(el,{y:60,rotation:-3,scale:.94},{y:0,rotation:0,scale:1,duration:.65,ease:'power3.out',overwrite:'auto'});
                 gsap.fromTo('.file-orange-disc',{scale:.75},{scale:1,duration:.65,ease:'power3.out',overwrite:'auto'});
+              }else if(el.matches('.footer-peek')){
+                gsap.fromTo(el.querySelectorAll('.footer-cat'),{x:-28,y:20,autoAlpha:0},{x:0,y:0,autoAlpha:1,duration:.65,ease:'power3.out',overwrite:'auto'});
               }else{
                 gsap.fromTo(el,{y:32},{y:0,duration:.5,ease:'power3.out',overwrite:'auto'});
               }
@@ -44,7 +46,7 @@ export default function PageMotion(){
             });
           });
         },{threshold:.08,rootMargin:'0px 0px -25px 0px'});
-        document.querySelectorAll('.file-art,.file-copy h2,.footer-top>p,.footer-cat').forEach(el=>observer?.observe(el));
+        document.querySelectorAll('.file-art,.file-copy h2,.footer-top>p,.footer-peek').forEach(el=>observer?.observe(el));
         const pointer=document.querySelector<HTMLElement>('.scene-pointer');
         if(pointer&&matchMedia('(hover:hover) and (pointer:fine)').matches){
           const rx=gsap.quickTo(pointer,'rotationY',{duration:.18,ease:'power2.out'});
