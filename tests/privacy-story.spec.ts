@@ -30,7 +30,7 @@ test('desktop story restores three full scenes, shutters, progress and reverse s
   await seek(page,bounds,.08);
   await expect(page.locator('.story-current')).toHaveText('01');
   expect(await page.locator('.silhouette-frame').evaluate(el=>getComputedStyle(el).clipPath)).toMatch(/100%/);
-  await page.getByRole('link',{name:'03 The artwork',exact:true}).click();
+  await page.getByRole('link',{name:'The artwork',exact:true}).click();
   await expect(page.getByRole('button',{name:'02 Peek',exact:true})).toBeInViewport();
 });
 

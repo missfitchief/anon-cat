@@ -82,7 +82,7 @@ test('restored cinema keeps navigation to artwork immediate',async({page})=>{
   await page.locator('.ethos-cinema').scrollIntoViewIfNeeded();
   await expect(page.locator('.ethos-cinema')).toHaveClass(/is-cinematic/);
   await expect(page.locator('.pin-spacer')).toHaveCount(1);
-  await page.getByRole('link',{name:'03 The artwork'}).click();await expect(page).toHaveURL(/#artwork$/);
+  await page.getByRole('link',{name:'The artwork',exact:true}).click();await expect(page).toHaveURL(/#artwork$/);
   await expect(page.getByRole('button',{name:'02 Peek',exact:true})).toBeVisible();
 });
 

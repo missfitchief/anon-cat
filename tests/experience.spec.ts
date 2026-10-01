@@ -36,7 +36,7 @@ for(const [width,height]of [[360,800],[390,844],[768,1024],[1440,900],[1920,1080
   await page.evaluate(()=>document.dispatchEvent(new Event('anon-cat:freeze')));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   expect(await page.locator('h1').count()).toBe(1);await expect(page.getByRole('button',{name:'Go incognito'})).toBeVisible();
-  if(width<700){await page.getByRole('button',{name:'Menu',exact:false}).click();await page.getByRole('link',{name:'01 The cat'}).click();await expect(page.getByRole('button',{name:'Menu',exact:false})).toHaveAttribute('aria-expanded','false');}
+  if(width<700){await page.getByRole('button',{name:'Menu',exact:false}).click();await page.getByRole('link',{name:'The cat',exact:true}).click();await expect(page.getByRole('button',{name:'Menu',exact:false})).toHaveAttribute('aria-expanded','false');}
   for(const selector of ['.file-art','.panel-frame','.silhouette-frame','.relaxed-frame','.selected-portrait']){
     await page.locator(selector).scrollIntoViewIfNeeded();
     await expect.poll(()=>page.locator(selector).locator('img').evaluateAll(nodes=>nodes.every(el=>(el as HTMLImageElement).complete&&(el as HTMLImageElement).naturalWidth>0))).toBe(true);

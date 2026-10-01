@@ -6,7 +6,7 @@ export default function Experience({children}:{children?:React.ReactNode}) {
   const [menu,setMenu]=useState(false);
   return <>
     <header className="header"><div className="scroll-progress" aria-hidden="true"/><a className="brand" href="#top" aria-label={`${site.name}, back to top`}><img src="/favicon.svg" alt="" width="34" height="34"/>{site.name}<span className="brand-star" aria-hidden="true">✳</span></a>
-      <nav id="mobile-nav" aria-label="Main navigation" className={menu?'nav menu-open':'nav'}>{site.navigation.map((n,i)=><a key={n.href} href={n.href} onClick={()=>setMenu(false)}><span>0{i+1}</span>{n.label}</a>)}</nav>
+      <nav id="mobile-nav" aria-label="Main navigation" className={menu?'nav menu-open':'nav'}>{site.navigation.map(n=><a key={n.href} href={n.href} onClick={()=>setMenu(false)}>{n.label}</a>)}</nav>
       <div className="header-controls"><button className="menu-button" aria-expanded={menu} aria-controls="mobile-nav" onClick={()=>setMenu(!menu)}>{menu?'Close':'Menu'}<span aria-hidden="true">{menu?'−':'+'}</span></button></div>
     </header>
     <main id="main"><section className="hero" id="top" aria-labelledby="hero-heading">
