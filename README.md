@@ -32,7 +32,7 @@ The current motion pass focuses on the first screen: a 600ms architectural arriv
 
 Automatic character motion repeats with a 2.5-second rest, resumes after Come back, and replays on returning to the hero or browser tab. PNG poster recovery can animate. OS reduced motion defaults to off; choosing Motion on explicitly enables the full experience and persists across reloads.
 
-The visible hero uses a 120KB desktop WebP or 73KB mobile WebP. Hidden poses start loading only after the visible cat is decoded. Noncritical artwork starts within 350px of the viewport; ordinary `noscript` images preserve the artwork without JavaScript. Three local Latin font files cover the site. Full-resolution PNG masters remain available. Performance marks remain in the browser and are never transmitted.
+The visible hero uses a 120KB desktop WebP or 73KB mobile WebP. Hidden poses start loading only after the visible cat is decoded. Noncritical artwork uses native browser lazy loading with low request priority and real image sources, including without JavaScript. There is no custom noscript image branch. Section entrances wait for image decoding and replay on re-entry. Three local Latin font files cover the site. Full-resolution PNG masters remain available. Performance marks remain in the browser and are never transmitted.
 
 ## Change the project
 

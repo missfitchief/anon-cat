@@ -54,7 +54,7 @@ test('an explicit Motion on choice overrides the OS default and survives reload'
 test('HTML fallbacks do not leak raw image markup when JavaScript is enabled',async({page})=>{
   await page.goto('/');
   await page.locator('#file').scrollIntoViewIfNeeded();
-  expect(await page.locator('noscript.deferred-fallback').first().evaluate(el=>getComputedStyle(el).display)).toBe('none');
+  await expect(page.locator('noscript')).toHaveCount(0);
   expect(await page.locator('body').innerText()).not.toContain('<img class=');
 });
 
@@ -123,12 +123,12 @@ test('hidden pose requests begin after the visible cat is decoded',async({page})
   times.poseStarts.forEach(start=>expect(start).toBeGreaterThanOrEqual(times.heroEnd));
 });
 
-test('below-fold images retain ordinary HTML fallbacks without JavaScript',async({browser})=>{
+test('below-fold images work natively without JavaScript',async({browser})=>{
   const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
   const page=await context.newPage();await page.goto('/');
   await page.getByRole('link',{name:'Meet the cat',exact:true}).click();
   await expect(page).toHaveURL(/#file$/);
-  const cat=page.locator('noscript .seated-cat');await expect(cat).toBeVisible();
+  const cat=page.locator('.seated-cat');await expect(cat).toBeVisible();
   await expect.poll(()=>cat.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0)).toBe(true);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await context.close();

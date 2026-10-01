@@ -18,16 +18,16 @@ The decorative performance and manual state are separate. A manual action cancel
 
 ## Rest of the document
 
-Native scrolling has no pin spacers, scrub inertia or extra story scroll distance. IntersectionObserver starts brief 400–550ms reveals as artwork/headings enter the viewport. Content remains visible if scripts fail. A passive, frame-coalesced scroll listener updates the header's document progress line. Portrait selection updates its accessible label and real local PNG download immediately; a 380ms print throw follows, cancelling earlier contexts on rapid choices. Redaction bars finish in at most 260ms, including stagger.
+Native scrolling has no pin spacers, scrub inertia or extra story scroll distance. IntersectionObserver starts 500–750ms reveals as artwork/headings enter the viewport. Images decode before their entrance, and reveals replay on re-entry. The file scene rises 60px with a small rotation and disc expansion; privacy scenes rise 48px while their images settle from 1.14 scale. Content remains visible if scripts fail. A passive, frame-coalesced scroll listener updates the header's document progress line. Portrait selection updates its accessible label and real local PNG download immediately; a 380ms print throw follows, cancelling earlier contexts on rapid choices. Redaction bars finish in at most 260ms, including stagger.
 
 ## Ownership and loading
 
 - CSS owns architectural arrival on `scene-camera`/foreground; these never share transforms with pointer or character motion.
 - The hero GSAP context owns poses, glance, breathing, travel and the short scene action.
-- Page GSAP owns pointer tilt on `scene-pointer` and one-shot below-fold reveals.
+- Page GSAP owns pointer tilt on `scene-pointer` and repeatable below-fold reveals.
 - Artwork GSAP owns print transforms inside its stage.
 
-The high-priority poster is 120,226 bytes on desktop or 73,296 bytes on mobile. Hidden poses load after its decode, and below-fold images start within 350px of the viewport. Ordinary `noscript` images preserve artwork without JavaScript. Original transparent PNGs remain available for source and error recovery. Browser-only performance marks measure readiness; there is no reporting endpoint.
+The high-priority poster is 120,226 bytes on desktop or 73,296 bytes on mobile. Hidden poses load after its decode. Below-fold artwork uses ordinary images with native lazy loading, low fetch priority and asynchronous decode; it works without hydration. No noscript image text or custom deferred-source visibility rule exists. Original transparent PNGs remain available for source and error recovery. Browser-only performance marks measure readiness; there is no reporting endpoint.
 
 ## Reduced motion, visibility and capture
 

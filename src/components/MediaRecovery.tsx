@@ -12,16 +12,9 @@ export default function MediaRecovery(){
       img.src=source.replace(/hero-cat-mobile\.webp$/,'hero-cat.webp').replace(/\.webp$/,'.png');
     };
     const onError=(event:Event)=>{if(event.target instanceof HTMLImageElement)recover(event.target);};
-    const onLoad=(event:Event)=>{if(event.target instanceof HTMLImageElement)event.target.removeAttribute('data-deferred-src');};
     document.addEventListener('error',onError,true);
-    document.addEventListener('load',onLoad,true);
     document.querySelectorAll('img').forEach(img=>{if(img.complete&&img.naturalWidth===0)recover(img);});
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-      if(!entry.isIntersecting)return;
-      const img=entry.target as HTMLImageElement;observer.unobserve(img);img.src=img.dataset.deferredSrc!;
-    }),{rootMargin:'350px'});
-    document.querySelectorAll('img[data-deferred-src]').forEach(img=>observer.observe(img));
-    return()=>{observer.disconnect();document.removeEventListener('error',onError,true);document.removeEventListener('load',onLoad,true);};
+    return()=>{document.removeEventListener('error',onError,true);};
   },[]);
   return null;
 }
