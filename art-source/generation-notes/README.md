@@ -1,6 +1,6 @@
 # Character asset production
 
-Higgsfield Nano Banana Pro (catalog ID `nano_banana_pro`; jobs returned backend alias `nano_banana_2`) produced nine 2k stills. All generation requests included the supplied front identity, and all later poses/portraits also included the locked generated front. Nine stills cost 18 credits; four background-removal jobs cost 4 credits. Total verified transaction spend: **22 credits** from the approved 200-credit project budget. Balance after submission: 1,122 credits (starting 1,144). No video jobs, subscriptions, top-ups or recurring generation were used.
+Higgsfield Nano Banana Pro (catalog ID `nano_banana_pro`; jobs returned backend alias `nano_banana_2`) produced the original batch of nine 2k stills. All generation requests included the supplied front identity, and all later poses/portraits also included the locked generated front. Nine stills cost 18 credits; four background-removal jobs cost 4 credits. Verified Higgsfield spend for that historical batch: **22 credits** from the approved 200-credit project budget. Balance after those submissions: 1,122 credits (starting 1,144). No video jobs, subscriptions, top-ups or recurring generation were used for that batch.
 
 Each still received a direct cost preflight of 2 credits. Background remover's exposed schema has no `get_cost` parameter; actual charges were checked in transactions. Existing job IDs were polled after interrupted work; no ambiguous job was resubmitted.
 
@@ -10,7 +10,9 @@ First two stills were submitted before project folder was returned and remain le
 
 Background removal and alpha cropping/optimization used Higgsfield sandbox PIL: alpha bounding box, Lanczos resize, WebP quality 86, method 6. Original uncut PNG masters are retained. Hero alpha crop was (375,79,1477,2370), output 770×1600, 216,302 bytes. Whiskers, ears, tail tip and feet were visually checked; thin whiskers may be partially softened by background extraction. The original front has full pale studio surroundings; transparent source alpha spans 0–255.
 
-See generation-requests.json for exact prompts, input media IDs, job IDs, settings and preflight costs. Main implementation normalizes portrait downloads to 1024 square while preserving 2048 square masters in art-source/portraits.
+See generation-requests.json for exact prompts, input media IDs, job IDs, settings and preflight costs. Original portrait masters were 2048 square; production portraits are normalized to 1024 square.
+
+The relaxed-eye correction on 2026-10-01 used one built-in imagegen edit, with the original relaxed portrait, side-eye and hero as references. No Higgsfield jobs were submitted for this correction; the historical 22/200 Higgsfield accounting above is separate from it. The corrected `../portraits/relaxed-master.png` is 1254 × 1254, and `../portraits/relaxed-original-master.png` archives the original. Large rounded brown irises, dark central pupils and glossy highlights now match the canonical face while remaining partly covered by relaxed eyelids. `../character-bible/expression-sheet.png` is retained as a historical sheet and is superseded as a relaxed-eye identity reference. See `../portraits/eye-correction.json` for the edit provenance and output dimensions.
 
 Final pose exports: step822×1600 WebP207,034 bytes; peek891×1200 WebP172,822 bytes; seated802×1200 WebP145,932 bytes. Matching public PNG/WebP crops have the same dimensions; full alpha masters retained in character-bible. Exact alpha bounds and source/removal job IDs are in exports.json. Edge QA against near-black showed a mild studio-like pale rim, retained after candidate decontamination gave little improvement.
 

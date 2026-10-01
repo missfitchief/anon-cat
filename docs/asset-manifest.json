@@ -160,20 +160,36 @@
     "sha256": "b5941a24ddf98cc4c8cfbb5d9cc2c2df2a157d4f532f701f26fef4c9af602e16"
   },
   {
-    "path": "public/assets/portraits/relaxed.png",
-    "bytes": 1937595,
-    "width": 1024,
-    "height": 1024,
-    "alpha": true,
-    "sha256": "0e71c5d6523986fd9e3de54b0dd7007e513e9b2bcb9dc13f7c85ec063acc9293"
-  },
-  {
-    "path": "public/assets/portraits/relaxed.webp",
-    "bytes": 146076,
+    "path": "public/assets/portraits/relaxed-eyes.png",
+    "bytes": 1757617,
     "width": 1024,
     "height": 1024,
     "alpha": false,
-    "sha256": "b00d53cc678f35f9e14ac4a8dc4a9ffb8fa5619b8b441bb00e99f6b1a0442cdd"
+    "sha256": "1c35d902964d5fd39e8a8d7647ce9962d7ecad10b9c65846885d17ddff1cc9a4"
+  },
+  {
+    "path": "public/assets/portraits/relaxed-eyes.webp",
+    "bytes": 117402,
+    "width": 1024,
+    "height": 1024,
+    "alpha": false,
+    "sha256": "4a8a86f03011b6f711439b9c2d4a86adf8fdb60d249a124a6186821b8750e180"
+  },
+  {
+    "path": "public/assets/portraits/relaxed.png",
+    "bytes": 1757617,
+    "width": 1024,
+    "height": 1024,
+    "alpha": false,
+    "sha256": "1c35d902964d5fd39e8a8d7647ce9962d7ecad10b9c65846885d17ddff1cc9a4"
+  },
+  {
+    "path": "public/assets/portraits/relaxed.webp",
+    "bytes": 117402,
+    "width": 1024,
+    "height": 1024,
+    "alpha": false,
+    "sha256": "4a8a86f03011b6f711439b9c2d4a86adf8fdb60d249a124a6186821b8750e180"
   },
   {
     "path": "public/assets/portraits/side-eye.png",

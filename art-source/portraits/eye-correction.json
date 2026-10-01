@@ -1,0 +1,20 @@
+{
+  "method": "One built-in imagegen edit, 2026-10-01",
+  "referenceImages": [
+    "public/assets/portraits/relaxed.png (before correction)",
+    "public/assets/portraits/side-eye.png",
+    "public/assets/character/hero-cat.png"
+  ],
+  "correction": "Canonical large rounded brown irises and dark pupils under relaxed eyelids; eye highlights matched to primary character.",
+  "master": "art-source/portraits/relaxed-master.png",
+  "originalPreserved": "art-source/portraits/relaxed-original-master.png",
+  "masterDimensions": [
+    1254,
+    1254
+  ],
+  "displayDimensions": [
+    1024,
+    1024
+  ],
+  "webpBytes": 117402
+}

@@ -32,6 +32,8 @@ The hero keeps its 600ms architectural arrival, automatic hide/peek/return, 180m
 
 The hiding pose uses the original close-up face with a continuation from the existing full-body artwork. Both move in the same wrapper behind the foreground pillar; responsive sizing preserves the original head framing and the lower mask conceals the feet. No additional media request is needed because the body reuses the responsive hero image.
 
+The relaxed privacy portrait matches the main character's rounded brown irises, dark central pupils and highlights while retaining its lowered eyelids. Its corrected WebP and PNG use the versioned `relaxed-eyes` filename. The previous master is archived in `art-source/portraits/relaxed-original-master.png`; correction provenance is in `eye-correction.json`.
+
 Automatic character motion repeats with a 2.5-second rest, resumes after Come back, and replays on returning to the hero or browser tab. PNG poster recovery can animate. The motion switch and saved preference were removed at the user’s request; animation stays enabled after reload.
 
 The visible hero uses a 120KB desktop WebP or 73KB mobile WebP. Hidden poses start loading only after the visible cat is decoded. Noncritical artwork uses native browser lazy loading with low request priority and real image sources, including without JavaScript. There is no custom noscript image branch. Section entrances wait for image decoding and replay on re-entry. Three local Latin font files cover the site. Full-resolution PNG masters remain available. Performance marks remain in the browser and are never transmitted.

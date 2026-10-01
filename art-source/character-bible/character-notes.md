@@ -1,7 +1,7 @@
 # Locked character direction
 
 ## Identity
-An upright orange cat wearing a fitted ribbed gray knitted head covering and matching long-sleeved body suit. Orange ears, orange eye openings around white eyes/dark pupils, orange rounded feline muzzle, paws and tail tip remain exposed. Small brown feline nose, dark fine whiskers, soft raised collar, calm knowing expression. The gray is clothing, not fur. There are no human fingers, shoes, accessories, weapons or logos.
+An upright orange cat wearing a fitted ribbed gray knitted head covering and matching long-sleeved body suit. Orange ears, orange eye openings around white eyes, orange rounded feline muzzle, paws and tail tip remain exposed. Canonical eyes have large rounded brown irises, dark central pupils and glossy highlights. Lowered relaxed eyelids obscure the upper part of those same full-sized irises; they do not make the irises small or narrow. Small brown feline nose, dark fine whiskers, soft raised collar, calm knowing expression. The gray is clothing, not fur. There are no human fingers, shoes, accessories, weapons or logos.
 
 The approved primary is `front-master.png`; `front-transparent-master.png` is its cutout. `turnaround-locked.png` resolves front, side and back consistently. The first turnaround exploration is retained as an unselected source and is not used in the website. Individual approved-view exports make the design convenient to inspect.
 
@@ -17,7 +17,9 @@ Matte medium-gray knit with visible vertical ribs, softly raised around eye/muzz
 Brand palette: ink #111315, charcoal #282B2E, knit gray #73767A, paper #F2EFE8, orange #FF861C. Artwork has physically shaded variants around these anchors; it is not globally recolored. `knit-material-reference.png` samples the approved front textile. `palette.svg` is an editable swatch reference.
 
 ## Expressions and poses
-`expression-sheet.png` shows side-eye, peek and relaxed. The face, orange openings and whiskers stay consistent across these commissioned shots. The primary idle is an upright feet-planted pose. A separate approved upright stepping shot is used for travel; a separate peek shot supplies the hidden state. The seated shot belongs to the editorial section. Original PNGs remain editable production sources; this is a pose-based 2.5D system, not a claimed skeleton.
+`expression-sheet.png` is retained as a historical side-eye, peek and relaxed sheet. Its original relaxed eyes are superseded as an identity reference by `../portraits/relaxed-master.png`, the corrected 1254 × 1254 master. `../portraits/relaxed-original-master.png` preserves the original portrait. The correction retains lowered eyelids while restoring the canonical iris, pupil and highlight design; the hero and side-eye remain the eye references. See `../portraits/eye-correction.json` for provenance.
+
+The primary idle is an upright feet-planted pose. A separate approved upright stepping shot is used for travel; a separate peek shot supplies the hidden state. The seated shot belongs to the editorial section. Original PNGs remain editable production sources; this is a pose-based 2.5D system, not a claimed skeleton.
 
 ## Consistency review
 Review ears, mask outline, eye/muzzle openings, nose shape, whisker attachment, collar, paw type and tail attachment after every replacement. Avoid reusing the rejected knit-orange turnaround. No generated text or markings appear on production artwork. Working name is kept as actual HTML.
