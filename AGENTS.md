@@ -1,3 +1,5 @@
+<!-- User preference: Do not add decorative 01 / 02 / 03 numbering to navigation, sections, scenes, galleries or progress labels. Use descriptive names and unnumbered visual progress. -->
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

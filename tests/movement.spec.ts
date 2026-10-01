@@ -44,7 +44,7 @@ test('camera, redaction and portrait controls produce actual motion after reload
   await expect.poll(()=>bar.evaluate(el=>new DOMMatrixReadOnly(getComputedStyle(el).transform).a),{intervals:[20]}).toBeGreaterThan(.05);
   await expect.poll(()=>bar.evaluate(el=>new DOMMatrixReadOnly(getComputedStyle(el).transform).a)).toBe(1);
   await page.locator('#artwork').scrollIntoViewIfNeeded();
-  await page.getByRole('button',{name:'02 Peek',exact:true}).click();
+  await page.getByRole('button',{name:'Peek',exact:true}).click();
   await expect.poll(()=>page.locator('.portrait-print[data-active=true]').evaluate(el=>Math.abs(new DOMMatrixReadOnly(getComputedStyle(el).transform).m13)),{intervals:[20]}).toBeGreaterThan(.01);
   await expect.poll(()=>page.locator('.portrait-print[data-active=true]').evaluate(el=>Math.abs(new DOMMatrixReadOnly(getComputedStyle(el).transform).m13))).toBeLessThan(.001);
 });

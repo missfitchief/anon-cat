@@ -24,8 +24,8 @@ await page.locator('.ethos-cinema.is-cinematic[data-story-ready="true"]').waitFo
 const storyBounds=await page.locator('.pin-spacer').evaluate(el=>({start:el.getBoundingClientRect().top+scrollY-innerHeight*.06,span:Math.round(innerHeight*1.75)}));
 for(const progress of [.08,.31,.52,.73,.94]){await glide(storyBounds.start+storyBounds.span*progress,700);await page.waitForTimeout(250);}
 const art=await page.locator('#artwork').evaluate(el=>el.getBoundingClientRect().top+scrollY-96);await glide(art,650);await page.waitForTimeout(450);
-await page.getByRole('button',{name:'02 Peek',exact:true}).click();await page.waitForTimeout(450);
-await page.getByRole('button',{name:'03 Relaxed',exact:true}).click();await page.waitForTimeout(450);
+await page.getByRole('button',{name:'Peek',exact:true}).click();await page.waitForTimeout(450);
+await page.getByRole('button',{name:'Relaxed',exact:true}).click();await page.waitForTimeout(450);
 await page.screenshot({path:'docs/screenshots/portrait-stack.png'});
 await context.close();await video.saveAs(path.resolve('../anon-cat-motion-preview.webm'));await browser.close();
 console.log('Saved actual production browser recording: ../anon-cat-motion-preview.webm');

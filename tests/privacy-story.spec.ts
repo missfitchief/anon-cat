@@ -19,7 +19,7 @@ test('desktop story restores three full scenes, shutters, progress and reverse s
   const bounds=await openStory(page);
   for(const [progress,chapter,selector]of [[.08,'01','.panel-frame'],[.52,'02','.silhouette-frame'],[.94,'03','.relaxed-frame']]as const){
     await seek(page,bounds,progress);
-    await expect(page.locator('.story-current')).toHaveText(chapter);
+    await expect(page.locator('.ethos-cinema')).toHaveAttribute('data-story-chapter',chapter);
     expect(await page.locator(selector).evaluate(el=>getComputedStyle(el).clipPath)).not.toMatch(/100%/);
     const position=await page.locator('.ethos-cinema').evaluate(el=>el.getBoundingClientRect().top);
     expect(Math.abs(position-54)).toBeLessThan(2);
@@ -28,10 +28,10 @@ test('desktop story restores three full scenes, shutters, progress and reverse s
   await seek(page,bounds,.31);
   expect(await page.locator('.privacy-shutters span').evaluateAll(nodes=>nodes.some(el=>{const box=el.getBoundingClientRect();const stage=el.parentElement!.getBoundingClientRect();return box.left<stage.right&&box.right>stage.left;}))).toBe(true);
   await seek(page,bounds,.08);
-  await expect(page.locator('.story-current')).toHaveText('01');
+  await expect(page.locator('.ethos-cinema')).toHaveAttribute('data-story-chapter','01');
   expect(await page.locator('.silhouette-frame').evaluate(el=>getComputedStyle(el).clipPath)).toMatch(/100%/);
   await page.getByRole('link',{name:'The artwork',exact:true}).click();
-  await expect(page.getByRole('button',{name:'02 Peek',exact:true})).toBeInViewport();
+  await expect(page.getByRole('button',{name:'Peek',exact:true})).toBeInViewport();
 });
 
 test('responsive story removes desktop pinning and restores it without duplicates',async({page})=>{
@@ -47,7 +47,7 @@ test('responsive story removes desktop pinning and restores it without duplicate
   await expect(page.locator('.ethos-cinema')).toHaveClass(/is-cinematic/);
 });
 
-for(const height of [600,700])test(`story and its chapter progress fit a ${height}px desktop viewport`,async({page})=>{
+for(const height of [600,700])test(`story and its visual progress fit a ${height}px desktop viewport`,async({page})=>{
   await page.setViewportSize({width:1280,height});await page.goto('/');const bounds=await openStory(page);await seek(page,bounds,.52);
   const layout=await page.locator('.story-progress').evaluate(el=>({bottom:el.getBoundingClientRect().bottom,overflow:document.documentElement.scrollWidth>innerWidth}));
   expect(layout.bottom).toBeLessThanOrEqual(height);expect(layout.overflow).toBe(false);
@@ -56,8 +56,8 @@ for(const height of [600,700])test(`story and its chapter progress fit a ${heigh
 test('direct artwork navigation stays reachable while story initializes',async({page})=>{
   await page.setViewportSize({width:1440,height:900});await page.goto('/#artwork');
   await expect(page.locator('.ethos-cinema')).toHaveAttribute('data-story-ready','true');
-  await expect(page.getByRole('button',{name:'02 Peek',exact:true})).toBeInViewport();
-  await page.getByRole('button',{name:'02 Peek',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Peek',exact:true})).toBeInViewport();
+  await page.getByRole('button',{name:'Peek',exact:true}).click();
   await expect(page.locator('#artwork')).toHaveAttribute('data-selection','peek');
   expect(await page.locator('body').innerText()).not.toContain('<img');
 });

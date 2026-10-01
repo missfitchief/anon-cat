@@ -35,7 +35,6 @@ export default function PrivacyStory({children}:{children:ReactNode}){
               el.dataset.storyProgress=self.progress.toFixed(3);
               const chapter=self.progress<.35?'01':self.progress<.7?'02':'03';
               el.dataset.storyChapter=chapter;
-              const label=el.querySelector('.story-current');if(label)label.textContent=chapter;
             }}});
             gsap.set('.silhouette-frame,.relaxed-frame',{clipPath:'inset(0 0 0 100%)'});
             gsap.set('.privacy-shutters span',{x:0,xPercent:330});

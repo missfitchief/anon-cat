@@ -83,7 +83,7 @@ test('restored cinema keeps navigation to artwork immediate',async({page})=>{
   await expect(page.locator('.ethos-cinema')).toHaveClass(/is-cinematic/);
   await expect(page.locator('.pin-spacer')).toHaveCount(1);
   await page.getByRole('link',{name:'The artwork',exact:true}).click();await expect(page).toHaveURL(/#artwork$/);
-  await expect(page.getByRole('button',{name:'02 Peek',exact:true})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Peek',exact:true})).toBeVisible();
 });
 
 test('an obsolete saved off value cannot stop animation after removing the switch',async({page})=>{
