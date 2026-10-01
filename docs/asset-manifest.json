@@ -1,0 +1,178 @@
+[
+  {
+    "path": "public/assets/character/hero-cat.png",
+    "bytes": 1520036,
+    "width": 770,
+    "height": 1600,
+    "alpha": true,
+    "sha256": "bcf69369b03d44b8bfe366e0fb4154c7fd1be2404835d13db11c3ede42fe3d4e"
+  },
+  {
+    "path": "public/assets/character/hero-cat.webp",
+    "bytes": 216302,
+    "width": 770,
+    "height": 1600,
+    "alpha": true,
+    "sha256": "cbd3f49e66033df062fb68441dadbef9a5d3b2e16e8f5d36fc9ecefd3e49f8e5"
+  },
+  {
+    "path": "public/assets/character/peek-cat.png",
+    "bytes": 1403300,
+    "width": 891,
+    "height": 1200,
+    "alpha": true,
+    "sha256": "af689112946341668e5fc29766049e696dfa3a80779ba56970f67a715bf7778b"
+  },
+  {
+    "path": "public/assets/character/peek-cat.webp",
+    "bytes": 172822,
+    "width": 891,
+    "height": 1200,
+    "alpha": true,
+    "sha256": "944aa5a3c222b3b3245e3c89ed0ed5807cd60e1737fcc1522e2bd92768366d53"
+  },
+  {
+    "path": "public/assets/character/seated-cat.png",
+    "bytes": 1042597,
+    "width": 802,
+    "height": 1200,
+    "alpha": true,
+    "sha256": "86e140eec9debcb9cd4a67b8c607105709a47b5f43e10a7d80a35af3597c4855"
+  },
+  {
+    "path": "public/assets/character/seated-cat.webp",
+    "bytes": 145932,
+    "width": 802,
+    "height": 1200,
+    "alpha": true,
+    "sha256": "a72c56c7ffa33f02bbf9420625204e141fd7619d707073ba08b0c0d25e165484"
+  },
+  {
+    "path": "public/assets/character/step-cat.png",
+    "bytes": 1459065,
+    "width": 822,
+    "height": 1600,
+    "alpha": true,
+    "sha256": "cffd071a0dd7f4e437c3dd9c42cebb999debe549aaa347e15beb608010c7f5bb"
+  },
+  {
+    "path": "public/assets/character/step-cat.webp",
+    "bytes": 207034,
+    "width": 822,
+    "height": 1600,
+    "alpha": true,
+    "sha256": "ce64c927ca6d55152a39049a4ef9962b1ffd87b95f49267f29d8b4f359819447"
+  },
+  {
+    "path": "public/assets/environments/file-plinth.png",
+    "bytes": 348370,
+    "width": 900,
+    "height": 600,
+    "alpha": true,
+    "sha256": "b554844aaefb3c36d09e0478a2017b2ba962fe1e34a162a130a0e52fbfb4e113"
+  },
+  {
+    "path": "public/assets/environments/file-plinth.webp",
+    "bytes": 6540,
+    "width": 650,
+    "height": 425,
+    "alpha": true,
+    "sha256": "b3b490705b6785c7fab0abc53761abfb413e193a1f12def4b87f77e49a7cb485"
+  },
+  {
+    "path": "public/assets/environments/hideout-back.png",
+    "bytes": 1625430,
+    "width": 1400,
+    "height": 1400,
+    "alpha": true,
+    "sha256": "732da600300dd6e8b869aa5670b1446a6b647c8af160f2d2b65ba5cbb1ec6f53"
+  },
+  {
+    "path": "public/assets/environments/hideout-back.webp",
+    "bytes": 30062,
+    "width": 1400,
+    "height": 1400,
+    "alpha": true,
+    "sha256": "491fcd1542594308d26694943c084e0e42e838fcea8640b57989b7645add968d"
+  },
+  {
+    "path": "public/assets/environments/hideout-front.png",
+    "bytes": 742189,
+    "width": 1400,
+    "height": 1400,
+    "alpha": true,
+    "sha256": "f98482f273e0831b062664249132f1e952f5e39c4b9d8cec6037437bee9fdc2b"
+  },
+  {
+    "path": "public/assets/environments/hideout-front.webp",
+    "bytes": 11102,
+    "width": 1400,
+    "height": 1400,
+    "alpha": true,
+    "sha256": "818acaa070f2aed7a4ee5878f7c59bbdf289b670b31705510685fe205e23c463"
+  },
+  {
+    "path": "public/assets/environments/hideout-mobile.png",
+    "bytes": 1700224,
+    "width": 1400,
+    "height": 1400,
+    "alpha": true,
+    "sha256": "223f03a57d7b418e2235740dcd0b1f2f5372a0536a028915b74fc70ded3013d3"
+  },
+  {
+    "path": "public/assets/environments/hideout-mobile.webp",
+    "bytes": 26284,
+    "width": 1400,
+    "height": 1400,
+    "alpha": true,
+    "sha256": "e6c10342e3914152600010908dd839f1c5191b6388f3fb77a06c07c659ad3d12"
+  },
+  {
+    "path": "public/assets/portraits/peek.png",
+    "bytes": 1360614,
+    "width": 1024,
+    "height": 1024,
+    "alpha": true,
+    "sha256": "d89a86f8d2889645e546a2df42d0f2a6ed8fba77cedffe5d50061864868ced60"
+  },
+  {
+    "path": "public/assets/portraits/peek.webp",
+    "bytes": 67580,
+    "width": 1024,
+    "height": 1024,
+    "alpha": false,
+    "sha256": "b5941a24ddf98cc4c8cfbb5d9cc2c2df2a157d4f532f701f26fef4c9af602e16"
+  },
+  {
+    "path": "public/assets/portraits/relaxed.png",
+    "bytes": 1937595,
+    "width": 1024,
+    "height": 1024,
+    "alpha": true,
+    "sha256": "0e71c5d6523986fd9e3de54b0dd7007e513e9b2bcb9dc13f7c85ec063acc9293"
+  },
+  {
+    "path": "public/assets/portraits/relaxed.webp",
+    "bytes": 146076,
+    "width": 1024,
+    "height": 1024,
+    "alpha": false,
+    "sha256": "b00d53cc678f35f9e14ac4a8dc4a9ffb8fa5619b8b441bb00e99f6b1a0442cdd"
+  },
+  {
+    "path": "public/assets/portraits/side-eye.png",
+    "bytes": 1607017,
+    "width": 1024,
+    "height": 1024,
+    "alpha": true,
+    "sha256": "b1a5d4bbe20c61e3c7fc93696aab05035758ce456e8e1e68b798c050b7eb3803"
+  },
+  {
+    "path": "public/assets/portraits/side-eye.webp",
+    "bytes": 146308,
+    "width": 1024,
+    "height": 1024,
+    "alpha": false,
+    "sha256": "4741d1b86c9f0140d0000973cce02614e873593a6e24e5ee0d31923d456158e9"
+  }
+]

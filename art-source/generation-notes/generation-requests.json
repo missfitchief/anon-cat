@@ -1,0 +1,207 @@
+[
+  {
+    "index": 0,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "aspect_ratio": "2:3",
+      "count": 1,
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        },
+        {
+          "role": "image_references",
+          "value": "48ddf53a-bd49-40d1-bc81-5e7ba2c43a04"
+        }
+      ],
+      "prompt": "One single full-body front view standing upright animation-ready neutral pose, entire body ears tail and both feet visible with generous margin, original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur, seamless pure white studio background, professional character design presentation, torso facing camera feet flat on ground shoulder width apart, arms relaxed slightly separated from body, attached long knitted tail curving gently to right with orange end, premium matte stylized 3D sculptural render with controlled vertical knit ribbing and soft cloth texture, soft global illumination, three-point diffused studio lighting and gentle rim light, no floor shadow so clean cutout possible, no text no logos no border no props no extra characters no weapons no glossy plastic no metal no carbon fiber no human hands no distorted anatomy"
+    },
+    "credits": 2,
+    "job_id": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415"
+  },
+  {
+    "index": 1,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "aspect_ratio": "16:9",
+      "count": 1,
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        },
+        {
+          "role": "image_references",
+          "value": "48ddf53a-bd49-40d1-bc81-5e7ba2c43a04"
+        }
+      ],
+      "prompt": "Character turnaround model sheet, three consistent full body views in a row front view side profile and back view evenly spaced, identical original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur on all views, pure white seamless studio background professional character sheet presentation, slim neck under soft raised collar, exactly consistent feline face eye openings and muzzle, same long ribbed knitted tail attached low to back curving downward then out and orange tail tip, premium matte stylized 3D sculptural render with controlled vertical knit ribs and soft cloth texture, each cat standing upright entire body and both feet in frame, shoulders and hip proportions consistent in all views, soft global illumination three-point studio lighting gentle rim light, high-end 3D animation studio quality, no text no watermark no logos no frame borders no background props no weapons no extra limbs no human hands no glossy plastic no photoreal fur no metal armor no babyface no quadruped anatomy"
+    },
+    "credits": 2,
+    "job_id": "049b2025-78b7-4a80-a580-b31a5f8ee8d4"
+  },
+  {
+    "index": 2,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "count": 1,
+      "folder_id": "ca8a1cd5-949b-41c2-a608-89c5f859979a",
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415"
+        },
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        }
+      ],
+      "aspect_ratio": "16:9",
+      "prompt": "Character turnaround model sheet three full body views in a row front view left side profile and back view evenly spaced, identical original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur on all views, first reference generated 3D cat controls face and proportions exactly, orange areas must be SMOOTH MATTE ORANGE CAT SKIN completely untextured and are never cloth, ONLY gray surfaces are knitted, pure white seamless studio background professional character sheet presentation, both feet visible flat on ground in every view, arms relaxed, tail attaches at low back with gray textile sleeve and smooth orange tail tip, soft raised collar, controlled vertically ribbed gray fabric, premium matte stylized 3D sculpture, soft global illumination diffused studio lighting subtle rim light, no text no logos no borders no props no extra limbs no human hands no glossy plastic no photoreal fur no babyface no orange knit texture no fabrics on paws ears muzzle or tail tip"
+    },
+    "credits": 2,
+    "job_id": "86948dc8-04d1-4f5a-a0fe-9d678acaa936"
+  },
+  {
+    "index": 3,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "count": 1,
+      "folder_id": "ca8a1cd5-949b-41c2-a608-89c5f859979a",
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415"
+        },
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        }
+      ],
+      "aspect_ratio": "1:1",
+      "prompt": "Square head and shoulders portrait of the identical original cat in reference one, original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur, preserve face and all gray mask openings exactly, deliberate slightly cheeky SIDE-EYE glance to viewer left, calm subtle confident smile, body and head front facing with eyes glancing only, bright warm orange smooth matte ears eye openings muzzle, gray vertical ribbed head covering and soft raised collar, generous frame margin entire ears visible, matte sculptural stylized 3D render soft diffused light, flat warm off-white #F2EFE8 background, no text no logo no props no extra characters no glossy plastic no fur no knit on orange surfaces no angry villain expression"
+    },
+    "credits": 2,
+    "job_id": "e543e83f-e63f-41ba-92ee-70220308f325"
+  },
+  {
+    "index": 4,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "count": 1,
+      "folder_id": "ca8a1cd5-949b-41c2-a608-89c5f859979a",
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415"
+        },
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        }
+      ],
+      "aspect_ratio": "1:1",
+      "prompt": "Square artistic portrait of the identical original cat in reference one, original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur, preserve face and all mask openings exactly, PEEK pose around left edge of a tall matte charcoal rectangular foreground slab that occludes the left third of portrait, visible right side of face and both alert eyes and orange ear with subtle inquisitive smile, one orange feline paw rests lightly on slab edge, warm orange opening in charcoal architectural background, premium matte sculptural stylized 3D render soft diffused directional light, clean clear face and controlled gray vertical knit ribs, orange areas smooth matte cat skin never knit, no text no logo no extra characters no glossy plastic no fur no aggressive expression no props other than slab no human hands"
+    },
+    "credits": 2,
+    "job_id": "b9a17592-036d-4086-b192-fe57cd8f38f5"
+  },
+  {
+    "index": 5,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "count": 1,
+      "folder_id": "ca8a1cd5-949b-41c2-a608-89c5f859979a",
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415"
+        },
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        }
+      ],
+      "aspect_ratio": "1:1",
+      "prompt": "Square chest-up portrait of identical original cat in reference one, original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur, preserve exact face and mask openings, RELAXED expression gently half-lidded white eyes looking at viewer and subtle satisfied closed smile, shoulders relaxed, entire ears visible within margin, smooth orange matte ears eye openings and muzzle contrasted with fitted gray vertical ribbed textile head covering and soft raised collar, premium matte sculptural stylized 3D render soft diffused warm light, clean solid muted orange #FF861C background, no text no logo no props no extra characters no glossy plastic no photoreal fur no knit on orange skin no angry face no baby proportions"
+    },
+    "credits": 2,
+    "job_id": "90808556-ee6b-4f83-8ac0-e8fd1cf411d9"
+  },
+  {
+    "index": 6,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "count": 1,
+      "folder_id": "ca8a1cd5-949b-41c2-a608-89c5f859979a",
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415"
+        },
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        }
+      ],
+      "aspect_ratio": "2:3",
+      "prompt": "One single full body original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur, identical face and proportions to reference first image, ANIMATION pose stepping carefully SIDEWAYS TO VIEWER RIGHT behind imaginary nearby wall, upper body and head still front-facing with eyes glancing to right, right foot stepping outward to viewer right and left foot toes still touching floor, arms restrained close to body and tail trailing LEFT with attached low back root, full ears head body paws and long tail in frame generous margins, smooth matte orange skin on ears muzzle eye openings paws tail tip never knit, fitted gray vertically ribbed textile suit and collar, premium matte stylized 3D sculptural render soft global illumination diffused studio light, pure white seamless background no actual wall no floor shadow, no text no logos no props no extra limbs no human hands no photoreal fur no glossy plastic no baby face no changing wardrobe"
+    },
+    "credits": 2,
+    "job_id": "7e704af7-6823-4d99-9e2c-0b18bf0cb303"
+  },
+  {
+    "index": 7,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "count": 1,
+      "folder_id": "ca8a1cd5-949b-41c2-a608-89c5f859979a",
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415"
+        },
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        }
+      ],
+      "aspect_ratio": "1:1",
+      "prompt": "One close-up head and one paw of original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur, same face and proportions as first reference, peeking around invisible vertical edge on viewer LEFT, head slightly tilted and turning toward left but eyes look at viewer, orange ear and both eyes alert and curious confident restrained smile, grey fitted vertically ribbed knit mask and small collar visible, one orange feline paw near left side of cheek as if resting on invisible wall edge, head cutout includes both ears full dark whiskers, smooth matte orange skin on ears eye openings muzzle and paw NEVER knitted, premium matte stylized 3D sculpture soft global illumination diffuse light, pure white seamless empty studio background no actual wall or other background objects, no text no logo no extra character no glossy plastic no fur no human hand no body no extra paws"
+    },
+    "credits": 2,
+    "job_id": "961a0378-18d6-4a91-a8c9-6fda9a0d8386"
+  },
+  {
+    "index": 8,
+    "params": {
+      "model": "nano_banana_pro",
+      "resolution": "2k",
+      "count": 1,
+      "folder_id": "ca8a1cd5-949b-41c2-a608-89c5f859979a",
+      "medias": [
+        {
+          "role": "image_references",
+          "value": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415"
+        },
+        {
+          "role": "image_references",
+          "value": "a3191034-16cb-4686-9618-adc2a4a14e9f"
+        }
+      ],
+      "aspect_ratio": "1:1",
+      "prompt": "Full body seated comfortably original upright orange cat from supplied identity references, fitted gray ribbed knitted head covering and matching long sleeve bodysuit, soft raised knitted collar, warm orange ears and eye openings around white almond eyes and dark pupils, orange muzzle and feline paws and orange tail tip, small dark feline nose, dark slim whiskers, mature calm slightly cheeky confident expression with subtle half-lidded eyes, no baby proportions, large expressive head but balanced lean rounded adult body proportions, gray is textile disguise not fur, preserve supplied full-body front face and clothing exactly, smoothly formed orange skin with matte illustrated finish, no photoreal fur, identical original character face and outfit to first reference, mature calm feline expression eyes half lidded small satisfied smile, upright anthropomorphic torso seated with orange paws resting on knees, knees bent and orange feet on ground, one attached gray sleeved tail curled beside body with smooth orange tip, whole head ears body arms legs feet tail visible in generous frame margins, NOT quadruped form, gray fitted ribbed knitted bodysuit with soft raised collar matte textile and controlled vertical ribbing, orange ears eye openings muzzle paws feet tail tip are smooth matte cat skin never knit, premium matte stylized 3D sculpture soft global illumination three point diffuse studio light, pure white seamless background no chair no floor shadow no props, no text no logos no extra characters no human hands no glossy plastic no fur no extra limbs no baby face"
+    },
+    "credits": 2,
+    "job_id": "370825f1-97bd-4773-89c9-3ea97aad3d7e"
+  }
+]

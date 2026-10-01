@@ -1,0 +1,17 @@
+# Character asset production
+
+Higgsfield Nano Banana Pro (catalog ID `nano_banana_pro`; jobs returned backend alias `nano_banana_2`) produced nine 2k stills. All generation requests included the supplied front identity, and all later poses/portraits also included the locked generated front. Nine stills cost 18 credits; four background-removal jobs cost 4 credits. Total verified transaction spend: **22 credits** from the approved 200-credit project budget. Balance after submission: 1,122 credits (starting 1,144). No video jobs, subscriptions, top-ups or recurring generation were used.
+
+Each still received a direct cost preflight of 2 credits. Background remover's exposed schema has no `get_cost` parameter; actual charges were checked in transactions. Existing job IDs were polled after interrupted work; no ambiguous job was resubmitted.
+
+The first sheet incorrectly textured orange skin as knit. One focused correction using the locked front fixed this. `turnaround-master.png` retains rejected first-sheet provenance; `turnaround-locked.png` is the selected sheet. Character source identity is the user-provided artwork. Matte gray disguise is knitted textile; orange cat surfaces are smooth. Mild pose-specific lighting differences remain. The step is a single pose, not a generated gait or rig. Its tail trails left for hiding to the right. The seated pose needs a compositional ledge/support. No exact pixel-matched blink variant was produced.
+
+First two stills were submitted before project folder was returned and remain legacy-unfiled. Subsequent stills use the conversation's private media folder ca8a1cd5-949b-41c2-a608-89c5f859979a. Successful masters were downloaded locally. Production assets are local, so visitors need no generation service request.
+
+Background removal and alpha cropping/optimization used Higgsfield sandbox PIL: alpha bounding box, Lanczos resize, WebP quality 86, method 6. Original uncut PNG masters are retained. Hero alpha crop was (375,79,1477,2370), output 770×1600, 216,302 bytes. Whiskers, ears, tail tip and feet were visually checked; thin whiskers may be partially softened by background extraction. The original front has full pale studio surroundings; transparent source alpha spans 0–255.
+
+See generation-requests.json for exact prompts, input media IDs, job IDs, settings and preflight costs. Main implementation normalizes portrait downloads to 1024 square while preserving 2048 square masters in art-source/portraits.
+
+Final pose exports: step822×1600 WebP207,034 bytes; peek891×1200 WebP172,822 bytes; seated802×1200 WebP145,932 bytes. Matching public PNG/WebP crops have the same dimensions; full alpha masters retained in character-bible. Exact alpha bounds and source/removal job IDs are in exports.json. Edge QA against near-black showed a mild studio-like pale rim, retained after candidate decontamination gave little improvement.
+
+Optimized pose files were uploaded from the media sandbox solely to recover them locally. Batch media confirmation returned service errors (request IDs d84010a5-d85a-4604-91ca-94bb1c88ce76 and9e9d48bd-77d4-41f3-9e9d-13ea8e88f630). One seated PNG PUT returned HTTP520 and a retry gave a zero-byte object. Final local inventory caught this; source was reprocessed and uploaded to a fresh object1e96c069-2a76-4d3e-8224-2c689e2ac678, confirmed successfully, and local1042597-byte PNG verified. Every final output pair has its expected nonzero size. Original still/removal jobs completed and no generation was repeated.

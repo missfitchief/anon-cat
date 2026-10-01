@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import sharp from 'sharp';
+const dir='art-source/character-bible';
+const meta=await sharp(`${dir}/turnaround-locked.png`).metadata();
+const third=Math.floor(meta.width/3);
+for(const [id,i]of [['front',0],['side',1],['back',2]])await sharp(`${dir}/turnaround-locked.png`).extract({left:i*third,top:0,width:third,height:meta.height}).png().toFile(`${dir}/approved-${id}.png`);
+const panels=await Promise.all(['side-eye','peek','relaxed'].map(async id=>({input:await sharp(`public/assets/portraits/${id}.png`).resize(600,600).toBuffer(),left:0,top:0})));
+await sharp({create:{width:1800,height:600,channels:4,background:'#f2efe8'}}).composite(panels.map((p,i)=>({...p,left:i*600}))).png().toFile(`${dir}/expression-sheet.png`);
+await sharp(`${dir}/front-master.png`).extract({left:680,top:800,width:330,height:330}).png().toFile(`${dir}/knit-material-reference.png`);
+await fs.writeFile(`${dir}/palette.svg`,`<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="200" viewBox="0 0 1000 200">${['#111315','#282B2E','#73767A','#F2EFE8','#FF861C'].map((c,i)=>`<rect x="${i*200}" width="200" height="200" fill="${c}"/>`).join('')}</svg>`);
+console.log('Character bible exports saved.');

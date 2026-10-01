@@ -1,0 +1,62 @@
+[
+  {
+    "file": "hero-cat",
+    "width": 770,
+    "height": 1600,
+    "webp_bytes": 216302,
+    "png_bytes": 1520036,
+    "source_job": "67e3165e-5fd8-4d5b-affe-7fa2ed52c415",
+    "alpha_job": "8484ceee-b565-4f51-81e6-6a1eb7ef8701",
+    "alpha_bbox": [
+      375,
+      79,
+      1477,
+      2370
+    ]
+  },
+  {
+    "file": "step-cat",
+    "width": 822,
+    "height": 1600,
+    "webp_bytes": 207034,
+    "png_bytes": 1459065,
+    "source_job": "7e704af7-6823-4d99-9e2c-0b18bf0cb303",
+    "alpha_job": "df1011b3-ea2e-4436-b067-764f07225244",
+    "alpha_bbox": [
+      126,
+      79,
+      1302,
+      2369
+    ]
+  },
+  {
+    "file": "peek-cat",
+    "width": 891,
+    "height": 1200,
+    "webp_bytes": 172822,
+    "png_bytes": 1403300,
+    "source_job": "961a0378-18d6-4a91-a8c9-6fda9a0d8386",
+    "alpha_job": "2d0502ee-4cb3-472b-8708-0d7e11367ec9",
+    "alpha_bbox": [
+      382,
+      54,
+      1863,
+      2048
+    ]
+  },
+  {
+    "file": "seated-cat",
+    "width": 802,
+    "height": 1200,
+    "webp_bytes": 145932,
+    "png_bytes": 1042597,
+    "source_job": "370825f1-97bd-4773-89c9-3ea97aad3d7e",
+    "alpha_job": "e31dfeb7-d93a-43a4-9e33-b33c750ad24a",
+    "alpha_bbox": [
+      550,
+      103,
+      1775,
+      1937
+    ]
+  }
+]
