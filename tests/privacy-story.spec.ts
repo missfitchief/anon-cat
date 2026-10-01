@@ -14,7 +14,7 @@ async function seek(page:Page,bounds:{start:number;span:number},progress:number)
   await expect.poll(async()=>Math.abs(Number(await page.locator('.ethos-cinema').getAttribute('data-story-progress'))-progress)).toBeLessThan(.01);
 }
 
-test('desktop story restores three full scenes, shutters, progress and reverse scrolling',async({page})=>{
+test('desktop story restores three full scenes, shutters and reverse scrolling',async({page})=>{
   await page.setViewportSize({width:1440,height:900});await page.goto('/');
   const bounds=await openStory(page);
   for(const [progress,chapter,selector]of [[.08,'01','.panel-frame'],[.52,'02','.silhouette-frame'],[.94,'03','.relaxed-frame']]as const){
@@ -47,10 +47,10 @@ test('responsive story removes desktop pinning and restores it without duplicate
   await expect(page.locator('.ethos-cinema')).toHaveClass(/is-cinematic/);
 });
 
-for(const height of [600,700])test(`story and its visual progress fit a ${height}px desktop viewport`,async({page})=>{
+for(const height of [600,700])test(`story scene stage fits a ${height}px desktop viewport`,async({page})=>{
   await page.setViewportSize({width:1280,height});await page.goto('/');const bounds=await openStory(page);await seek(page,bounds,.52);
-  const layout=await page.locator('.story-progress').evaluate(el=>({bottom:el.getBoundingClientRect().bottom,overflow:document.documentElement.scrollWidth>innerWidth}));
-  expect(layout.bottom).toBeLessThanOrEqual(height);expect(layout.overflow).toBe(false);
+  const layout=await page.locator('.ethos-sequence').evaluate(el=>({top:el.getBoundingClientRect().top,bottom:el.getBoundingClientRect().bottom,overflow:document.documentElement.scrollWidth>innerWidth}));
+  expect(layout.top).toBeGreaterThanOrEqual(0);expect(layout.bottom).toBeLessThanOrEqual(height);expect(layout.overflow).toBe(false);
 });
 
 test('direct artwork navigation stays reachable while story initializes',async({page})=>{

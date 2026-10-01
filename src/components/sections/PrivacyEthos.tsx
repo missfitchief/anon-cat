@@ -11,7 +11,6 @@ export default function PrivacyEthos(){return <section className="ethos-section"
     <figure className="ethos-frame relaxed-frame"><DeferredImage src="/assets/portraits/relaxed.webp" width="1024" height="1024" alt="The disguised cat relaxes in its own warm, quiet space."/><figcaption>Make yourself unavailable.</figcaption></figure>
   </div>
   <div className="privacy-shutters" aria-hidden="true"><span/><span/><span/></div>
-  <div className="story-progress" aria-hidden="true"><span className="story-progress-track"><i/></span></div>
   </PrivacyStory>
   <div className="monero-editorial"><p className="eyebrow"><span className="orange-rule"/> THE MONERO CONNECTION</p><div><p>Privacy is an instinct here.<br/>In Monero, it’s part of the design.</p><p className="monero-explanation">Monero is a cryptocurrency focused on private transactions. Its privacy technologies conceal the sender, recipient, and amount. This independent character project takes inspiration from that ethos.</p><a className="text-link" href={site.moneroUrl} target="_blank" rel="noopener noreferrer">Explore Monero <span className="external-label">OFFICIAL SITE</span></a></div></div>
 </section>;}

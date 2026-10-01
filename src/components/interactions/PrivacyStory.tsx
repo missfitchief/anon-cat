@@ -49,8 +49,7 @@ export default function PrivacyStory({children}:{children:ReactNode}){
               .to('.silhouette-frame',{clipPath:'inset(0 100% 0 0)',duration:.9,ease:'power3.inOut'},3.45)
               .to('.relaxed-frame',{clipPath:'inset(0 0 0 0%)',duration:.9,ease:'power3.inOut'},3.45)
               .from('.relaxed-frame img',{scale:1.25,duration:2,ease:'none'},3.5)
-              .to('.ethos-heading h2 em',{scale:1.15,x:12,duration:5.5,ease:'none',transformOrigin:'0% 50%'},0)
-              .fromTo('.story-progress-track i',{scaleX:0},{scaleX:1,duration:5.5,ease:'none'},0);
+              .to('.ethos-heading h2 em',{scale:1.15,x:12,duration:5.5,ease:'none',transformOrigin:'0% 50%'},0);
           }else{
             gsap.utils.toArray<HTMLElement>('.ethos-frame').forEach((item,index)=>{
               gsap.from(item,{clipPath:index%2?'inset(0 0 0 100%)':'inset(0 100% 0 0)',scale:.92,ease:'power3.out',scrollTrigger:{trigger:item,start:'top 93%',end:'top 38%',scrub:true}});

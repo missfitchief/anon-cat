@@ -1,8 +1,10 @@
 # Production verification — 2026-10-01
 
+The privacy scene's complete progress indicator was subsequently removed. Build, strict TypeScript, lint and six relevant existing browser checks passed. These verify the same forward/reverse scene timing, shutter transitions, resize cleanup, short desktop scene bounds and artwork navigation. No visible progress widget remains in this section.
+
 The static export after restoring the privacy cinema passed `npm run build` (including strict TypeScript), lint, and all 35 Playwright Chromium checks.
 
-After removing decorative section, scene, progress and portrait numbering, the production build, strict TypeScript, lint and 10 relevant existing browser checks passed. These cover scene transitions and reverse scrolling, pin cleanup on resize, short desktop viewports, direct artwork navigation, mobile layout, portrait selection/download and actual motion. The unnumbered progress line and animation timelines remain active. The refreshed story screenshots show the current labels.
+After removing decorative section, scene, progress and portrait numbering, the production build, strict TypeScript, lint and 10 relevant existing browser checks passed. These cover scene transitions and reverse scrolling, pin cleanup on resize, short desktop viewports, direct artwork navigation, mobile layout, portrait selection/download and actual motion. The animation timelines remain active. The refreshed story screenshots show the current labels.
 
 The first-page recheck adds visible-pose assertions after manual return, scroll re-entry, and a delayed poster failure after hydration. It also verifies animation stays enabled without a switch, including with an obsolete saved off value or reduced-motion preference, survives reload, and emits no raw noscript image markup with JavaScript enabled. The previous autoplay cancellation and fallback failure are fixed; repeat rest is now 2.5 seconds.
 
