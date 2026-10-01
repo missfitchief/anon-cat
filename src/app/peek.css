@@ -1,0 +1,6 @@
+/* Preserve the close-up framing; an existing character body continues behind the pillar. */
+.peek-cat{container-type:size}
+.peek-anchor{position:absolute;left:50%;top:50%;width:min(100%,74.25cqh);aspect-ratio:891/1200;transform:translate(-50%,-50%)}
+.peek-anchor img{width:100%;height:auto;max-width:none;display:block}
+.peek-anchor .peek-body-extension{position:absolute;z-index:-1;width:91%;left:12%;top:23%;clip-path:polygon(19% 33%,64% 33%,64% 60%,52% 80%,40% 100%,19% 100%);transform:rotate(24deg);transform-origin:50% 33%}
+.peek-face{position:relative;mask-image:linear-gradient(to bottom,#000 88%,transparent 100%)}

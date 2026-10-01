@@ -6,6 +6,8 @@ The hero keeps ordinary HTML text and controls stable. A CSS architectural arriv
 
 After the visible cat decodes, two low-priority pose requests are warmed. Once all three images are ready, the cat glances, crossfades to the approved upright stepping pose, moves right behind the actual Blender-rendered foreground slab, peeks around its edge, and returns. This short decorative performance lasts 1.7 seconds with a 2.5-second rest between repeats. Clicking immediately cancels it and starts the requested action. Feet-anchored breathing changes height by 1.2% over a 2.6-second half-cycle. Pointer tilt responds over 180ms and is limited to 4° horizontal, 2.5° vertical and 8px horizontal translation. Pointer values are neither saved nor transmitted.
 
+The hiding pose keeps the original peek face and adds a torso continuation from the existing full-body character image. The body and face share the `.peek-cat` animation wrapper. A contained original-aspect anchor preserves the previous head size and position; the additional body extends below it behind the foreground slab. A short alpha blend softens the old torso crop. The lower body mask keeps the feet behind the slab across desktop and mobile cameras. The continuation reuses the already-requested responsive hero image, including its PNG recovery, and adds no media bytes or animation dependencies.
+
 The CTA and Monero caption use a flex column with a 22px gap (16px on mobile), without entrance or hover translation. On mobile the scene occupies its own grid row after the copy, replacing the old fixed top offset.
 
 ## Manual hero state machine
