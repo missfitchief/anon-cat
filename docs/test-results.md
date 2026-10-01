@@ -1,5 +1,7 @@
 # Production verification — 2026-10-01
 
+The technical note below the download button was removed. Build, strict TypeScript, lint and the existing portrait-download/mobile-layout checks passed. All three actual PNG downloads remain valid.
+
 A final decorative-number sweep removed subject/file serial IDs, the background digits and the numerical hero footer ornament. The portrait choices already use names only. Build, strict TypeScript, lint and six relevant existing checks passed, covering automatic hero motion, rapid portrait changes, redaction, actual PNG downloads and mobile/desktop layout. The portrait-options-clean.png screenshot shows the unnumbered picker.
 
 The privacy scene's complete progress indicator was subsequently removed. Build, strict TypeScript, lint and six relevant existing browser checks passed. These verify the same forward/reverse scene timing, shutter transitions, resize cleanup, short desktop scene bounds and artwork navigation. No visible progress widget remains in this section.
