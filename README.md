@@ -1,6 +1,6 @@
 # ANON CAT — Private by instinct
 
-A complete one-page character experience built with Next.js App Router, React, strict TypeScript, local fonts, and GSAP. “ANON CAT” is a replaceable working name. This independent project is inspired by Monero's privacy ethos; no token/network deployment, endorsement, social account, or purchase infrastructure is assumed.
+A complete one-page character experience built with Next.js App Router, React, strict TypeScript, local fonts, and GSAP. “ANON CAT” is a replaceable working name. The user-supplied official CA appears in the header and footer. This independent project is inspired by Monero's privacy ethos; no network, endorsement, social account, or purchase infrastructure is assumed.
 
 ## Run
 
@@ -36,7 +36,7 @@ The visible hero uses a 120KB desktop WebP or 73KB mobile WebP. Hidden poses sta
 
 ## Change the project
 
-- **Name, copy, navigation, socials, network details:** `src/config/site.ts`. Add real social URLs to `socials`; absent links are omitted. Keep financial/network values null until their relationship and destination are verified. No financial UI is rendered by the current application.
+- **Name, copy, navigation, socials, contract address, network details:** `src/config/site.ts`. `assetIdentifier` holds the exact user-supplied official CA. The header copies the full address even though its visible preview is shortened; the footer displays the entire address. Add actual social, network and purchase destinations only when supplied and verified.
 - **Metadata:** `src/app/layout.tsx`. The current private staging site uses `noindex`; change only when a public launch is intended.
 - **Typography and layout:** `src/app/globals.css`; the local font packages are Barlow Condensed and DM Sans. Font packages include their OFL licenses in `node_modules/@fontsource/*`.
 - **Timing:** `src/config/motion.ts`. Hero state logic is in `src/components/hero/HeroScene.tsx`; page motion is a separate component. Do not allow multiple systems to own the same transforms.

@@ -24,4 +24,4 @@ Checked the official pages on 2026-10-01:
 - https://www.getmonero.org/get-started/what-is-monero/
 - https://www.getmonero.org/get-started/faq/
 
-The copy describes Monero as focused on private transactions, with technologies concealing sender, recipient, and amount. The website makes no guaranteed anonymity claim, network deployment claim, or endorsement claim. Network, purchase URL, asset identifier, and social accounts remain unconfigured.
+The copy describes Monero as focused on private transactions, with technologies concealing sender, recipient, and amount. The website makes no guaranteed anonymity claim, network deployment claim, or endorsement claim. Network, purchase URL and social accounts remain unconfigured. The asset identifier was later populated with the exact official CA supplied by the user on 2026-10-01; it does not imply a Monero deployment or affiliation.

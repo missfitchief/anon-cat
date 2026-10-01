@@ -1,5 +1,7 @@
 # Production verification — 2026-10-01
 
+The official CA supplied by the user is now displayed in full in the footer and available through a compact header copy control. Real clipboard contents were compared with the complete supplied string after header, keyboard/footer and legacy-fallback copying. Denied-copy feedback was checked to ensure it does not falsely report success. Build, strict TypeScript, lint and four existing checks passed (360/768/1440px layout and the production request/asset audit). Header/footer screenshots show the current address placement; no wallet or purchase link was added.
+
 The subsequent brand update replaces the generic SVG cat with the exact supplied cat illustration in the header, footer and favicon. The original image is preserved unchanged; resized PNGs total 25,430 bytes. Logo display sizes are 52px on desktop and 44px on mobile, without changing header height. Production build, strict TypeScript, lint and three existing checks passed: desktop/mobile layout and the normal-production asset/request audit.
 
 The artwork download gallery is replaced by **Leave no trace**. A cat enters an orange pool of light; visitors brush away its pawprints, clear the trail with a keyboard-accessible button, and replay the entrance. The cat settles into the seated pose after clearing. Navigation now reads The hideout; the existing #artwork anchor remains compatible. No decorative numbers, gallery choices or download links appear in the website.
@@ -22,7 +24,7 @@ The character uses existing compressed cutouts. The entrance and pose change are
 
 ## Performance
 
-Fresh Chromium contexts measured the Leave no trace export before the subsequent logo-only update, through the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. These are single local lab samples, not field percentiles or guarantees for physical devices or the hosting provider.
+Fresh Chromium contexts measured the Leave no trace export before the subsequent logo and contract-address updates, through the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. These are single local lab samples, not field percentiles or guarantees for physical devices or the hosting provider.
 
 | Condition | LCP | CLS | Controls ready | Automatic character starts |
 | --- | ---: | ---: | ---: | ---: |

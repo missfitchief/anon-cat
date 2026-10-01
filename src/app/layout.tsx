@@ -5,6 +5,7 @@ import '@fontsource/dm-sans/latin-600.css';
 import './globals.css';
 import './motion.css';
 import './trace.css';
+import './contract.css';
 import {site} from '@/config/site';
 export const metadata: Metadata = { title: `${site.name} — Private by instinct`, description:site.description, icons:{icon:{url:'/cat-favicon.png',type:'image/png',sizes:'64x64'}}, robots:{index:false,follow:false} };
 export default function RootLayout({children}:Readonly<{children:React.ReactNode}>) {
