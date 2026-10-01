@@ -36,6 +36,8 @@ The hiding pose uses the original close-up face with a continuation from the exi
 
 The relaxed privacy portrait matches the main character's rounded brown irises, dark central pupils and highlights while retaining its lowered eyelids. Its corrected WebP and PNG use the versioned `relaxed-eyes` filename. The previous master is archived in `art-source/portraits/relaxed-original-master.png`; correction provenance is in `eye-correction.json`.
 
+The privacy story's walking scene uses a warm #B86C2C backdrop to match the shaded orange portraits. Its character brightness is consistent between compact and desktop layouts, with no new raster asset or change to the approved portrait artwork.
+
 The footer reuses the peeking pose behind an orange panel. A clipped copy of the same artwork keeps its paw in front, and a sill conceals the torso crop. Both image layers decode before a shared 650ms entrance, which replays on re-entry. Responsive grid columns keep the scene clear of the headline and contract-address controls.
 
 Automatic character motion repeats with a 2.5-second rest, resumes after Come back, and replays on returning to the hero or browser tab. PNG poster recovery can animate. The motion switch and saved preference were removed at the user’s request; animation stays enabled after reload.

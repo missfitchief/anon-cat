@@ -1,0 +1,52 @@
+{
+  "url": "http://127.0.0.1:3001",
+  "checkedAt": "2026-10-01T17:01:59.114Z",
+  "checks": [
+    {
+      "label": "mobile",
+      "width": 390,
+      "style": {
+        "background": "rgb(184, 108, 44)",
+        "characterFilter": "brightness(0.8)"
+      },
+      "scenes": [
+        {
+          "name": "peek",
+          "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\story-color-mobile-peek.png"
+        },
+        {
+          "name": "walking",
+          "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\story-color-mobile-walking.png"
+        },
+        {
+          "name": "relaxed",
+          "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\story-color-mobile-relaxed.png"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "label": "desktop",
+      "width": 1440,
+      "style": {
+        "background": "rgb(184, 108, 44)",
+        "characterFilter": "brightness(0.8)"
+      },
+      "scenes": [
+        {
+          "name": "peek",
+          "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\story-color-desktop-peek.png"
+        },
+        {
+          "name": "walking",
+          "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\story-color-desktop-walking.png"
+        },
+        {
+          "name": "relaxed",
+          "screenshot": "C:\\Users\\akki\\Documents\\Codex\\2026-10-01\\files-mentioned-by-the-user-qrdg5\\outputs\\anon-cat\\docs\\screenshots\\story-color-desktop-relaxed.png"
+        }
+      ],
+      "pageErrors": []
+    }
+  ]
+}
