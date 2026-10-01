@@ -1,7 +1,6 @@
 'use client';
 import {useEffect} from 'react';
 import gsap from 'gsap';
-import {quietMotion} from '@/lib/motion-preference';
 
 export default function PageMotion(){
   useEffect(()=>{
@@ -21,7 +20,6 @@ export default function PageMotion(){
     const setup=()=>{
       const current=++generation;
       observer?.disconnect();disposePointer();context?.revert();frozen=false;
-      if(quietMotion())return;
       context=gsap.context(()=>{
         // Native document flow: no pinned sections, scrub delays or moving controls.
         const visible=new WeakSet<Element>();
@@ -68,10 +66,9 @@ export default function PageMotion(){
     };
     const freeze=()=>{frozen=true;context?.getTweens().forEach((tween:gsap.core.Tween)=>tween.pause());};
     setup();updateProgress();
-    const preferenceObserver=new MutationObserver(setup);preferenceObserver.observe(document.documentElement,{attributes:true,attributeFilter:['data-motion']});
     document.addEventListener('anon-cat:freeze',freeze);
     window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);
-    return()=>{generation++;preferenceObserver.disconnect();observer?.disconnect();disposePointer();context?.revert();cancelAnimationFrame(frame);document.removeEventListener('anon-cat:freeze',freeze);window.removeEventListener('scroll',onScroll);window.removeEventListener('resize',onScroll);};
+    return()=>{generation++;observer?.disconnect();disposePointer();context?.revert();cancelAnimationFrame(frame);document.removeEventListener('anon-cat:freeze',freeze);window.removeEventListener('scroll',onScroll);window.removeEventListener('resize',onScroll);};
   },[]);
   return null;
 }

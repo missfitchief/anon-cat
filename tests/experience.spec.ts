@@ -23,15 +23,17 @@ test('portraits select and download actual square PNGs',async({page})=>{
     const response=await page.request.get(`/assets/portraits/${id}.png`);const buf=await response.body();expect(buf.readUInt32BE(16)).toBe(1024);expect(buf.readUInt32BE(20)).toBe(1024);
   }
 });
-test('reduced motion and motion switch during a transition stay operable',async({page})=>{
-  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await expect(page.locator('html')).toHaveAttribute('data-motion','off');
+test('hero controls remain animated and operable with the switch removed',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await expect(page.locator('html')).toHaveAttribute('data-motion','on');
   await page.getByRole('button',{name:'Go incognito'}).click();await expect(page.locator('.hero-scene')).toHaveAttribute('data-state','peeking');
   await page.getByRole('button',{name:'Come back'}).click();await expect(page.locator('.hero-scene')).toHaveAttribute('data-state','idle');
-  await page.emulateMedia({reducedMotion:'no-preference'});await page.getByRole('button',{name:'Go incognito'}).click();await page.getByRole('button',{name:'Turn motion off'}).click();
+  await page.getByRole('button',{name:'Go incognito'}).click();
   await expect(page.locator('.hero-scene')).toHaveAttribute('data-state','peeking');await expect(page.getByRole('button',{name:'Come back'})).toBeEnabled();
 });
 for(const [width,height]of [[360,800],[390,844],[768,1024],[1440,900],[1920,1080]])test(`layout ${width} × ${height}`,async({page})=>{
-  await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');await page.evaluate(()=>document.fonts.ready);
+  await page.setViewportSize({width,height});await page.goto('/');await page.evaluate(()=>document.fonts.ready);
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-interactive','ready');
+  await page.evaluate(()=>document.dispatchEvent(new Event('anon-cat:freeze')));
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   expect(await page.locator('h1').count()).toBe(1);await expect(page.getByRole('button',{name:'Go incognito'})).toBeVisible();
   if(width<700){await page.getByRole('button',{name:'Menu',exact:false}).click();await page.getByRole('link',{name:'01 The cat'}).click();await expect(page.getByRole('button',{name:'Menu',exact:false})).toHaveAttribute('aria-expanded','false');}

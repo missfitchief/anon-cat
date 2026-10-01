@@ -37,17 +37,15 @@ test('a poster failure after hydration recovers motion with the PNG',async({page
   await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
 });
 
-test('an explicit Motion on choice overrides the OS default and survives reload',async({page})=>{
+test('animation stays enabled without a switch even with reduced-motion preference',async({page})=>{
   await page.emulateMedia({reducedMotion:'reduce'});
   await page.goto('/');
-  await expect(page.getByRole('button',{name:'Turn motion on'})).toBeVisible();
-  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','stopped');
-  await page.getByRole('button',{name:'Turn motion on'}).click();
+  await expect(page.getByRole('button',{name:/Turn motion/})).toHaveCount(0);
   await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
   await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
   expect(await page.locator('.scene-camera').evaluate(el=>getComputedStyle(el).animationName)).toBe('scene-arrive');
   await page.reload();
-  await expect(page.getByRole('button',{name:'Turn motion off'})).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('data-motion','on');
   await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
 });
 
@@ -89,15 +87,13 @@ test('native scrolling reaches all three privacy scenes with no pin or delayed c
   await expect(page.getByRole('button',{name:'02 Peek',exact:true})).toBeVisible();
 });
 
-test('motion-off restores the static hero, cancels its performance, and survives reload',async({page})=>{
-  await page.goto('/');await page.getByRole('button',{name:'Turn motion off'}).click();
-  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','stopped');
-  expect(await page.locator('.scene-camera').evaluate(el=>getComputedStyle(el).animationName)).toBe('none');
-  await page.reload();await expect(page.locator('html')).toHaveAttribute('data-motion','off');
-  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','stopped');
-  await expect(page.locator('.pin-spacer')).toHaveCount(0);
-  await page.getByRole('button',{name:'Turn motion on'}).click();
+test('an obsolete saved off value cannot stop animation after removing the switch',async({page})=>{
+  await page.addInitScript(()=>localStorage.setItem('anon-cat-motion','off'));
+  await page.goto('/');
   await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+  await page.reload();await expect(page.locator('html')).toHaveAttribute('data-motion','on');
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+  await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
 });
 
 test('rapid portrait throws settle on the selected print and matching download',async({page})=>{

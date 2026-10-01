@@ -26,11 +26,11 @@ npm run test:e2e
 3. A short illustrated privacy sequence with restrained, sourced Monero copy and an ordinary link to its official website.
 4. Three coherent square portraits with working local PNG downloads, plus a quiet cameo and return-to-top.
 
-All content and controls are HTML. Motion can be disabled; reduced-motion outcomes remain understandable. No autoplay audio, scroll hijacking, fake loader, wallet request, tracking, or runtime third-party font/media request.
+All content and controls are HTML. Animations are enabled throughout, with no motion switch or stored off preference. No autoplay audio, scroll hijacking, fake loader, wallet request, tracking, or runtime third-party font/media request.
 
-The current motion pass focuses on the first screen: a 600ms architectural arrival starts before hydration, then the cat briefly steps behind the wall, peeks, and returns automatically. Pointer tilt responds over 180ms. Text and the CTA remain fixed; the button and Monero caption form an explicit action stack. Mobile artwork follows the copy in normal document flow. Manual hide/peek finishes in 720ms and return in 560ms. Native scrolling has no pinned story or scrub delay; below-fold reveals take about 400ms, and portrait changes settle in 380ms. The sticky header keeps the motion switch available. Disabling motion restores the complete static document. `src/app/motion.css` owns CSS arrival; `PageMotion.tsx` owns pointer/reveals while HeroScene and ArtworkPack own inner actions.
+The current motion pass focuses on the first screen: a 600ms architectural arrival starts before hydration, then the cat briefly steps behind the wall, peeks, and returns automatically. Pointer tilt responds over 180ms. Text and the CTA remain fixed; the button and Monero caption form an explicit action stack. Mobile artwork follows the copy in normal document flow. Manual hide/peek finishes in 720ms and return in 560ms. Native scrolling has no pinned story or scrub delay; below-fold reveals take about 400ms, and portrait changes settle in 380ms. The sticky header keeps navigation available; animations remain enabled. `src/app/motion.css` owns CSS arrival; `PageMotion.tsx` owns pointer/reveals while HeroScene and ArtworkPack own inner actions.
 
-Automatic character motion repeats with a 2.5-second rest, resumes after Come back, and replays on returning to the hero or browser tab. PNG poster recovery can animate. OS reduced motion defaults to off; choosing Motion on explicitly enables the full experience and persists across reloads.
+Automatic character motion repeats with a 2.5-second rest, resumes after Come back, and replays on returning to the hero or browser tab. PNG poster recovery can animate. The motion switch and saved preference were removed at the user’s request; animation stays enabled after reload.
 
 The visible hero uses a 120KB desktop WebP or 73KB mobile WebP. Hidden poses start loading only after the visible cat is decoded. Noncritical artwork uses native browser lazy loading with low request priority and real image sources, including without JavaScript. There is no custom noscript image branch. Section entrances wait for image decoding and replay on re-entry. Three local Latin font files cover the site. Full-resolution PNG masters remain available. Performance marks remain in the browser and are never transmitted.
 
@@ -41,7 +41,7 @@ The visible hero uses a 120KB desktop WebP or 73KB mobile WebP. Hidden poses sta
 - **Typography and layout:** `src/app/globals.css`; the local font packages are Barlow Condensed and DM Sans. Font packages include their OFL licenses in `node_modules/@fontsource/*`.
 - **Timing:** `src/config/motion.ts`. Hero state logic is in `src/components/hero/HeroScene.tsx`; page motion is a separate component. Do not allow multiple systems to own the same transforms.
 - **Artwork:** replace files under `public/assets/`, preserving alpha, dimensions, composition and file names or updating central asset paths. PNGs in `portraits/` are actual 1024×1024 downloads; WebP files are display previews. Source masters remain in `art-source/`.
-- **Motion preference:** one non-unique local storage string (`anon-cat-motion`). There is no identity or event history.
+- **Motion:** always enabled; no application preference is read from or written to browser storage.
 
 ## Editable artwork and Blender
 

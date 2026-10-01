@@ -36,4 +36,3 @@ html[data-motion=on] .scene-front{animation:foreground-arrive .55s cubic-bezier(
   .hero-ghost{top:360px;right:30%;font-size:350px}.portrait-print{border-width:7px}.hero-scene{perspective:900px}
   .portrait-options button:hover,.portrait-options button[aria-pressed=true]{padding-left:8px}.selected-portrait{margin:14px 12px 0 8px}.selected-portrait figcaption{padding-top:45px}
 }
-html[data-motion=off] .hero-ghost{opacity:.6}

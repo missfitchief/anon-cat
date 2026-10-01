@@ -1,12 +1,12 @@
 # Production verification — 2026-10-01
 
-The final static export passed `npm run build` (including strict TypeScript), lint, and all 30 Playwright Chromium checks in 36.5 seconds.
+The static export after removing the motion switch passed `npm run build` (including strict TypeScript), lint, and all 30 Playwright Chromium checks.
 
-The first-page recheck adds visible-pose assertions after manual return, scroll re-entry, and a delayed poster failure after hydration. It also verifies that an explicit Motion on choice overrides the OS default and survives reload, and that no raw noscript image markup appears with JavaScript enabled. The previous autoplay cancellation and fallback failure are fixed; repeat rest is now 2.5 seconds.
+The first-page recheck adds visible-pose assertions after manual return, scroll re-entry, and a delayed poster failure after hydration. It also verifies animation stays enabled without a switch, including with an obsolete saved off value or reduced-motion preference, survives reload, and emits no raw noscript image markup with JavaScript enabled. The previous autoplay cancellation and fallback failure are fixed; repeat rest is now 2.5 seconds.
 
 The subsequent whole-page repair removes the noscript image branch and custom deferred-source visibility path entirely. Native image sources work without JavaScript. New movement tests verify file artwork waits for delayed image loads, replays on re-entry, all three privacy scenes translate and scale visibly, and camera tilt, CSS redaction and 3D portrait selection actually move after reload. `file-native-desktop.png` shows the clean seated-cat section.
 
-Coverage includes automatic first-screen character performance and immediate interruption; sub-second manual hide/return; CTA/caption separation throughout entrance and hover at 360, 390, 768, 1440 and 1920px; mobile scene/copy separation; no horizontal overflow; native navigation without pinning; reduced motion and its saved setting; 15 rapid hero clicks and 15 rapid portrait changes; accessible fictional redaction; all three actual 1024×1024 PNG downloads; keyboard skip/navigation; WebP failure recovery before and after hydration; poster-first request ordering; and ordinary artwork fallbacks with JavaScript disabled.
+Coverage includes automatic first-screen character performance and immediate interruption; sub-second manual hide/return; CTA/caption separation throughout entrance and hover at 360, 390, 768, 1440 and 1920px; mobile scene/copy separation; no horizontal overflow; native navigation without pinning; ignored legacy off settings and absence of the switch; 15 rapid hero clicks and 15 rapid portrait changes; accessible fictional redaction; all three actual 1024×1024 PNG downloads; keyboard skip/navigation; WebP failure recovery before and after hydration; poster-first request ordering; and ordinary artwork fallbacks with JavaScript disabled.
 
 The production request audit found no automatic third-party requests, missing assets, browser console errors or hydration errors. Public financial destinations remain unconfigured. Browser performance marks are local and have no reporting endpoint. This pass incurred no new generation charges; total generation use remains 22 of the approved 200 credits.
 
@@ -18,7 +18,7 @@ Independent inspection found no material loss in the compressed character's face
 
 ## Performance
 
-Final single-sample measurements use fresh browser contexts against the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. The hosting provider has its own delivery behavior. These are lab samples, not field percentiles or guarantees for physical devices.
+The measurements below are from the preceding whole-page repair, before switch removal, using fresh browser contexts against the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. The hosting provider has its own delivery behavior. These are lab samples, not field percentiles or guarantees for physical devices.
 
 | Condition | LCP | CLS | Controls ready | Automatic character starts |
 | --- | ---: | ---: | ---: | ---: |
