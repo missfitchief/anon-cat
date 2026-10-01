@@ -8,7 +8,7 @@ export default function Experience({children}:{children?:React.ReactNode}) {
   const [menu,setMenu]=useState(false);
   useEffect(()=>{
     const query=window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sync=()=>{let saved:string|null=null;try{saved=localStorage.getItem(motion.storageKey);}catch{}setQuiet(query.matches||saved==='off');};
+    const sync=()=>{let saved:string|null=null;try{saved=localStorage.getItem(motion.storageKey);}catch{}setQuiet(saved==='off'||(saved!=='on'&&query.matches));};
     sync();query.addEventListener('change',sync);return()=>query.removeEventListener('change',sync);
   },[]);
   useEffect(()=>{document.documentElement.dataset.motion=quiet?'off':'on';},[quiet]);

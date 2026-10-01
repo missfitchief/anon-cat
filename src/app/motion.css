@@ -13,7 +13,7 @@ html[data-motion=on] .scene-front{animation:foreground-arrive .55s cubic-bezier(
 .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
 .hero-actions .monero-caption{margin:0;max-width:340px}.monero-dot{flex-shrink:0}
 img[data-deferred-src]{visibility:hidden}
-.deferred-fallback{display:contents}
+.deferred-fallback{display:none}
 .file-section,.artwork-section{overflow:clip}.ethos-cinema{position:relative}
 .file-grid,.artwork-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .file-art,.file-copy,.artwork-copy,.selected-portrait{min-width:0}

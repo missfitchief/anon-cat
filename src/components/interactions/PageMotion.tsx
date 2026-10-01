@@ -1,7 +1,7 @@
 'use client';
 import {useEffect} from 'react';
 import gsap from 'gsap';
-import {motion} from '@/config/motion';
+import {quietMotion} from '@/lib/motion-preference';
 
 export default function PageMotion(){
   useEffect(()=>{
@@ -17,13 +17,9 @@ export default function PageMotion(){
       if(progress)progress.style.transform=`scaleX(${length>0?scrollY/length:0})`;
     };
     const onScroll=()=>{if(!frame)frame=requestAnimationFrame(updateProgress);};
-    const quiet=()=>{
-      let stored=false;try{stored=localStorage.getItem(motion.storageKey)==='off';}catch{}
-      return stored||document.documentElement.dataset.motion==='off'||matchMedia('(prefers-reduced-motion: reduce)').matches;
-    };
     const setup=()=>{
       observer?.disconnect();disposePointer();context?.revert();frozen=false;
-      if(quiet())return;
+      if(quietMotion())return;
       context=gsap.context(()=>{
         // Native document flow: no pinned sections, scrub delays or moving controls.
         observer=new IntersectionObserver(entries=>{

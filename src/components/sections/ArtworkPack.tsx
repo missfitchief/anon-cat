@@ -2,7 +2,7 @@
 import {useState,useRef,useEffect} from 'react';
 import gsap from 'gsap';
 import {site} from '@/config/site';
-import {motion} from '@/config/motion';
+import {quietMotion} from '@/lib/motion-preference';
 import DeferredImage from '@/components/DeferredImage';
 export default function ArtworkPack(){
   const [selected,setSelected]=useState(0);
@@ -14,8 +14,7 @@ export default function ArtworkPack(){
     const old=previous.current;
     const setup=()=>{
       context?.revert();
-      let stored=false;try{stored=localStorage.getItem(motion.storageKey)==='off';}catch{}
-      const quiet=stored||document.documentElement.dataset.motion==='off'||matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const quiet=quietMotion();
       context=gsap.context(()=>{
         const cards=gsap.utils.toArray<HTMLElement>('.portrait-print');
         cards.forEach((card,index)=>{

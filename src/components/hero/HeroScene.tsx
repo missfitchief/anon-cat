@@ -14,6 +14,8 @@ export default function HeroScene({quiet}:{quiet:boolean}) {
   const timeline=useRef<gsap.core.Timeline|null>(null);
   const ambient=useRef<gsap.core.Tween|null>(null);
   const welcome=useRef<gsap.core.Timeline|null>(null);
+  const replay=useRef<(()=>void)|null>(null);
+  const frozen=useRef(false);
   const stateRef=useRef<HeroState>('idle');
   const [state,setState]=useState<HeroState>('idle');
   const [failed,setFailed]=useState(false);
@@ -26,16 +28,25 @@ export default function HeroScene({quiet}:{quiet:boolean}) {
     gsap.set('.scene-action',{scale:1,xPercent:0});
     gsap.set('.standing-cat',{opacity:1});gsap.set('.stepping-cat',{opacity:0});
     const el=root.current;
+    replay.current=null;frozen.current=false;
     if(el){el.dataset.welcome='stopped';el.dataset.interactive='ready';}
     if(!performance.getEntriesByName('anon-cat-controls-ready').length)performance.mark('anon-cat-controls-ready');
-    if(quiet || failed) return;
+    if(quiet) return;
     ambient.current=gsap.to('.cat-breathe',{scaleY:1.012,duration:motion.breathe,yoyo:true,repeat:-1,ease:'sine.inOut',transformOrigin:'50% 100%'});
     const poses=Array.from(el?.querySelectorAll<HTMLImageElement>('img[data-pose-src]')??[]);
+    const poster=el?.querySelector<HTMLImageElement>('.standing-cat');
+    const images=poster?[poster,...poses]:poses;
+    let visible=false;
     const startWelcome=()=>context.add(()=>{
-      if(welcome.current?.isActive()||stateRef.current!=='idle'||poses.some(img=>!img.getAttribute('src')||!img.complete||img.naturalWidth===0))return;
+      if(frozen.current||document.hidden||!visible||welcome.current?.isActive()||stateRef.current!=='idle'||images.some(img=>!img.getAttribute('src')||!img.complete||img.naturalWidth===0))return;
       welcome.current?.kill();
+      gsap.set('.cat-travel',{xPercent:0,autoAlpha:1});
+      gsap.set('.peek-cat',{scaleX:-1,xPercent:0,autoAlpha:0});
+      gsap.set('.standing-cat',{opacity:1});gsap.set('.stepping-cat',{opacity:0});
+      gsap.set('.cat-glance',{rotation:0});gsap.set('.scene-action',{scale:1,xPercent:0});
+      gsap.set('.ground-shadow',{opacity:.8});
       // A short, interruptible character performance; controls never wait for it.
-      const w=gsap.timeline({delay:.2,repeat:-1,repeatDelay:5.5,onStart:()=>{if(el)el.dataset.welcome='playing';if(!performance.getEntriesByName('anon-cat-first-character-motion').length)performance.mark('anon-cat-first-character-motion');}});
+      const w=gsap.timeline({delay:.2,repeat:-1,repeatDelay:2.5,onStart:()=>{if(el){el.dataset.welcome='playing';el.dataset.welcomeRun=String(Number(el.dataset.welcomeRun??0)+1);}if(!performance.getEntriesByName('anon-cat-first-character-motion').length)performance.mark('anon-cat-first-character-motion');}});
       welcome.current=w;
       w.to('.cat-glance',{rotation:-3,duration:.12,ease:'power2.out'},0)
        .to('.scene-action',{scale:1.025,duration:.18,ease:'power2.out'},0)
@@ -55,18 +66,23 @@ export default function HeroScene({quiet}:{quiet:boolean}) {
        .to('.cat-glance',{rotation:0,duration:.12},1.5)
        .to('.scene-action',{scale:1,duration:.2,ease:'power2.out'},1.5);
     });
-    poses.forEach(img=>img.addEventListener('load',startWelcome));
-    startWelcome();
-    let visible=true;
-    const pause=()=>{ambient.current?.pause();welcome.current?.pause();};
-    const resume=()=>{ambient.current?.resume();welcome.current?.resume();};
-    const observer=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(visible&&!document.hidden)resume();else pause();},{threshold:.1});
+    replay.current=()=>{welcome.current?.kill();welcome.current=null;startWelcome();};
+    images.forEach(img=>img.addEventListener('load',startWelcome));
+    const pause=()=>{ambient.current?.pause();welcome.current?.pause();if(el&&welcome.current)el.dataset.welcome='paused';};
+    const resume=(restart:boolean)=>{
+      if(frozen.current)return;
+      ambient.current?.resume();
+      if(restart||!welcome.current)replay.current?.();
+      else{welcome.current?.resume();if(el)el.dataset.welcome='playing';}
+    };
+    const observer=new IntersectionObserver(([entry])=>{const wasVisible=visible;visible=entry.isIntersecting;if(visible&&!document.hidden)resume(!wasVisible);else pause();},{threshold:.1});
     if(el) observer.observe(el);
-    const onVisibility=()=>document.hidden||!visible?pause():resume();
-    const freeze=()=>{pause();timeline.current?.pause();};
+    const onVisibility=()=>document.hidden||!visible?pause():resume(true);
+    const freeze=()=>{frozen.current=true;pause();timeline.current?.pause();if(el)el.dataset.welcome='frozen';};
     document.addEventListener('visibilitychange',onVisibility);
     document.addEventListener('anon-cat:freeze',freeze);
-    return ()=>{welcome.current?.kill();poses.forEach(img=>img.removeEventListener('load',startWelcome));observer.disconnect();document.removeEventListener('visibilitychange',onVisibility);document.removeEventListener('anon-cat:freeze',freeze);};
+    onVisibility();
+    return ()=>{replay.current=null;welcome.current?.kill();images.forEach(img=>img.removeEventListener('load',startWelcome));observer.disconnect();document.removeEventListener('visibilitychange',onVisibility);document.removeEventListener('anon-cat:freeze',freeze);};
   },{scope:root,dependencies:[quiet,failed],revertOnUpdate:true});
   const change=(value:HeroState)=>{stateRef.current=value;setState(value);};
   const fallback=(e:SyntheticEvent<HTMLImageElement>,path:string)=>{
@@ -89,11 +105,11 @@ export default function HeroScene({quiet}:{quiet:boolean}) {
     if(isTransitioning(stateRef.current))return;
     timeline.current?.kill();
     const hidden=stateRef.current==='peeking';
-    warmPoses(root.current);welcome.current?.kill();if(root.current)root.current.dataset.welcome='stopped';
+    warmPoses(root.current);welcome.current?.kill();welcome.current=null;if(root.current)root.current.dataset.welcome='stopped';
     if(!hidden){gsap.set('.cat-travel',{xPercent:0,autoAlpha:1});gsap.set('.standing-cat',{opacity:1});gsap.set('.stepping-cat',{opacity:0});gsap.set('.peek-cat',{autoAlpha:0});gsap.set('.cat-glance',{rotation:0});gsap.set('.scene-action',{scale:1,xPercent:0});}
     if(quiet){change(hidden?'idle':'peeking');gsap.set('.cat-travel',{xPercent:hidden?0:110,autoAlpha:hidden?1:0});gsap.set('.peek-cat',{autoAlpha:hidden?0:1,xPercent:0});gsap.set('.ground-shadow',{opacity:hidden?.8:0});return;}
     change(hidden?'returning':'hiding');
-    const t=gsap.timeline({onComplete:()=>change(hidden?'idle':'peeking')});timeline.current=t;
+    const t=gsap.timeline({onComplete:()=>{change(hidden?'idle':'peeking');if(hidden)replay.current?.();}});timeline.current=t;
     if(hidden){
       t.to('.peek-cat',{xPercent:15,autoAlpha:0,duration:.12},0)
        .set('.cat-travel',{autoAlpha:1},.06)

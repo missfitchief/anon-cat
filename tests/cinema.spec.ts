@@ -9,7 +9,53 @@ test('first-screen cat performs automatically and controls interrupt it quickly'
     await page.getByRole('button',{name:label}).click();
     await expect(page.locator('.hero-scene')).toHaveAttribute('data-state',state,{timeout:1200});
   }
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+  await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
+});
+
+test('returning to the first screen replays visible character motion',async({page})=>{
+  await page.goto('/');
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+  const run=Number(await page.locator('.hero-scene').getAttribute('data-welcome-run'));
+  await page.locator('#artwork').scrollIntoViewIfNeeded();
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','paused');
+  await page.getByRole('link',{name:'ANON CAT, back to top'}).click();
+  await expect.poll(async()=>Number(await page.locator('.hero-scene').getAttribute('data-welcome-run'))).toBeGreaterThan(run);
+  await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
+});
+
+test('a poster failure after hydration recovers motion with the PNG',async({page})=>{
+  let release!:()=>void;
+  const ready=new Promise<void>(resolve=>{release=resolve;});
+  await page.route('**/hero-cat.webp',async route=>{await ready;await route.abort();});
+  await page.goto('/',{waitUntil:'domcontentloaded'});
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-interactive','ready');
+  release();
+  await expect(page.locator('.hero-scene')).toHaveClass(/asset-fallback/);
+  await expect.poll(()=>page.locator('.standing-cat').evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0)).toBe(true);
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+  await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
+});
+
+test('an explicit Motion on choice overrides the OS default and survives reload',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto('/');
+  await expect(page.getByRole('button',{name:'Turn motion on'})).toBeVisible();
   await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','stopped');
+  await page.getByRole('button',{name:'Turn motion on'}).click();
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+  await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
+  expect(await page.locator('.scene-camera').evaluate(el=>getComputedStyle(el).animationName)).toBe('scene-arrive');
+  await page.reload();
+  await expect(page.getByRole('button',{name:'Turn motion off'})).toBeVisible();
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+});
+
+test('HTML fallbacks do not leak raw image markup when JavaScript is enabled',async({page})=>{
+  await page.goto('/');
+  await page.locator('#file').scrollIntoViewIfNeeded();
+  expect(await page.locator('noscript.deferred-fallback').first().evaluate(el=>getComputedStyle(el).display)).toBe('none');
+  expect(await page.locator('body').innerText()).not.toContain('<img class=');
 });
 
 for(const width of [360,390,768,1440,1920])test(`first-screen actions never overlap at ${width}px`,async({page})=>{

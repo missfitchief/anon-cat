@@ -1,6 +1,8 @@
 # Production verification — 2026-10-01
 
-The final static export passed `npm run build` (including strict TypeScript), lint, and all 23 Playwright Chromium checks in 27.6 seconds.
+The final static export passed `npm run build` (including strict TypeScript), lint, explicit typecheck, and all 27 Playwright Chromium checks in 32.1 seconds.
+
+The first-page recheck adds visible-pose assertions after manual return, scroll re-entry, and a delayed poster failure after hydration. It also verifies that an explicit Motion on choice overrides the OS default and survives reload, and that no raw noscript image markup appears with JavaScript enabled. The previous autoplay cancellation and fallback failure are fixed; repeat rest is now 2.5 seconds.
 
 Coverage includes automatic first-screen character performance and immediate interruption; sub-second manual hide/return; CTA/caption separation throughout entrance and hover at 360, 390, 768, 1440 and 1920px; mobile scene/copy separation; no horizontal overflow; native navigation without pinning; reduced motion and its saved setting; 15 rapid hero clicks and 15 rapid portrait changes; accessible fictional redaction; all three actual 1024×1024 PNG downloads; keyboard skip/navigation; WebP failure recovery before and after hydration; poster-first request ordering; and ordinary artwork fallbacks with JavaScript disabled.
 
@@ -18,10 +20,10 @@ Final single-sample measurements use fresh browser contexts against the Brotli-e
 
 | Condition | LCP | CLS | Controls ready | Automatic character starts |
 | --- | ---: | ---: | ---: | ---: |
-| 1440×900, localhost, unthrottled | 188 ms | 0.022404 | 197 ms | 443 ms |
-| 390×844, 4× CPU, 150ms latency, 1.6 Mbps download | 844 ms | 0.030525 | 2,398 ms | 3,508 ms |
+| 1440×900, localhost, unthrottled | 152 ms | 0.022404 | 157 ms | 411 ms |
+| 390×844, 4× CPU, 150ms latency, 1.6 Mbps download | 836 ms | 0.030525 | 2,417 ms | 3,546 ms |
 
-Architectural CSS motion begins at 187ms and 842ms respectively, before React is ready. Manual action duration after input is 720ms for hide/peek and 560ms for return; portrait motion takes 380ms. First-screen text and controls do not translate. The old 175vh pinned story was removed.
+Architectural CSS motion begins at 157ms and 831ms respectively. Manual action duration after input is 720ms for hide/peek and 560ms for return; portrait motion takes 380ms. First-screen text and controls do not translate. The old 175vh pinned story was removed.
 
 Both LCP/CLS samples meet the original 2.5-second/0.1 targets. Controls and full character performance are reported separately because text LCP alone does not measure interaction readiness. Raw timings, local marks and transfer sizes are in `performance-results.json`. `performance-uncompressed.json` retains an earlier intermediate sample from the uncompressed preview and is not a measurement of the final source.
 
