@@ -1,5 +1,13 @@
 [
   {
+    "path": "public/assets/brand/cat-logo.png",
+    "bytes": 18416,
+    "width": 104,
+    "height": 104,
+    "alpha": false,
+    "sha256": "35998003e3673c91693b0a5cede224e468d2c5eb5dc9cf5de86760dd432ae5b6"
+  },
+  {
     "path": "public/assets/character/hero-cat-mobile.webp",
     "bytes": 73296,
     "width": 433,

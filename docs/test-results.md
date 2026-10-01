@@ -1,5 +1,7 @@
 # Production verification — 2026-10-01
 
+The subsequent brand update replaces the generic SVG cat with the exact supplied cat illustration in the header, footer and favicon. The original image is preserved unchanged; resized PNGs total 25,430 bytes. Logo display sizes are 52px on desktop and 44px on mobile, without changing header height. Production build, strict TypeScript, lint and three existing checks passed: desktop/mobile layout and the normal-production asset/request audit.
+
 The artwork download gallery is replaced by **Leave no trace**. A cat enters an orange pool of light; visitors brush away its pawprints, clear the trail with a keyboard-accessible button, and replay the entrance. The cat settles into the seated pose after clearing. Navigation now reads The hideout; the existing #artwork anchor remains compatible. No decorative numbers, gallery choices or download links appear in the website.
 
 The final production build passed, including strict TypeScript, and lint passed without warnings. The comprehensive Chromium run passed 36 of 37 checks. Its sole failure sampled the breathing transform before the offscreen IntersectionObserver callback had paused it. Verification now waits for the actual playback state before measuring a stationary transform. All six focused scene checks then passed against the final build, including that corrected offscreen assertion and two new resilience checks. No broader site behavior was changed after the comprehensive run.
@@ -20,7 +22,7 @@ The character uses existing compressed cutouts. The entrance and pose change are
 
 ## Performance
 
-Fresh Chromium contexts measured the final export through the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. These are single local lab samples, not field percentiles or guarantees for physical devices or the hosting provider.
+Fresh Chromium contexts measured the Leave no trace export before the subsequent logo-only update, through the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. These are single local lab samples, not field percentiles or guarantees for physical devices or the hosting provider.
 
 | Condition | LCP | CLS | Controls ready | Automatic character starts |
 | --- | ---: | ---: | ---: | ---: |

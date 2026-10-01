@@ -45,6 +45,8 @@ The visible hero uses a 120KB desktop WebP or 73KB mobile WebP. Hidden poses sta
 
 ## Editable artwork and Blender
 
+The header, footer and browser favicon use the user's supplied cat illustration. Its unchanged original is saved in `art-source/brand/`; small resized PNGs serve the logo and favicon. The generic cat icon was removed.
+
 `art-source/character-bible/` contains the locked front, turnaround, expressions/poses and design notes. `art-source/generation-notes/` records actual generation jobs, prompts, costs and output provenance. The rendered scene is `art-source/blender/anon-cat-hideout.blend`.
 
 The hero pipeline is deliberately **layered 2.5D**, with true Blender architectural geometry and camera-facing character image planes. It is not a claimed fully modeled/rigged 3D cat. The gray material is a textile disguise, not gray fur. Its high-resolution raster knit remains stable during animation.
