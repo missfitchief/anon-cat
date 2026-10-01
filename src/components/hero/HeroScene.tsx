@@ -147,7 +147,6 @@ export default function HeroScene({quiet}:{quiet:boolean}) {
         <img className="peek-face" data-pose-src={site.assets.peek} onError={e=>fallback(e,'/assets/character/peek-cat.png')} alt="" width="891" height="1200" fetchPriority="low" decoding="async"/>
       </div></div>
     </div></div></div></div>
-    <div className="scene-caption"><span className="scene-note">Comfortably undisclosed.</span></div>
     <div className="scene-control"><button className="incognito" onClick={toggle} disabled={isTransitioning(state)} aria-pressed={state==='peeking'}><span className="incognito-symbol" aria-hidden="true">◉</span>{state==='peeking'||state==='returning'?'Come back':'Go incognito'}<span className="small-plus" aria-hidden="true">{state==='peeking'?'−':'+'}</span></button><p className="sr-only" role="status">{state==='idle'?'The orange cat is standing in its charcoal knitted disguise.':state==='hiding'?'The cat is stepping behind the wall.':state==='peeking'?'The cat is hidden, with one ear and its eyes peeking around the wall.':'The cat is returning.'}</p></div>
   </div>;
 }

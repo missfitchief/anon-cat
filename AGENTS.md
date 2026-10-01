@@ -1,5 +1,7 @@
 <!-- User preference: Do not add decorative numbering to navigation, sections, scenes, galleries or progress labels, arbitrary serial IDs, or background digits. Use descriptive names. -->
 
+<!-- User preference: Avoid decorative artwork/scene captions and cryptic filler microcopy that add no useful information. Rejected examples: “Seen here. Knows you saw.” and “Comfortably undisclosed.” -->
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
