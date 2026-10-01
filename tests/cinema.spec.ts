@@ -82,8 +82,8 @@ test('restored cinema keeps navigation to artwork immediate',async({page})=>{
   await page.locator('.ethos-cinema').scrollIntoViewIfNeeded();
   await expect(page.locator('.ethos-cinema')).toHaveClass(/is-cinematic/);
   await expect(page.locator('.pin-spacer')).toHaveCount(1);
-  await page.getByRole('link',{name:'The artwork',exact:true}).click();await expect(page).toHaveURL(/#artwork$/);
-  await expect(page.getByRole('button',{name:'Peek',exact:true})).toBeVisible();
+  await page.getByRole('link',{name:'The hideout',exact:true}).click();await expect(page).toHaveURL(/#artwork$/);
+  await expect(page.getByRole('button',{name:'Clear the trail',exact:true})).toBeVisible();
 });
 
 test('an obsolete saved off value cannot stop animation after removing the switch',async({page})=>{
@@ -93,18 +93,6 @@ test('an obsolete saved off value cannot stop animation after removing the switc
   await page.reload();await expect(page.locator('html')).toHaveAttribute('data-motion','on');
   await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
   await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
-});
-
-test('rapid portrait throws settle on the selected print and matching download',async({page})=>{
-  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');
-  await page.locator('#artwork').scrollIntoViewIfNeeded();
-  await page.evaluate(()=>{const options=document.querySelectorAll<HTMLButtonElement>('.portrait-options button');for(let i=0;i<15;i++)options[i%3].click();});
-  await expect(page.locator('#artwork')).toHaveAttribute('data-selection','relaxed');
-  await expect(page.locator('.download-button')).toHaveAttribute('href','/assets/portraits/relaxed.png');
-  await page.waitForTimeout(450);
-  await expect(page.locator('.portrait-print[data-active=true]')).toHaveCount(1);
-  const position=await page.locator('.portrait-print[data-active=true]').evaluate(el=>{const box=el.getBoundingClientRect();const stage=el.parentElement!.getBoundingClientRect();return Math.abs(box.x+box.width/2-stage.x-stage.width/2);});
-  expect(position).toBeLessThan(25);expect(errors).toEqual([]);
 });
 
 test('hidden pose requests begin after the visible cat is decoded',async({page})=>{

@@ -1,46 +1,36 @@
 # Production verification — 2026-10-01
 
-The technical note below the download button was removed. Build, strict TypeScript, lint and the existing portrait-download/mobile-layout checks passed. All three actual PNG downloads remain valid.
+The artwork download gallery is replaced by **Leave no trace**. A cat enters an orange pool of light; visitors brush away its pawprints, clear the trail with a keyboard-accessible button, and replay the entrance. The cat settles into the seated pose after clearing. Navigation now reads The hideout; the existing #artwork anchor remains compatible. No decorative numbers, gallery choices or download links appear in the website.
 
-A final decorative-number sweep removed subject/file serial IDs, the background digits and the numerical hero footer ornament. The portrait choices already use names only. Build, strict TypeScript, lint and six relevant existing checks passed, covering automatic hero motion, rapid portrait changes, redaction, actual PNG downloads and mobile/desktop layout. The portrait-options-clean.png screenshot shows the unnumbered picker.
+The final production build passed, including strict TypeScript, and lint passed without warnings. The comprehensive Chromium run passed 36 of 37 checks. Its sole failure sampled the breathing transform before the offscreen IntersectionObserver callback had paused it. Verification now waits for the actual playback state before measuring a stationary transform. All six focused scene checks then passed against the final build, including that corrected offscreen assertion and two new resilience checks. No broader site behavior was changed after the comprehensive run.
 
-The privacy scene's complete progress indicator was subsequently removed. Build, strict TypeScript, lint and six relevant existing browser checks passed. These verify the same forward/reverse scene timing, shutter transitions, resize cleanup, short desktop scene bounds and artwork navigation. No visible progress widget remains in this section.
+Focused checks verify partial pointer brushing, keyboard clearing, pose changes, rapid clear/restart input, offscreen pausing, frozen capture behavior, preservation of the visible cat when the seated image fails, mobile touch interaction and native scrolling, no horizontal overflow, and a readable scene with native images without JavaScript. The scene was independently reviewed for cleanup, touch scrolling, input races and failed-image behavior.
 
-The static export after restoring the privacy cinema passed `npm run build` (including strict TypeScript), lint, and all 35 Playwright Chromium checks.
+The comprehensive pass covered existing hero automatic/manual motion and loading recovery, reload and re-entry, camera movement, redaction, forward/reverse privacy-story transitions and shutters, resize cleanup, short desktop heights, direct navigation, keyboard controls, five layout widths, native image loading, ignored old motion-off preferences, and a request audit. No automatic third-party requests, missing normal-production assets, browser page errors or hydration errors were found. Asset failures in resilience checks are deliberately simulated.
 
-After removing decorative section, scene, progress and portrait numbering, the production build, strict TypeScript, lint and 10 relevant existing browser checks passed. These cover scene transitions and reverse scrolling, pin cleanup on resize, short desktop viewports, direct artwork navigation, mobile layout, portrait selection/download and actual motion. The animation timelines remain active. The refreshed story screenshots show the current labels.
-
-The first-page recheck adds visible-pose assertions after manual return, scroll re-entry, and a delayed poster failure after hydration. It also verifies animation stays enabled without a switch, including with an obsolete saved off value or reduced-motion preference, survives reload, and emits no raw noscript image markup with JavaScript enabled. The previous autoplay cancellation and fallback failure are fixed; repeat rest is now 2.5 seconds.
-
-The subsequent whole-page repair removes the noscript image branch and custom deferred-source visibility path entirely. Native image sources work without JavaScript. New movement tests verify file artwork waits for delayed image loads, replays on re-entry, all three privacy scenes translate and scale visibly, and camera tilt, CSS redaction and 3D portrait selection actually move after reload. `file-native-desktop.png` shows the clean seated-cat section.
-
-The restored desktop privacy story is checked at all three scene positions, during a shutter wipe, and in reverse. Tests cover pin placement, scene state, scene masks, viewport resize without duplicate spacers, compact scroll motion, 600/700px desktop heights and direct artwork navigation after late story initialization. The motion switch remains absent; hero/loading fixes are retained. `restored-story-01.png`, `restored-story-02.png` and `restored-story-03.png` show the large restored scenes.
-
-Coverage also includes automatic first-screen performance and interruption; sub-second manual hide/return; CTA/caption separation at five widths; mobile scene/copy separation; no horizontal overflow; navigation past the privacy pin; ignored legacy off settings and absence of the switch; rapid hero clicks and portrait changes; fictional redaction; three actual PNG downloads; keyboard navigation; WebP failure recovery; poster-first requests; and artwork without JavaScript.
-
-The production request audit found no automatic third-party requests, missing assets, browser console errors or hydration errors. Public financial destinations remain unconfigured. Browser performance marks are local and have no reporting endpoint. This pass incurred no new generation charges; total generation use remains 22 of the approved 200 credits.
+The earlier rendering repair, restored privacy cinema, removal of the motion switch, and decorative-number removal remain in current source. Earlier gallery/download checks describe superseded behavior and are retained only in the delivery history.
 
 ## Visual review
 
-Screenshots cover all five viewport sizes, including the new normal-flow mobile layout. Full-page captures scroll through deferred artwork and wait for actual image decoding. The normal-motion browser recording demonstrates the automatic hide/peek, manual return, pointer response, redaction, native scrolling and fast portrait choices. `hero-fast-desktop.png` shows stable CTA/caption spacing.
+`trace-room-desktop.png`, `trace-room-cleared.png` and `trace-room-mobile.png` show the replacement. Five full-page screenshots cover 360, 390, 768, 1440 and 1920px widths. The actual production-browser recording includes hero motion, redaction, the restored privacy cinema and pawprint brushing. It contains no invented or composited website frames.
 
-Independent inspection found no material loss in the compressed character's face openings, knit ribs, paws or attached tail. Fine textile grain is somewhat softer, and the existing pale edge fringe remains. The hero uses layered 2.5D pose animation, rather than a claimed skeletal gait. Full-resolution transparent PNGs and the packed Blender source remain available.
+The mobile light pool starts below the headline so the orange words remain legible. Native vertical scrolling is preserved; the scene does not capture pointer input or prevent default touch behavior. Its long-lived entrance/breathing animations pause offscreen and when the tab is hidden. Capture freezing pauses all scene tweens; later actions settle immediately.
+
+The character uses existing compressed cutouts. The entrance and pose change are layered 2.5D raster animation, not a claimed skeletal walk or fully rigged 3D cat. No additional generation charges were incurred; original use remains 22 of the approved 200 credits.
 
 ## Performance
 
-The measurements below use the restored version in fresh browser contexts against the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. The hosting provider has its own delivery behavior. These are lab samples, not field percentiles or guarantees for physical devices.
+Fresh Chromium contexts measured the final export through the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. These are single local lab samples, not field percentiles or guarantees for physical devices or the hosting provider.
 
 | Condition | LCP | CLS | Controls ready | Automatic character starts |
 | --- | ---: | ---: | ---: | ---: |
-| 1440×900, localhost, unthrottled | 128 ms | 0 | 115 ms | 363 ms |
-| 390×844, 4× CPU, 150ms latency, 1.6 Mbps download | 740 ms | 0.030525 | 2,434 ms | 3,508 ms |
+| 1440×900, localhost, unthrottled | 148 ms | 0 | 138 ms | 382 ms |
+| 390×844, 4× CPU, 150ms latency, 1.6 Mbps download | 1,008 ms | 0.000009 | 2,496 ms | 3,599 ms |
 
-Manual action duration after input remains 720ms for hide/peek and 560ms for return; portrait motion takes 380ms. First-screen text and controls do not translate. The 175vh privacy story is restored only in its own section; lazy choreography loading keeps it outside the hero's critical requests.
+Manual hero hide/peek takes 720ms and return takes 560ms after input. The replacement scene has a 1.6-second entrance, 260ms footprint dissolves and a 450ms seated-pose fade. The 175vh desktop privacy story remains confined to its own section. Raw timings, marks and resource transfer sizes are in `performance-results.json`; controls and character motion are reported separately because text LCP does not measure readiness of the full interaction.
 
-Both LCP/CLS samples meet the original 2.5-second/0.1 targets. Controls and full character performance are reported separately because text LCP alone does not measure interaction readiness. Raw timings, local marks and transfer sizes are in `performance-results.json`. `performance-uncompressed.json` retains an earlier intermediate sample from the uncompressed preview and is not a measurement of the final source.
-
-The desktop hero WebP is 120,226 bytes (44% smaller than its previous 216,302-byte version); mobile uses a 73,296-byte version. Hidden step/peek sprites total 135,766 bytes and begin after poster decode. Artwork below the fold loads according to native browser lazy-loading rules. Three local Latin font files replace five full-subset stylesheet imports. The preview compresses text assets with Brotli and caches hashed Next.js files immutably. All 23 local production artwork assets have dimensions, sizes and SHA-256 hashes in `asset-manifest.json`.
+The hero uses a 120,226-byte desktop WebP or 73,296-byte mobile poster. Hidden step/peek assets start after poster decode. The new scene reuses existing step/seated images and local GSAP, with no new animation library, video, generated artwork or remote request. Below-fold images use native lazy loading. Three local Latin font files replace larger full-subset imports. The server compresses text assets with Brotli and caches hashed Next.js assets immutably. Asset dimensions, sizes and SHA-256 hashes are in `asset-manifest.json`.
 
 ## Production provenance
 
-Higgsfield generated the approved artwork during the original build. The unavailable Blender MCP bridge was replaced by local Blender 5.2.1 LTS CPU rendering, with dedicated geometry, packed character image planes and editable authoring actions. No unrelated Blender scene was altered. Hosting/CDN processing and header enforcement remain documented in `privacy-implementation.md`.
+Higgsfield generated the approved artwork during the original build. The unavailable Blender MCP bridge was replaced by local Blender 5.2.1 LTS CPU rendering, with dedicated geometry, packed image planes and editable authoring actions. No unrelated Blender scene was altered. Hosting/CDN processing and header enforcement are documented in `privacy-implementation.md`.

@@ -30,8 +30,8 @@ test('desktop story restores three full scenes, shutters and reverse scrolling',
   await seek(page,bounds,.08);
   await expect(page.locator('.ethos-cinema')).toHaveAttribute('data-story-chapter','01');
   expect(await page.locator('.silhouette-frame').evaluate(el=>getComputedStyle(el).clipPath)).toMatch(/100%/);
-  await page.getByRole('link',{name:'The artwork',exact:true}).click();
-  await expect(page.getByRole('button',{name:'Peek',exact:true})).toBeInViewport();
+  await page.getByRole('link',{name:'The hideout',exact:true}).click();
+  await expect(page.getByRole('button',{name:'Clear the trail',exact:true})).toBeInViewport();
 });
 
 test('responsive story removes desktop pinning and restores it without duplicates',async({page})=>{
@@ -56,8 +56,8 @@ for(const height of [600,700])test(`story scene stage fits a ${height}px desktop
 test('direct artwork navigation stays reachable while story initializes',async({page})=>{
   await page.setViewportSize({width:1440,height:900});await page.goto('/#artwork');
   await expect(page.locator('.ethos-cinema')).toHaveAttribute('data-story-ready','true');
-  await expect(page.getByRole('button',{name:'Peek',exact:true})).toBeInViewport();
-  await page.getByRole('button',{name:'Peek',exact:true}).click();
-  await expect(page.locator('#artwork')).toHaveAttribute('data-selection','peek');
+  await expect(page.getByRole('button',{name:'Clear the trail',exact:true})).toBeInViewport();
+  await page.getByRole('button',{name:'Clear the trail',exact:true}).click();
+  await expect(page.locator('#artwork')).toHaveAttribute('data-trace-state','cleared');
   expect(await page.locator('body').innerText()).not.toContain('<img');
 });

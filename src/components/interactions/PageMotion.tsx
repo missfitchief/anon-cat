@@ -44,7 +44,7 @@ export default function PageMotion(){
             });
           });
         },{threshold:.08,rootMargin:'0px 0px -25px 0px'});
-        document.querySelectorAll('.file-art,.file-copy h2,.artwork-copy .display-title,.selected-portrait,.footer-top>p,.footer-cat').forEach(el=>observer?.observe(el));
+        document.querySelectorAll('.file-art,.file-copy h2,.footer-top>p,.footer-cat').forEach(el=>observer?.observe(el));
         const pointer=document.querySelector<HTMLElement>('.scene-pointer');
         if(pointer&&matchMedia('(hover:hover) and (pointer:fine)').matches){
           const rx=gsap.quickTo(pointer,'rotationY',{duration:.18,ease:'power2.out'});

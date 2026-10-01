@@ -4,7 +4,7 @@ export const site = {
   headline: ['NINE LIVES.', 'NONE OF YOUR', 'BUSINESS.'],
   intro: 'You found the cat. That’s all you get.',
   moneroLine: 'A privacy-minded cat inspired by Monero.',
-  navigation: [{label:'The cat',href:'#file'}, {label:'The instinct',href:'#ethos'}, {label:'The artwork',href:'#artwork'}],
+  navigation: [{label:'The cat',href:'#file'}, {label:'The instinct',href:'#ethos'}, {label:'The hideout',href:'#artwork'}],
   moneroUrl: 'https://www.getmonero.org/get-started/what-is-monero/',
   socials: [] as { label: string; url: string }[],
   network: null as { name: string; documentationUrl: string } | null,
@@ -12,5 +12,4 @@ export const site = {
   assetIdentifier: null as string | null,
   file: [{label:'Name',value:'Not volunteered.'},{label:'Occupation',value:'Cat.'},{label:'Address',value:'Somewhere comfortable.'},{label:'Current plans',value:'Unavailable.'},{label:'Favorite color',value:'That one is obvious.'}],
   assets: {hero:'/assets/character/hero-cat.webp',step:'/assets/character/step-cat.webp',peek:'/assets/character/peek-cat.webp',seated:'/assets/character/seated-cat.webp',background:'/assets/environments/hideout-back.webp',foreground:'/assets/environments/hideout-front.webp',mobile:'/assets/environments/hideout-mobile.webp'},
-  portraits: [{id:'side-eye',label:'Side-eye',description:'A look that says just enough.',src:'/assets/portraits/side-eye.png'},{id:'peek',label:'Peek',description:'Present. On its own terms.',src:'/assets/portraits/peek.png'},{id:'relaxed',label:'Relaxed',description:'Perfectly comfortable being unknown.',src:'/assets/portraits/relaxed.png'}],
 } as const;
