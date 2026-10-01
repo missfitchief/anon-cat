@@ -1,4 +1,4 @@
-<!-- User preference: Do not add decorative 01 / 02 / 03 numbering to navigation, sections, scenes, galleries or progress labels. Use descriptive names and unnumbered visual progress. -->
+<!-- User preference: Do not add decorative numbering to navigation, sections, scenes, galleries or progress labels, arbitrary serial IDs, or background digits. Use descriptive names. -->
 
 <!-- BEGIN:nextjs-agent-rules -->
 

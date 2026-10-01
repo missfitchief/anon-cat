@@ -11,8 +11,8 @@ export default function Experience({children}:{children?:React.ReactNode}) {
     </header>
     <main id="main"><section className="hero" id="top" aria-labelledby="hero-heading">
       <div className="hero-copy"><p className="eyebrow"><span className="orange-rule"/> PRIVATE BY INSTINCT</p><h1 id="hero-heading">{site.headline.map((line,i)=><span className={i===2?'orange-type':''} key={line}>{line}</span>)}</h1><p className="hero-intro">{site.intro}</p><div className="hero-actions"><a href="#file" className="button orange-button">Meet the cat<span aria-hidden="true">+</span></a><p className="monero-caption"><span className="monero-dot" aria-hidden="true">m</span>{site.moneroLine}</p></div></div>
-      <div className="hero-ghost" aria-hidden="true">09</div><HeroScene quiet={false}/>
-      <div className="hero-bottom"><span>NO NAME TAG. NO EXPLANATION.</span><a href="#file">SCROLL TO GET LESS<span aria-hidden="true">↓</span></a><span className="coordinates">09 LIVES / 00 DETAILS</span></div>
+      <HeroScene quiet={false}/>
+      <div className="hero-bottom"><span>NO NAME TAG. NO EXPLANATION.</span><a href="#file">SCROLL TO GET LESS<span aria-hidden="true">↓</span></a></div>
     </section>{children}</main>
   </>;
 }

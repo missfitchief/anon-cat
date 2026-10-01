@@ -8,7 +8,7 @@ html[data-motion=on] .scene-front{animation:foreground-arrive .55s cubic-bezier(
 @keyframes scene-arrive{from{transform:translateY(16px) scale(1.075)}to{transform:translateY(0) scale(1)}}
 @keyframes foreground-arrive{from{transform:translateX(calc(var(--foreground-rest) + 65px))}to{transform:translateX(var(--foreground-rest))}}
 .scene-light{position:absolute;inset:12% 5% 18% 45%;background:radial-gradient(ellipse,#ff861c24,transparent 65%);pointer-events:none}
-.hero-ghost{position:absolute;right:24%;top:10%;font-family:var(--display);font-size:clamp(280px,36vw,690px);font-weight:700;line-height:1;letter-spacing:-.08em;color:transparent;-webkit-text-stroke:1px #f2efe813;pointer-events:none;z-index:0}
+
 .scroll-progress{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;pointer-events:none}
 .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
 .hero-actions .monero-caption{margin:0;max-width:340px}.monero-dot{flex-shrink:0}
@@ -41,13 +41,13 @@ html[data-motion=on] .scene-front{animation:foreground-arrive .55s cubic-bezier(
 .nav a{position:relative}.nav a::after{content:'';position:absolute;bottom:8px;left:0;right:0;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .15s}.nav a:hover::after{transform:scaleX(1)}
 .redaction-bar{transition-duration:.18s}.file-value{transition-duration:.12s}
 .file-row:nth-child(2) .redaction-bar{transition-delay:.02s}.file-row:nth-child(3) .redaction-bar{transition-delay:.04s}.file-row:nth-child(4) .redaction-bar{transition-delay:.06s}.file-row:nth-child(5) .redaction-bar{transition-delay:.08s}
-@media(max-width:1000px){.hero-ghost{right:5%;top:20%;font-size:350px}.selected-portrait{margin:15px 10px 0}}
+@media(max-width:1000px){.selected-portrait{margin:15px 10px 0}}
 @media(max-width:700px){
   .hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 440px auto;min-height:0;padding-bottom:24px;row-gap:24px}
   .hero-copy{grid-row:1}.hero-actions{gap:16px}
   .hero-scene{position:relative;grid-row:2;top:auto;left:-6.8%;right:auto;width:113.6%;height:440px}
   .scene-front{--foreground-rest:4%}
   .hero-bottom{position:relative;grid-row:3;inset:auto;width:100%;margin:0;padding-top:20px}
-  .hero-ghost{top:360px;right:30%;font-size:350px}.portrait-print{border-width:7px}.hero-scene{perspective:900px}
+  .portrait-print{border-width:7px}.hero-scene{perspective:900px}
   .portrait-options button:hover,.portrait-options button[aria-pressed=true]{padding-left:8px}.selected-portrait{margin:14px 12px 0 8px}.selected-portrait figcaption{padding-top:45px}
 }
