@@ -13,6 +13,23 @@ html[data-motion=on] .scene-front{animation:foreground-arrive .55s cubic-bezier(
 .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
 .hero-actions .monero-caption{margin:0;max-width:340px}.monero-dot{flex-shrink:0}
 .file-section,.artwork-section{overflow:clip}.ethos-cinema{position:relative}
+.privacy-shutters,.story-progress{display:none}
+.is-cinematic.ethos-cinema{height:84svh;min-height:min(600px,calc(100svh - 115px));max-height:940px;isolation:isolate;overflow:hidden}
+.is-cinematic .ethos-heading{position:absolute;left:0;top:17%;width:43%;height:70%;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:0;z-index:3;pointer-events:none}
+.is-cinematic .ethos-heading h2{font-size:clamp(62px,7vw,130px);max-width:100%;line-height:.91}.is-cinematic .ethos-heading h2 em{display:inline-block}
+.is-cinematic .ethos-heading>p{font-size:16px;line-height:1.7;padding-bottom:10px;max-width:220px}
+.is-cinematic .ethos-sequence{position:absolute;right:0;top:12%;width:53%;height:76%;display:block;overflow:hidden}
+.is-cinematic .ethos-frame{position:absolute;inset:0;width:100%;height:100%;margin:0}
+.is-cinematic .panel-frame{z-index:1}.is-cinematic .silhouette-frame{z-index:2}.is-cinematic .relaxed-frame{z-index:3}
+.is-cinematic .ethos-frame img{object-fit:cover;object-position:center}
+.is-cinematic .silhouette-frame img{object-fit:contain;width:100%;max-width:none;object-position:50% 100%;filter:brightness(.8)}
+.is-cinematic .silhouette-occluder{left:66%;box-shadow:-25px 0 35px #17191b66}
+.is-cinematic .ethos-frame figcaption{padding:80px 32px 32px;font-size:20px;line-height:1.4}.is-cinematic .ethos-frame figcaption span{font-size:13px}
+.is-cinematic .privacy-shutters{display:block;position:absolute;right:0;top:12%;width:53%;height:76%;overflow:hidden;z-index:5;pointer-events:none}
+.privacy-shutters span{position:absolute;left:0;width:36%;height:34%;background:#282b2e;border-top:1px solid #46494b;transform:translateX(330%)}
+.privacy-shutters span:nth-child(1){top:0}.privacy-shutters span:nth-child(2){top:33%}.privacy-shutters span:nth-child(3){top:66%}
+.is-cinematic .story-progress{position:absolute;left:0;bottom:4%;display:flex;align-items:center;gap:16px;width:39%;font-size:12px;color:#92948e;letter-spacing:1px}
+.story-current{color:var(--orange);min-width:22px}.story-progress-track{height:1px;flex:1;background:#4a4c49;position:relative}.story-progress-track i{position:absolute;inset:0;background:var(--orange);transform:scaleX(0);transform-origin:left}
 .file-grid,.artwork-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .file-art,.file-copy,.artwork-copy,.selected-portrait{min-width:0}
 .selected-portrait{transform:none;perspective:1400px}.portrait-stage{position:relative;aspect-ratio:1;perspective:1200px;isolation:isolate}

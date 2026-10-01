@@ -20,13 +20,17 @@ test('file artwork waits for real images and animates again on re-entry',async({
   await expect.poll(()=>art.evaluate(el=>new DOMMatrixReadOnly(getComputedStyle(el).transform).m42),{intervals:[20]}).toBeGreaterThan(2);
 });
 
-test('all privacy scenes visibly move when entering the viewport',async({page})=>{
+test('compact privacy scenes reveal with scroll without desktop pinning',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
   await page.goto('/');
   for(const selector of ['.panel-frame','.silhouette-frame','.relaxed-frame']){
-    await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.waitForTimeout(80);
     const frame=page.locator(selector);await frame.scrollIntoViewIfNeeded();
-    await expect.poll(()=>frame.evaluate(el=>new DOMMatrixReadOnly(getComputedStyle(el).transform).m42),{intervals:[20]}).toBeGreaterThan(2);
+    await expect(page.locator('.ethos-cinema')).toHaveAttribute('data-story-ready','true');
+    await expect(page.locator('.pin-spacer')).toHaveCount(0);
     await expect.poll(()=>frame.locator('img').evaluate(el=>new DOMMatrixReadOnly(getComputedStyle(el).transform).a),{intervals:[20]}).toBeGreaterThan(1.01);
+    const before=await frame.locator('img').evaluate(el=>getComputedStyle(el).transform);
+    await page.evaluate(()=>window.scrollBy({top:120,behavior:'instant'}));
+    await expect.poll(()=>frame.locator('img').evaluate(el=>getComputedStyle(el).transform)).not.toBe(before);
   }
 });
 

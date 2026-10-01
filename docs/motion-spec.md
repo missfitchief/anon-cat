@@ -18,13 +18,16 @@ The decorative performance and manual state are separate. A manual action cancel
 
 ## Rest of the document
 
-Native scrolling has no pin spacers, scrub inertia or extra story scroll distance. IntersectionObserver starts 500–750ms reveals as artwork/headings enter the viewport. Images decode before their entrance, and reveals replay on re-entry. The file scene rises 60px with a small rotation and disc expansion; privacy scenes rise 48px while their images settle from 1.14 scale. Content remains visible if scripts fail. A passive, frame-coalesced scroll listener updates the header's document progress line. Portrait selection updates its accessible label and real local PNG download immediately; a 380ms print throw follows, cancelling earlier contexts on rapid choices. Redaction bars finish in at most 260ms, including stagger.
+The original privacy cinema is restored on desktop at 1001px and above. Its 84svh stage pins at 6% of the viewport for 175vh of scroll travel, with direct progress and no scrub inertia. Peek transitions through three charcoal shutters into Walking on orange, then another wipe reveals Relaxed. The title enlarges and chapter/progress indicators advance. The stage fits short desktop viewports. Compact screens use three stacked scenes with reversible scroll masks and image depth, without pinning.
+
+ScrollTrigger is imported only within 800px of this section; its three images are then warmed to avoid empty masked scenes. Setup refreshes after font readiness. Late pin creation preserves the following viewport, and direct artwork hashes are realigned unless the visitor has started scrolling. MatchMedia removes pinning and desktop transforms on resize. Other sections keep brief repeatable entrances and native flow: the file rises 60px with a small rotation/disc expansion. Portrait selection and its PNG download update immediately, followed by a 380ms print throw. Redaction finishes within 260ms. Ordinary image markup and a three-card fallback remain available without scripts.
 
 ## Ownership and loading
 
 - CSS owns architectural arrival on `scene-camera`/foreground; these never share transforms with pointer or character motion.
 - The hero GSAP context owns poses, glance, breathing, travel and the short scene action.
 - Page GSAP owns pointer tilt on `scene-pointer` and repeatable below-fold reveals.
+- PrivacyStory owns privacy frames, images, occluder, shutters, heading and chapter track; PageMotion excludes those targets.
 - Artwork GSAP owns print transforms inside its stage.
 
 The high-priority poster is 120,226 bytes on desktop or 73,296 bytes on mobile. Hidden poses load after its decode. Below-fold artwork uses ordinary images with native lazy loading, low fetch priority and asynchronous decode; it works without hydration. No noscript image text or custom deferred-source visibility rule exists. Original transparent PNGs remain available for source and error recovery. Browser-only performance marks measure readiness; there is no reporting endpoint.

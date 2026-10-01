@@ -20,6 +20,9 @@ await page.screenshot({path:'docs/screenshots/hero-fast-desktop.png'});
 const file=await page.locator('#file').evaluate(el=>el.getBoundingClientRect().top+scrollY-96);await glide(file,650);await page.waitForTimeout(450);
 await page.getByRole('button',{name:'Too much information'}).click();await page.waitForTimeout(300);
 const story=await page.locator('#ethos').evaluate(el=>el.getBoundingClientRect().top+scrollY-96);await glide(story,650);await page.waitForTimeout(500);
+await page.locator('.ethos-cinema.is-cinematic[data-story-ready="true"]').waitFor();
+const storyBounds=await page.locator('.pin-spacer').evaluate(el=>({start:el.getBoundingClientRect().top+scrollY-innerHeight*.06,span:Math.round(innerHeight*1.75)}));
+for(const progress of [.08,.31,.52,.73,.94]){await glide(storyBounds.start+storyBounds.span*progress,700);await page.waitForTimeout(250);}
 const art=await page.locator('#artwork').evaluate(el=>el.getBoundingClientRect().top+scrollY-96);await glide(art,650);await page.waitForTimeout(450);
 await page.getByRole('button',{name:'02 Peek',exact:true}).click();await page.waitForTimeout(450);
 await page.getByRole('button',{name:'03 Relaxed',exact:true}).click();await page.waitForTimeout(450);
