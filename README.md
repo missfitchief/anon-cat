@@ -28,6 +28,8 @@ npm run test:e2e
 
 All content and controls are HTML. Motion can be disabled; reduced-motion outcomes remain understandable. No autoplay audio, scroll hijacking, fake loader, wallet request, tracking, or runtime third-party font/media request.
 
+The cinematic upgrade adds a moving architectural arrival, headline choreography, damped scene tilt, a reversible three-scene desktop privacy sequence driven by native scroll, stacked mask reveals on phones/tablets, and physical portrait throws. The sticky header keeps the motion switch available. Disabling motion restores the complete static document and removes every pin spacer. `src/app/motion.css` contains these staging styles; `PageMotion.tsx` owns page choreography while HeroScene and ArtworkPack own their inner actions.
+
 ## Change the project
 
 - **Name, copy, navigation, socials, network details:** `src/config/site.ts`. Add real social URLs to `socials`; absent links are omitted. Keep financial/network values null until their relationship and destination are verified. No financial UI is rendered by the current application.
@@ -64,6 +66,8 @@ Use the installed Blender executable's full path if it is not on PATH. The first
 - `docs/test-results.md`, `docs/performance-results.json` and `docs/screenshots/`: actual production validation.
 
 Helpers: `node scripts/measure.mjs`, `node scripts/asset-manifest.mjs`, and `node scripts/reference-audit.mjs`. The latter is a reproducible reference capture, not application code. Playwright tests use Chromium and all five requested viewport sizes. Performance measurements are emulated conditions, not claims about every visitor's network or physical device.
+
+`node scripts/capture-motion.mjs` saves a silent recording of the actual production website to `../anon-cat-motion-preview.webm`, demonstrating arrival, concealment, redaction, native scroll scenes and portrait selection.
 
 ## Deployment
 
