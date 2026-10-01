@@ -1,5 +1,7 @@
 # Production verification — 2026-10-01
 
+The latest hideout correction moves the cat left, keeps its entrance on a fixed floor baseline and moves the contact shadow with the actor. Pawprints, brushing handlers, trail controls and the seated transition are removed. Build and strict TypeScript passed; lint passed. Eleven relevant Chromium checks passed across scene settling, keyboard navigation, visibility pausing/resuming, capture freeze, mobile native scrolling, no-JavaScript rendering, actual motion, artwork navigation, desktop/mobile layout and the production request/asset audit. Visual captures at 390, 768, 1440 and 1920px showed zero pawprints, no horizontal overflow and matching foot/shadow baselines. The final small tablet heading-spacing refinement was build-checked and captured separately. No new performance benchmark was run.
+
 The latest repair fills the hiding pose's horizontal torso cutoff with a continuation from existing approved artwork. Face framing, hide/return timing, foreground occlusion and footer portrait are preserved. Production build and strict TypeScript passed; lint passed. Ten relevant existing Chromium checks passed, covering autoplay and interruption, hero re-entry, PNG recovery, pose request order, manual controls, layout, captures, asset/error auditing and keyboard/media recovery. A subsequent lower-mask adjustment was build-checked and visually verified at 390x844, 768x1024, 1440x768, 1440x900 and 1920x900. It conceals the feet behind the slab. This is not a new performance benchmark; no new site media or dependencies were added.
 
 The official CA supplied by the user is now displayed in full in the footer and available through a compact header copy control. Real clipboard contents were compared with the complete supplied string after header, keyboard/footer and legacy-fallback copying. Denied-copy feedback was checked to ensure it does not falsely report success. Build, strict TypeScript, lint and four existing checks passed (360/768/1440px layout and the production request/asset audit). Header/footer screenshots show the current address placement; no wallet or purchase link was added.
@@ -16,9 +18,9 @@ The comprehensive pass covered existing hero automatic/manual motion and loading
 
 The earlier rendering repair, restored privacy cinema, removal of the motion switch, and decorative-number removal remain in current source. Earlier gallery/download checks describe superseded behavior and are retained only in the delivery history.
 
-## Visual review
+## Earlier verification history and visual review
 
-`trace-room-desktop.png`, `trace-room-cleared.png` and `trace-room-mobile.png` show the replacement. Five full-page screenshots cover 360, 390, 768, 1440 and 1920px widths. The actual production-browser recording includes hero motion, redaction, the restored privacy cinema and pawprint brushing. It contains no invented or composited website frames.
+`trace-room-desktop.png`, `trace-room-cleared.png` and `trace-room-mobile.png` show the replacement. Five full-page screenshots cover 360, 390, 768, 1440 and 1920px widths. The refreshed actual production-browser recording includes hero motion, redaction, the restored privacy cinema and the grounded hideout entrance. Pawprint brushing and trace-room-cleared.png describe the superseded interaction. It contains no invented or composited website frames.
 
 The mobile light pool starts below the headline so the orange words remain legible. Native vertical scrolling is preserved; the scene does not capture pointer input or prevent default touch behavior. Its long-lived entrance/breathing animations pause offscreen and when the tab is hidden. Capture freezing pauses all scene tweens; later actions settle immediately.
 

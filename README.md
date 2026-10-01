@@ -24,11 +24,11 @@ npm run test:e2e
 1. A charcoal Blender-rendered hideout with a consistent orange cat in a fitted gray knitted disguise. `Go incognito` uses explicit guarded idle/hide/peek/return states.
 2. A warm editorial fictional character file. Redaction changes only supplied character details and provides accessible “withheld” alternatives.
 3. A short illustrated privacy sequence with restrained, sourced Monero copy and an ordinary link to its official website.
-4. Leave no trace: a sculptural cat scene where visitors brush away pawprints, clear the trail by keyboard or touch, and let the cat wander again. The download gallery is removed.
+4. Leave no trace: the cat moves left across the floor into the orange light and rests without leaving pawprints. Its contact shadow travels with it. The download gallery and trail-clearing controls are removed.
 
 All content and controls are HTML. Animations are enabled throughout, with no motion switch or stored off preference. No autoplay audio, scroll hijacking, fake loader, wallet request, tracking, or runtime third-party font/media request.
 
-The hero keeps its 600ms architectural arrival, automatic hide/peek/return, 180ms pointer response and fixed text/CTA. Manual hide/peek finishes in 720ms and return in 560ms. The original privacy cinema is restored on desktop: a large image stage beside the heading moves through Peek, Walking and Relaxed scenes with shutter wipes over 175vh of scrolling. Scroll progress responds immediately without scrub lag. Compact screens retain three stacked scenes with scroll-driven mask reveals. The hideout replaces the gallery with a 1.6-second entrance and 260ms pawprint dissolves. The sticky header keeps navigation available; animations remain enabled. `PrivacyStory.tsx` owns only the privacy stage and loads its ScrollTrigger code near that section; PageMotion and other components retain their own transforms.
+The hero keeps its 600ms architectural arrival, automatic hide/peek/return, 180ms pointer response and fixed text/CTA. Manual hide/peek finishes in 720ms and return in 560ms. The original privacy cinema is restored on desktop: a large image stage beside the heading moves through Peek, Walking and Relaxed scenes with shutter wipes over 175vh of scrolling. Scroll progress responds immediately without scrub lag. Compact screens retain three stacked scenes with scroll-driven mask reveals. The hideout has a 1.4-second horizontal entrance with a shared character/shadow actor and no pawprints. The sticky header keeps navigation available; animations remain enabled. `PrivacyStory.tsx` owns only the privacy stage and loads its ScrollTrigger code near that section; PageMotion and other components retain their own transforms.
 
 The hiding pose uses the original close-up face with a continuation from the existing full-body artwork. Both move in the same wrapper behind the foreground pillar; responsive sizing preserves the original head framing and the lower mask conceals the feet. No additional media request is needed because the body reuses the responsive hero image.
 
@@ -75,7 +75,7 @@ Use the installed Blender executable's full path if it is not on PATH. The first
 
 Helpers: `node scripts/measure.mjs`, `node scripts/asset-manifest.mjs`, and `node scripts/reference-audit.mjs`. The latter is a reproducible reference capture, not application code. Playwright tests use Chromium and all five requested viewport sizes. Performance measurements are emulated conditions, not claims about every visitor's network or physical device.
 
-`node scripts/capture-motion.mjs` saves a silent recording of the actual production website to `../anon-cat-motion-preview.webm`, demonstrating automatic character motion, quick concealment/return, redaction, native scrolling and pawprint brushing.
+`node scripts/capture-motion.mjs` saves a silent recording of the actual production website to `../anon-cat-motion-preview.webm`, demonstrating automatic character motion, quick concealment/return, redaction, native scrolling and the grounded hideout entrance.
 
 ## Deployment
 

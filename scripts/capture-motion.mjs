@@ -24,12 +24,7 @@ await page.locator('.ethos-cinema.is-cinematic[data-story-ready="true"]').waitFo
 const storyBounds=await page.locator('.pin-spacer').evaluate(el=>({start:el.getBoundingClientRect().top+scrollY-innerHeight*.06,span:Math.round(innerHeight*1.75)}));
 for(const progress of [.08,.31,.52,.73,.94]){await glide(storyBounds.start+storyBounds.span*progress,700);await page.waitForTimeout(250);}
 const art=await page.locator('#artwork').evaluate(el=>el.getBoundingClientRect().top+scrollY-96);await glide(art,650);await page.waitForTimeout(450);
-await page.locator('#artwork[data-trace-ready="true"]').waitFor();await page.waitForTimeout(1700);
+await page.locator('#artwork[data-trace-ready="true"]').waitFor();await page.waitForTimeout(2100);
 await page.screenshot({path:'docs/screenshots/trace-room-desktop.png'});
-for(const print of (await page.locator('.trace-print').all()).slice(0,4)){
-  const box=await print.boundingBox();await page.mouse.move(box.x+box.width/2,box.y+box.height/2,{steps:8});await page.waitForTimeout(140);
-}
-await page.getByRole('button',{name:'Clear the trail',exact:true}).click();await page.waitForTimeout(650);
-await page.screenshot({path:'docs/screenshots/trace-room-cleared.png'});
 await context.close();await video.saveAs(path.resolve('../anon-cat-motion-preview.webm'));await browser.close();
 console.log('Saved actual production browser recording: ../anon-cat-motion-preview.webm');

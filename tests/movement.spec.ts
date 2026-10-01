@@ -34,7 +34,7 @@ test('compact privacy scenes reveal with scroll without desktop pinning',async({
   }
 });
 
-test('camera, redaction and hideout controls produce actual motion after reload',async({page})=>{
+test('camera, redaction and the hideout entrance produce actual motion after reload',async({page})=>{
   await page.goto('/');await page.reload();
   await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
   await page.mouse.move(1100,160);
@@ -44,9 +44,7 @@ test('camera, redaction and hideout controls produce actual motion after reload'
   await expect.poll(()=>bar.evaluate(el=>new DOMMatrixReadOnly(getComputedStyle(el).transform).a),{intervals:[20]}).toBeGreaterThan(.05);
   await expect.poll(()=>bar.evaluate(el=>new DOMMatrixReadOnly(getComputedStyle(el).transform).a)).toBe(1);
   await page.locator('#artwork').scrollIntoViewIfNeeded();
-  await page.getByRole('button',{name:'Clear the trail',exact:true}).click();
-  await expect(page.locator('#artwork')).toHaveAttribute('data-trace-state','cleared');
-  await page.getByRole('button',{name:'Let him wander',exact:true}).click();
-  await expect.poll(()=>page.locator('.trace-cat').evaluate(el=>Math.abs(new DOMMatrixReadOnly(getComputedStyle(el).transform).m41)),{intervals:[20]}).toBeGreaterThan(10);
+  await expect(page.locator('#artwork')).toHaveAttribute('data-trace-ready','true');
+  await expect.poll(()=>page.locator('.trace-cat').evaluate(el=>new DOMMatrixReadOnly(getComputedStyle(el).transform).m41),{intervals:[20]}).toBeGreaterThan(10);
   await expect.poll(()=>page.locator('.trace-cat').evaluate(el=>Math.abs(new DOMMatrixReadOnly(getComputedStyle(el).transform).m41))).toBeLessThan(.1);
 });
