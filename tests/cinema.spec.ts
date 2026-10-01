@@ -1,32 +1,57 @@
 import {test,expect} from '@playwright/test';
 
-test('desktop privacy story reveals three scenes and reverses with native scrolling',async({page})=>{
-  await page.setViewportSize({width:1440,height:900});await page.goto('/');
-  await expect(page.locator('.ethos-cinema')).toHaveClass(/is-cinematic/);
-  const start=await page.locator('.ethos-cinema').evaluate(el=>el.getBoundingClientRect().top+scrollY-innerHeight*.06);
-  for(const [progress,label] of [[.12,'01'],[.52,'02'],[.94,'03'],[.12,'01']] as const){
-    await page.evaluate(({start,progress})=>window.scrollTo({top:start+innerHeight*1.75*progress,behavior:'instant'}),{start,progress});
-    await expect(page.locator('.story-current')).toHaveText(label);
-    await page.waitForTimeout(750); // Allow the actual scrub tween to settle.
-    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-    await page.screenshot({path:`docs/screenshots/cinema-${label}.png`});
-    if(label==='03'){
-      const covers=await page.locator('.privacy-shutters span').evaluateAll(nodes=>nodes.some(el=>{const box=el.getBoundingClientRect();const parent=el.parentElement!.getBoundingClientRect();return box.right>parent.left&&box.left<parent.right;}));
-      expect(covers).toBe(false);
-    }
+test('first-screen cat performs automatically and controls interrupt it quickly',async({page})=>{
+  await page.goto('/');
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+  await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
+  await expect(page.getByRole('button',{name:'Go incognito'})).toBeEnabled();
+  for(const [label,state]of [['Go incognito','peeking'],['Come back','idle']]){
+    await page.getByRole('button',{name:label}).click();
+    await expect(page.locator('.hero-scene')).toHaveAttribute('data-state',state,{timeout:1200});
   }
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','stopped');
 });
 
-test('motion-off removes pinning, restores all scenes, and survives reload',async({page})=>{
-  await page.setViewportSize({width:1440,height:900});await page.goto('/');
-  await expect(page.locator('.ethos-cinema')).toHaveClass(/is-cinematic/);
-  await page.getByRole('button',{name:'Turn motion off'}).click();
-  await expect(page.locator('.ethos-cinema')).not.toHaveClass(/is-cinematic/);
+for(const width of [360,390,768,1440,1920])test(`first-screen actions never overlap at ${width}px`,async({page})=>{
+  await page.setViewportSize({width,height:width<700?844:1000});
+  await page.goto('/',{waitUntil:'domcontentloaded'});
+  const samples=await page.evaluate(()=>new Promise<{gap:number;sceneGap:number;overflow:boolean}[]>(resolve=>{
+    const rows:{gap:number;sceneGap:number;overflow:boolean}[]=[];const start=performance.now();
+    const sample=()=>{
+      const button=document.querySelector('.hero-actions .button')!.getBoundingClientRect();
+      const caption=document.querySelector('.monero-caption')!.getBoundingClientRect();
+      const scene=document.querySelector('.hero-scene')!.getBoundingClientRect();
+      rows.push({gap:caption.top-button.bottom,sceneGap:scene.top-caption.bottom,overflow:document.documentElement.scrollWidth>innerWidth});
+      if(performance.now()-start<850)requestAnimationFrame(sample);else resolve(rows);
+    };requestAnimationFrame(sample);
+  }));
+  expect(Math.min(...samples.map(r=>r.gap))).toBeGreaterThanOrEqual(15);
+  expect(samples.some(r=>r.overflow)).toBe(false);
+  if(width<700)expect(Math.min(...samples.map(r=>r.sceneGap))).toBeGreaterThanOrEqual(20);
+  await page.getByRole('link',{name:'Meet the cat',exact:true}).hover();
+  const gap=await page.locator('.monero-caption').evaluate(el=>el.getBoundingClientRect().top-document.querySelector('.hero-actions .button')!.getBoundingClientRect().bottom);
+  expect(gap).toBeGreaterThanOrEqual(15);
+});
+
+test('native scrolling reaches all three privacy scenes with no pin or delayed control',async({page})=>{
+  await page.goto('/');
+  for(const scene of ['.panel-frame','.silhouette-frame','.relaxed-frame']){
+    await page.locator(scene).scrollIntoViewIfNeeded();await expect(page.locator(scene)).toBeVisible();
+  }
   await expect(page.locator('.pin-spacer')).toHaveCount(0);
-  for(const scene of ['.panel-frame','.silhouette-frame','.relaxed-frame'])expect(await page.locator(scene).evaluate(el=>getComputedStyle(el).clipPath)).toBe('none');
+  await page.getByRole('link',{name:'03 The artwork'}).click();await expect(page).toHaveURL(/#artwork$/);
+  await expect(page.getByRole('button',{name:'02 Peek',exact:true})).toBeVisible();
+});
+
+test('motion-off restores the static hero, cancels its performance, and survives reload',async({page})=>{
+  await page.goto('/');await page.getByRole('button',{name:'Turn motion off'}).click();
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','stopped');
+  expect(await page.locator('.scene-camera').evaluate(el=>getComputedStyle(el).animationName)).toBe('none');
   await page.reload();await expect(page.locator('html')).toHaveAttribute('data-motion','off');
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','stopped');
   await expect(page.locator('.pin-spacer')).toHaveCount(0);
-  await page.getByRole('button',{name:'Turn motion on'}).click();await expect(page.locator('.ethos-cinema')).toHaveClass(/is-cinematic/);
+  await page.getByRole('button',{name:'Turn motion on'}).click();
+  await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
 });
 
 test('rapid portrait throws settle on the selected print and matching download',async({page})=>{
@@ -35,19 +60,30 @@ test('rapid portrait throws settle on the selected print and matching download',
   await page.evaluate(()=>{const options=document.querySelectorAll<HTMLButtonElement>('.portrait-options button');for(let i=0;i<15;i++)options[i%3].click();});
   await expect(page.locator('#artwork')).toHaveAttribute('data-selection','relaxed');
   await expect(page.locator('.download-button')).toHaveAttribute('href','/assets/portraits/relaxed.png');
-  await page.waitForTimeout(1400);
+  await page.waitForTimeout(450);
   await expect(page.locator('.portrait-print[data-active=true]')).toHaveCount(1);
   const position=await page.locator('.portrait-print[data-active=true]').evaluate(el=>{const box=el.getBoundingClientRect();const stage=el.parentElement!.getBoundingClientRect();return Math.abs(box.x+box.width/2-stage.x-stage.width/2);});
   expect(position).toBeLessThan(25);expect(errors).toEqual([]);
 });
 
-for(const width of [360,390])test(`mobile ${width} has full motion and no desktop pin`,async({page})=>{
-  await page.setViewportSize({width,height:844});await page.goto('/');await page.waitForTimeout(2200);
-  await expect(page.locator('html')).toHaveAttribute('data-cinema','on');await expect(page.locator('.pin-spacer')).toHaveCount(0);
-  const cat=await page.locator('.standing-cat').boundingBox();expect(cat?.x).toBeGreaterThan(0);expect((cat?.x??0)+(cat?.width??0)).toBeLessThan(width);
-  for(const selector of ['.file-art','.panel-frame','.silhouette-frame','.relaxed-frame','#artwork']){
-    await page.locator(selector).scrollIntoViewIfNeeded();await page.waitForTimeout(850);
-    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  }
-  await page.getByRole('button',{name:'Turn motion off'}).click();await expect(page.locator('.pin-spacer')).toHaveCount(0);
+test('hidden pose requests begin after the visible cat is decoded',async({page})=>{
+  await page.goto('/');await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','playing');
+  const times=await page.evaluate(()=>{
+    const entries=performance.getEntriesByType('resource') as PerformanceResourceTiming[];
+    const hero=entries.find(r=>r.name.endsWith('/hero-cat.webp'))!;
+    return {heroEnd:hero.responseEnd,poseStarts:entries.filter(r=>r.name.endsWith('/step-cat.webp')||r.name.endsWith('/peek-cat.webp')).map(r=>r.startTime)};
+  });
+  expect(times.poseStarts.length).toBe(2);
+  times.poseStarts.forEach(start=>expect(start).toBeGreaterThanOrEqual(times.heroEnd));
+});
+
+test('below-fold images retain ordinary HTML fallbacks without JavaScript',async({browser})=>{
+  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
+  const page=await context.newPage();await page.goto('/');
+  await page.getByRole('link',{name:'Meet the cat',exact:true}).click();
+  await expect(page).toHaveURL(/#file$/);
+  const cat=page.locator('noscript .seated-cat');await expect(cat).toBeVisible();
+  await expect.poll(()=>cat.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0)).toBe(true);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await context.close();
 });

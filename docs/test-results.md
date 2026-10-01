@@ -1,34 +1,32 @@
 # Production verification — 2026-10-01
 
-`npm run build`, `npm run lint`, and strict TypeScript validation passed. The cinematic upgrade's comprehensive Playwright Chromium run passed all 17 tests in 40.8 seconds. After correcting shutter transform offsets, the five dedicated motion tests passed again in 21.2 seconds, including an assertion that no shutter remains over the final scene.
+The final static export passed `npm run build` (including strict TypeScript), lint, and all 23 Playwright Chromium checks in 27.6 seconds.
 
-Coverage: guarded hide/peek/return states and 15 rapid extra clicks; accessible fictional redaction; all three real 1024×1024 PNG downloads; reduced motion and switching motion off during transit; mobile navigation; one H1 and no horizontal overflow at 360×800, 390×844, 768×1024, 1440×900 and 1920×1080; normal animated state capture; keyboard skip/navigation; unconfigured financial controls; and PNG recovery when every WebP request is deliberately aborted, including before hydration.
+Coverage includes automatic first-screen character performance and immediate interruption; sub-second manual hide/return; CTA/caption separation throughout entrance and hover at 360, 390, 768, 1440 and 1920px; mobile scene/copy separation; no horizontal overflow; native navigation without pinning; reduced motion and its saved setting; 15 rapid hero clicks and 15 rapid portrait changes; accessible fictional redaction; all three actual 1024×1024 PNG downloads; keyboard skip/navigation; WebP failure recovery before and after hydration; poster-first request ordering; and ordinary artwork fallbacks with JavaScript disabled.
 
-The production request audit found zero automatic third-party requests, missing assets, browser console errors or hydration errors. Generation services and fonts do not require visitor-side external requests. npm audit reported zero known dependency vulnerabilities after the Sharp update.
-
-New coverage: all three native-scroll privacy scenes and reverse scrolling; motion-off removes pin spacers and masks and survives reload; rapid portrait choices settle on the correct print/download; and full-motion 360px/390px layouts have no desktop pin or horizontal overflow. A bounded independent motion review checked transform ownership and cancellation; a competing decorative numeral transform was removed.
+The production request audit found no automatic third-party requests, missing assets, browser console errors or hydration errors. Public financial destinations remain unconfigured. Browser performance marks are local and have no reporting endpoint. This pass incurred no new generation charges; total generation use remains 22 of the approved 200 credits.
 
 ## Visual review
 
-Desktop, mobile, peeking, three cinematic phases and portrait-stack screenshots are in `screenshots/`. Font readiness and explicit animation freezing make static captures reproducible. The live local browser and silent production browser recording exercise normal motion separately. The character's face, suit, paws, tail attachment, foreground occlusion and seated plinth were reviewed. The mobile composition uses its own camera and a stacked layout. Character travel uses approved pose changes; it is not a skeletal gait simulation. Fine ear/tail articulation and a separate blink are not implemented.
+Screenshots cover all five viewport sizes, including the new normal-flow mobile layout. Full-page captures scroll through deferred artwork and wait for actual image decoding. The normal-motion browser recording demonstrates the automatic hide/peek, manual return, pointer response, redaction, native scrolling and fast portrait choices. `hero-fast-desktop.png` shows stable CTA/caption spacing.
+
+Independent inspection found no material loss in the compressed character's face openings, knit ribs, paws or attached tail. Fine textile grain is somewhat softer, and the existing pale edge fringe remains. The hero uses layered 2.5D pose animation, rather than a claimed skeletal gait. Full-resolution transparent PNGs and the packed Blender source remain available.
 
 ## Performance
 
-Final production measurement, fresh Chromium contexts against the local static server:
+Final single-sample measurements use fresh browser contexts against the Brotli-enabled local production server. Its compression cache may already be warm; browser caches are fresh. The hosting provider has its own delivery behavior. These are lab samples, not field percentiles or guarantees for physical devices.
 
-| Condition | LCP | CLS |
-| --- | ---: | ---: |
-| 1440×900, localhost, unthrottled | 248 ms | 0.022404 |
-| 390×844, 4× CPU slowdown, 150 ms network latency, 1.6 Mbps download | 1,564 ms | 0.030523 |
+| Condition | LCP | CLS | Controls ready | Automatic character starts |
+| --- | ---: | ---: | ---: | ---: |
+| 1440×900, localhost, unthrottled | 188 ms | 0.022404 | 197 ms | 443 ms |
+| 390×844, 4× CPU, 150ms latency, 1.6 Mbps download | 844 ms | 0.030525 | 2,398 ms | 3,508 ms |
 
-Both measured samples meet the brief's 2.5-second LCP and 0.1 CLS targets. These are single lab samples, not field percentiles or physical-device guarantees. Raw resources, timings and conditions are recorded in `performance-results.json`.
+Architectural CSS motion begins at 187ms and 842ms respectively, before React is ready. Manual action duration after input is 720ms for hide/peek and 560ms for return; portrait motion takes 380ms. First-screen text and controls do not translate. The old 175vh pinned story was removed.
 
-The hero WebP is 216,302 bytes. Matching transparent PNG fallbacks are intentionally larger. Desktop architecture background and foreground are approximately 30 KB and 11 KB. All 22 production artwork assets have dimensions, sizes and SHA-256 digests in `asset-manifest.json`.
+Both LCP/CLS samples meet the original 2.5-second/0.1 targets. Controls and full character performance are reported separately because text LCP alone does not measure interaction readiness. Raw timings, local marks and transfer sizes are in `performance-results.json`. `performance-uncompressed.json` retains an earlier intermediate sample from the uncompressed preview and is not a measurement of the final source.
 
-## Production tooling limits
+The desktop hero WebP is 120,226 bytes (44% smaller than its previous 216,302-byte version); mobile uses a 73,296-byte version. Hidden step/peek sprites total 135,766 bytes and begin after poster decode. Artwork below the fold starts within 350px of the viewport. Three local Latin font files replace five full-subset stylesheet imports. The preview compresses text assets with Brotli and caches hashed Next.js files immutably. All 23 local production artwork assets have dimensions, sizes and SHA-256 hashes in `asset-manifest.json`.
 
-Higgsfield generated and exported the approved assets, using 22 of the user's approved 200 credits. The Blender MCP bridge was unreachable; local Blender 5.2.1 LTS successfully rendered the dedicated scene and saved packed editable character planes and named authoring actions. No unrelated Blender scene was altered. This delivery uses the brief's supported layered 2.5D alternative.
+## Production provenance
 
-The animation upgrade reuses those assets and incurred no additional generation charges.
-
-Public launch name, verified network relationship, social URLs and financial destinations remain unspecified in central configuration. The working name is ANON CAT. Hosting/CDN traffic and header enforcement are covered separately in `privacy-implementation.md`.
+Higgsfield generated the approved artwork during the original build. The unavailable Blender MCP bridge was replaced by local Blender 5.2.1 LTS CPU rendering, with dedicated geometry, packed character image planes and editable authoring actions. No unrelated Blender scene was altered. Hosting/CDN processing and header enforcement remain documented in `privacy-implementation.md`.

@@ -1,40 +1,40 @@
 # Motion specification
 
-## Rendering decision
-The hero proof selected layered 2.5D. Blender renders charcoal architecture into matching RGBA background/foreground layers; a consistent high-resolution transparent character is composited between them. No WebGL, video playback, alpha-video dependency, or runtime generation service is needed. The mobile scene uses a separate Blender camera. The actual website composition is the authoritative final layout.
+## First screen
 
-## Ownership
-- HTML/CSS: layout, responsive art frame, physical rendered foreground layer.
-- GSAP hero context: character travel, restrained glance, stance/step crossfade, peek visibility, breathing.
-- Separate page GSAP context: architectural arrival, responsive scroll camera, privacy shutters, file/artwork/footer staging and document progress. Transform wrappers separate arrival, scrolling, pointer tilt and character actions.
-- Dedicated artwork context: layered print throws; changing selection reverts earlier tweens before starting the latest choice.
-- CSS: redaction bars and control hover feedback only.
+The hero keeps ordinary HTML text and controls stable. A CSS architectural arrival lasts 600ms and begins before React hydration; the foreground moves 65px on a separate layer over 550ms. The saved motion preference and OS reduced-motion setting are read before paint. No entrance mask, loader or control delay covers the page.
 
-## Hero state machine
+After the visible cat decodes, two low-priority pose requests are warmed. Once ready, the cat glances, crossfades to the approved upright stepping pose, moves right behind the actual Blender-rendered foreground slab, peeks around its edge, and returns. This short decorative performance lasts 1.7 seconds with a 5.5-second rest between repeats. Clicking immediately cancels it and starts the requested action; it never disables a control. Feet-anchored breathing changes height by 1.2% over a 2.6-second half-cycle. Pointer tilt responds over 180ms and is limited to 4° horizontal, 2.5° vertical and 8px horizontal translation. Pointer values are neither saved nor transmitted.
+
+The CTA and Monero caption use a flex column with a 22px gap (16px on mobile), without entrance or hover translation. On mobile the scene occupies its own grid row after the copy, replacing the old fixed top offset.
+
+## Manual hero state machine
+
 `idle → hiding → peeking → returning → idle`
 
-`hiding` and `returning` disable the scene button. A synchronous ref guards against rapid clicks before React renders. No click queue is retained. Timeline completion changes state. Turning motion off during transit settles into the intended final state and restores operability.
+A synchronous ref guards rapid clicks during manual transit, and the button is disabled only while that manual action runs. Hide consists of a 100ms glance, 80ms pose crossfade, 420ms travel and 180ms peek, using explicit overlapping positions; total 720ms. Return totals 560ms, including 480ms travel. Turning motion off during transit settles at the requested destination and restores operability. With reduced motion, outcomes change immediately.
 
-Idle uses a 3.5-second sine breathing half-cycle, only 0.6% vertical expansion anchored to the feet. Hide begins with a small sideways gesture, crossfades to the approved upright stepping shot, travels behind the rendered foreground slab, and pauses before revealing the peeking shot. The primary front's tail is on the trailing side, so its orange tip is concealed after its body. Return reverses the concealment and restores the standing pose. No upright/quadruped morph occurs. This is pose-based animation, not a claimed skeletal walking simulation.
+The decorative performance and manual state are separate. A manual action cancels the decorative timeline, restores a known pose, and owns travel afterward. There is no queued action or delayed autoplay restart after a manual interaction.
 
-Starting timing values live in `src/config/motion.ts`: hide 1.3s, peek 0.45s, return 1.1s. The interaction now adds a 6% whole-stage camera push, settling as the peek or standing pose appears. Button feedback uses 180ms. There is no pointer telemetry or autoplay audio.
+## Rest of the document
 
-## Cinematic page choreography
+Native scrolling has no pin spacers, scrub inertia or extra story scroll distance. IntersectionObserver starts brief 400–550ms reveals as artwork/headings enter the viewport. Content remains visible if scripts fail. A passive, frame-coalesced scroll listener updates the header's document progress line. Portrait selection updates its accessible label and real local PNG download immediately; a 380ms print throw follows, cancelling earlier contexts on rapid choices. Redaction bars finish in at most 260ms, including stagger.
 
-The 2026-10-01 animation upgrade adds a roughly 1.8-second architectural arrival: three horizontal shutters move away, background geometry rises 100px, the foreground travels 170px, and the scene pulls back from 1.18× scale. Headline lines arrive with a 120ms stagger. Text and controls remain ordinary HTML; there is no loading gate. Narrow screens use a smaller 45px camera rise, 1.12× scale and 28px headline movement to preserve spacing.
+## Ownership and loading
 
-Native scroll shifts the whole hero camera by up to 105px and scales it to 1.13× on desktop. Fine-pointer devices add a damped tilt of at most 4.5° horizontally and 3° vertically on a separate wrapper. Pointer positions are neither saved nor sent anywhere. Below the hero, the file artwork/seat arrives as a complete object, its orange disc expands, and fictional rows cascade into place.
+- CSS owns architectural arrival on `scene-camera`/foreground; these never share transforms with pointer or character motion.
+- The hero GSAP context owns poses, glance, breathing, travel and the short scene action.
+- Page GSAP owns pointer tilt on `scene-pointer` and one-shot below-fold reveals.
+- Artwork GSAP owns print transforms inside its stage.
 
-Above 1000px, the ethos section becomes a pinned three-scene sequence spanning 175vh of native scroll. Three narrow charcoal shutters pass through the frames while peek, concealed step, and relaxed portraits replace one another. Slow image moves, an expanding YOURS label and a local progress indicator connect the scenes. Scrolling backward reverses the sequence. The shutters finish fully outside the image. On phones and tablets the three scenes remain stacked, with directional mask reveals and image movement; there is no desktop pin.
+The high-priority poster is 120,226 bytes on desktop or 73,296 bytes on mobile. Hidden poses load after its decode, and below-fold images start within 350px of the viewport. Ordinary `noscript` images preserve artwork without JavaScript. Original transparent PNGs remain available for source and error recovery. Browser-only performance marks measure readiness; there is no reporting endpoint.
 
-The artwork is a three-print stack. Selection throws the next print from a 45% horizontal offset and −28° depth rotation, settling over 850ms; the previous print moves behind it. Only the selected portrait is exposed to assistive technology, and its download updates immediately to the corresponding local PNG. Rapid selections cancel earlier contexts. The footer type and cameo arrive separately.
+## Reduced motion, visibility and capture
 
-## Reduced motion and visibility
-OS reduced-motion starts the page quietly. A visible motion control saves only `anon-cat-motion` (`on`/`off`) locally. Reduced-motion hide/return is a direct state change; every outcome is announced by the status text. Decorative breathing pauses offscreen and while the document is hidden. Both GSAP contexts, listeners, and observers clean up on unmount. Native scrolling is retained.
+OS reduced-motion and the visible motion switch disable decorative movement. Only `anon-cat-motion` (`on`/`off`) is stored locally. Ambient timelines pause offscreen and when the document is hidden. Contexts, listeners and observers clean up on unmount. Disabling motion reverts transforms and cancels automatic character performance; reload respects the saved preference.
 
-The motion control remains visible in a sticky header. Switching motion off reverts all pin spacers, masks, camera transforms and decorative staging, restoring the full static document. Reload respects the stored setting. Resize uses GSAP matchMedia to replace the desktop sequence with the mobile composition and clean up the former pin.
+Tests wait for font/image readiness and emit `anon-cat:freeze` for reproducible animated-state captures. `scripts/capture-motion.mjs` records the actual production browser with no composited or invented frames.
 
-For deterministic captures, tests set reduced motion, wait for fonts, and emit `anon-cat:freeze` when inspecting an animated state. Listeners explicitly pause hero, page and portrait tweens/timelines. No mixer exists in this pipeline. `scripts/capture-motion.mjs` records the actual production browser without inventing or compositing frames.
+## Artwork scope
 
-## Scope and limitations
-The approved textile is raster artwork: it cannot swim across geometry. The character source remains editable as image planes and source PNGs rather than a claimed fully modeled cat. The live Blender MCP bridge could not be reached; local Blender 5.2.1 LTS CPU rendering produced the scene. Blender camera/source actions are editable and packed; browser GSAP is the final motion implementation. Fine ear/tail articulation requires a further layer breakdown or skeletal production pass.
+The hero is layered 2.5D: Blender architectural geometry, matching background/foreground renders and approved transparent character images. The mobile scene has a separate Blender camera. There is no WebGL, runtime generation or video playback dependency. The knit cannot swim across geometry because it remains raster artwork. Pose animation does not claim a skeletal gait or fine ear/tail articulation. The unreachable Blender MCP bridge was replaced by documented local Blender 5.2.1 LTS CPU rendering; the editable `.blend` retains packed image planes and named authoring actions.

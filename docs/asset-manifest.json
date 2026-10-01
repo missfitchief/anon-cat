@@ -1,5 +1,13 @@
 [
   {
+    "path": "public/assets/character/hero-cat-mobile.webp",
+    "bytes": 73296,
+    "width": 433,
+    "height": 900,
+    "alpha": true,
+    "sha256": "e7502d93e2b6596d78d1eaf9a83f2cc2218e21d008798a7dec711ef1eb3384bb"
+  },
+  {
     "path": "public/assets/character/hero-cat.png",
     "bytes": 1520036,
     "width": 770,
@@ -9,11 +17,11 @@
   },
   {
     "path": "public/assets/character/hero-cat.webp",
-    "bytes": 216302,
-    "width": 770,
-    "height": 1600,
+    "bytes": 120226,
+    "width": 578,
+    "height": 1200,
     "alpha": true,
-    "sha256": "cbd3f49e66033df062fb68441dadbef9a5d3b2e16e8f5d36fc9ecefd3e49f8e5"
+    "sha256": "086483570818508ee4ee807bec96c0784c63426b609c7dc72e2a5009b7c5cdb3"
   },
   {
     "path": "public/assets/character/peek-cat.png",
@@ -25,11 +33,11 @@
   },
   {
     "path": "public/assets/character/peek-cat.webp",
-    "bytes": 172822,
-    "width": 891,
-    "height": 1200,
+    "bytes": 70552,
+    "width": 557,
+    "height": 750,
     "alpha": true,
-    "sha256": "944aa5a3c222b3b3245e3c89ed0ed5807cd60e1737fcc1522e2bd92768366d53"
+    "sha256": "4c991b8bfa845d130f972e5b2c6b26276427b154dc7f27b61226e990a3416329"
   },
   {
     "path": "public/assets/character/seated-cat.png",
@@ -41,11 +49,11 @@
   },
   {
     "path": "public/assets/character/seated-cat.webp",
-    "bytes": 145932,
-    "width": 802,
-    "height": 1200,
+    "bytes": 97104,
+    "width": 668,
+    "height": 1000,
     "alpha": true,
-    "sha256": "a72c56c7ffa33f02bbf9420625204e141fd7619d707073ba08b0c0d25e165484"
+    "sha256": "afebbb91f30a1bf23586b3a4ef3c932f12133918e921e72320d74010a48ca4de"
   },
   {
     "path": "public/assets/character/step-cat.png",
@@ -57,11 +65,11 @@
   },
   {
     "path": "public/assets/character/step-cat.webp",
-    "bytes": 207034,
-    "width": 822,
-    "height": 1600,
+    "bytes": 65214,
+    "width": 462,
+    "height": 900,
     "alpha": true,
-    "sha256": "ce64c927ca6d55152a39049a4ef9962b1ffd87b95f49267f29d8b4f359819447"
+    "sha256": "09096ed23032baf74382f64abd112615639ead87107d7470db35d212ad596513"
   },
   {
     "path": "public/assets/environments/file-plinth.png",

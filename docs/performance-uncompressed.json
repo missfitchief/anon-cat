@@ -1,0 +1,254 @@
+[
+  {
+    "condition": "1440×900 Chromium, cold context, localhost, unthrottled",
+    "lcp": 404,
+    "cls": 0.022404380967881946,
+    "cssEntranceStart": 420,
+    "marks": [
+      {
+        "name": "anon-cat-controls-ready",
+        "time": 454
+      },
+      {
+        "name": "anon-cat-hero-decoded",
+        "time": 468
+      },
+      {
+        "name": "anon-cat-first-character-motion",
+        "time": 957.3000000007451
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://127.0.0.1:3001/favicon.svg",
+        "transferSize": 629,
+        "duration": 10.5
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/environments/hideout-front.webp",
+        "transferSize": 11402,
+        "duration": 20.300000000745058
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/character/hero-cat.webp",
+        "transferSize": 120526,
+        "duration": 21.300000000745058
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/0qnqqv3ojvutj.css",
+        "transferSize": 23884,
+        "duration": 24.800000000745058
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/3l04zcqx63h3y.js",
+        "transferSize": 17097,
+        "duration": 115.19999999925494
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/0nr5vralju_ts.js",
+        "transferSize": 183056,
+        "duration": 133.59999999962747
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/turbopack-1h985lzee1e1w.js",
+        "transferSize": 9988,
+        "duration": 114.70000000111759
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/1rj7ns8rte9vc.js",
+        "transferSize": 229456,
+        "duration": 175
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/environments/hideout-back.webp",
+        "transferSize": 30362,
+        "duration": 19
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/3fntmmi971322.js",
+        "transferSize": 14677,
+        "duration": 115.40000000037253
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/44o6bemq2sru0.js",
+        "transferSize": 93559,
+        "duration": 153.90000000037253
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/dm-sans-latin-400-normal.0471snlmja818.woff2",
+        "transferSize": 14500,
+        "duration": 201.09999999962747
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/dm-sans-latin-600-normal.0oone78si629l.woff2",
+        "transferSize": 14444,
+        "duration": 198
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/barlow-condensed-latin-700-normal.21s4tc4km7afu.woff2",
+        "transferSize": 22744,
+        "duration": 198.7999999988824
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/dm-sans-latin-500-normal.0brn-8r9pdr2e.woff2",
+        "transferSize": 14604,
+        "duration": 199.69999999925494
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/barlow-condensed-latin-600-normal.289y3avl9x-vx.woff2",
+        "transferSize": 22608,
+        "duration": 208.59999999962747
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/environments/file-plinth.webp",
+        "transferSize": 6840,
+        "duration": 32.20000000111759
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/character/seated-cat.webp",
+        "transferSize": 97404,
+        "duration": 33.09999999962747
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/portraits/peek.webp",
+        "transferSize": 67880,
+        "duration": 32
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/character/step-cat.webp",
+        "transferSize": 111318,
+        "duration": 33.30000000074506
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/portraits/relaxed.webp",
+        "transferSize": 146376,
+        "duration": 33.90000000037253
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/portraits/side-eye.webp",
+        "transferSize": 146608,
+        "duration": 51.69999999925494
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/character/peek-cat.webp",
+        "transferSize": 95972,
+        "duration": 14.299999998882413
+      }
+    ],
+    "navigation": [
+      {
+        "domContentLoaded": 110.5,
+        "load": 411.09999999962747
+      }
+    ]
+  },
+  {
+    "condition": "390×844 Chromium, cold context, 4× CPU, 150ms latency, 1.6 Mbps down",
+    "lcp": 1852,
+    "cls": 0.03052315849740889,
+    "cssEntranceStart": 1853,
+    "marks": [
+      {
+        "name": "anon-cat-controls-ready",
+        "time": 5831
+      },
+      {
+        "name": "anon-cat-hero-decoded",
+        "time": 5977.9000000003725
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://127.0.0.1:3001/favicon.svg",
+        "transferSize": 629,
+        "duration": 173.59999999962747
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/character/hero-cat.webp",
+        "transferSize": 120526,
+        "duration": 2374.60000000149
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/environments/hideout-front.webp",
+        "transferSize": 11402,
+        "duration": 401.8999999985099
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/0qnqqv3ojvutj.css",
+        "transferSize": 23884,
+        "duration": 605.1999999992549
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/3l04zcqx63h3y.js",
+        "transferSize": 17097,
+        "duration": 1243.699999999255
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/0nr5vralju_ts.js",
+        "transferSize": 183056,
+        "duration": 4583.199999999255
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/1rj7ns8rte9vc.js",
+        "transferSize": 229456,
+        "duration": 4829.799999998882
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/turbopack-1h985lzee1e1w.js",
+        "transferSize": 9988,
+        "duration": 1068
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/3fntmmi971322.js",
+        "transferSize": 14677,
+        "duration": 1211.800000000745
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/environments/hideout-mobile.webp",
+        "transferSize": 26584,
+        "duration": 632.7000000011176
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/chunks/44o6bemq2sru0.js",
+        "transferSize": 93559,
+        "duration": 3669.7000000011176
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/dm-sans-latin-400-normal.0471snlmja818.woff2",
+        "transferSize": 14500,
+        "duration": 1495.800000000745
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/dm-sans-latin-600-normal.0oone78si629l.woff2",
+        "transferSize": 14444,
+        "duration": 2070.39999999851
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/dm-sans-latin-500-normal.0brn-8r9pdr2e.woff2",
+        "transferSize": 14604,
+        "duration": 2257.2000000011176
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/barlow-condensed-latin-700-normal.21s4tc4km7afu.woff2",
+        "transferSize": 22744,
+        "duration": 2913.89999999851
+      },
+      {
+        "name": "http://127.0.0.1:3001/_next/static/media/barlow-condensed-latin-600-normal.289y3avl9x-vx.woff2",
+        "transferSize": 22608,
+        "duration": 3068.199999999255
+      },
+      {
+        "name": "http://127.0.0.1:3001/assets/character/seated-cat.webp",
+        "transferSize": 97404,
+        "duration": 2565.5
+      }
+    ],
+    "navigation": [
+      {
+        "domContentLoaded": 1813.699999999255,
+        "load": 5438
+      }
+    ]
+  }
+]

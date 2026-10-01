@@ -1,1 +1,1 @@
-export const motion = { hide: 1.3, peek: .45, return: 1.1, reveal: .6, breathe: 3.5, storageKey: 'anon-cat-motion' } as const;
+export const motion = { hide: .42, peek: .18, return: .48, reveal: .4, breathe: 2.6, storageKey: 'anon-cat-motion' } as const;

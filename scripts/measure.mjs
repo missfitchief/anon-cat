@@ -6,13 +6,14 @@ for(const mobile of [false,true]){
  const client=await page.context().newCDPSession(page);
  if(mobile){await client.send('Network.enable');await client.send('Network.emulateNetworkConditions',{offline:false,latency:150,downloadThroughput:200000,uploadThroughput:100000});await client.send('Emulation.setCPUThrottlingRate',{rate:4});}
  await page.addInitScript(()=>{
-  window.__metrics={lcp:0,cls:0};
+  window.__metrics={lcp:0,cls:0,cssEntranceStart:0};
+  document.addEventListener('animationstart',event=>{if(event.animationName==='scene-arrive'&&!window.__metrics.cssEntranceStart)window.__metrics.cssEntranceStart=performance.now();});
   new PerformanceObserver(list=>{for(const e of list.getEntries())window.__metrics.lcp=e.startTime;}).observe({type:'largest-contentful-paint',buffered:true});
   new PerformanceObserver(list=>{for(const e of list.getEntries())if(!e.hadRecentInput)window.__metrics.cls+=e.value;}).observe({type:'layout-shift',buffered:true});
  });
- await page.goto('http://127.0.0.1:3001/',{waitUntil:'networkidle'});await page.waitForTimeout(1200);
- const metrics=await page.evaluate(()=>({...window.__metrics,resources:performance.getEntriesByType('resource').map(r=>({name:r.name,transferSize:r.transferSize,duration:r.duration})),navigation:performance.getEntriesByType('navigation').map(n=>({domContentLoaded:n.domContentLoadedEventEnd,load:n.loadEventEnd}))}));
+ await page.goto('http://127.0.0.1:3001/',{waitUntil:'networkidle'});await page.locator('.hero-scene[data-welcome="playing"]').waitFor();await page.waitForTimeout(350);
+ const metrics=await page.evaluate(()=>({...window.__metrics,marks:performance.getEntriesByType('mark').filter(r=>r.name.startsWith('anon-cat-')).map(r=>({name:r.name,time:r.startTime})),resources:performance.getEntriesByType('resource').map(r=>({name:r.name,transferSize:r.transferSize,duration:r.duration})),navigation:performance.getEntriesByType('navigation').map(n=>({domContentLoaded:n.domContentLoadedEventEnd,load:n.loadEventEnd}))}));
  results.push({condition:mobile?'390×844 Chromium, cold context, 4× CPU, 150ms latency, 1.6 Mbps down':'1440×900 Chromium, cold context, localhost, unthrottled',...metrics});
  await page.close();
 }
-await fs.writeFile('docs/performance-results.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results.map(({condition,lcp,cls})=>({condition,lcp_ms:lcp,cls})),null,2));await browser.close();
+await fs.writeFile('docs/performance-results.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results.map(({condition,lcp,cls,marks,cssEntranceStart})=>({condition,lcp_ms:lcp,cls,cssEntranceStart,marks})),null,2));await browser.close();

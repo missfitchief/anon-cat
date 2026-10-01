@@ -1,7 +1,11 @@
 import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import {brotliCompress,constants} from 'node:zlib';
+import {promisify} from 'node:util';
 const root=path.resolve('out');
+const compress=promisify(brotliCompress);
+const compressed=new Map();
 const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2','.txt':'text/plain','.json':'application/json'};
 http.createServer(async(req,res)=>{
   try{
@@ -11,7 +15,14 @@ http.createServer(async(req,res)=>{
     if(p!==root&&!p.startsWith(root+path.sep)){res.writeHead(403);res.end();return;}
     if(decoded.endsWith('/'))p=path.join(p,'index.html');
     let bytes;try{bytes=await fs.readFile(p);}catch{if(!path.extname(p)){p+='.html';bytes=await fs.readFile(p);}else throw new Error('404');}
-    res.writeHead(200,{'Content-Type':types[path.extname(p)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','Permissions-Policy':'camera=(), microphone=(), geolocation=()','Content-Security-Policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'"});
-    res.end(bytes);
+    const headers={'Content-Type':types[path.extname(p)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','Permissions-Policy':'camera=(), microphone=(), geolocation=()','Content-Security-Policy':"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'",'Vary':'Accept-Encoding','Cache-Control':decoded.startsWith('/_next/static/')?'public, max-age=31536000, immutable':'no-cache'};
+    if(/\bbr\b/.test(req.headers['accept-encoding']||'')&&bytes.length>1024&&/\.(html|js|css|svg|json|txt)$/.test(p)){
+      const stat=await fs.stat(p);const hit=compressed.get(p);
+      if(hit?.mtime===stat.mtimeMs)bytes=hit.bytes;
+      else{bytes=await compress(bytes,{params:{[constants.BROTLI_PARAM_QUALITY]:4}});compressed.set(p,{mtime:stat.mtimeMs,bytes});}
+      headers['Content-Encoding']='br';
+    }
+    headers['Content-Length']=String(bytes.length);
+    res.writeHead(200,headers);res.end(req.method==='HEAD'?undefined:bytes);
   }catch{res.writeHead(404,{'Content-Type':'text/plain'});res.end('Not found');}
 }).listen(3001,'127.0.0.1',()=>console.log('Production preview: http://127.0.0.1:3001'));
