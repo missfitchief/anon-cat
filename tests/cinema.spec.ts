@@ -100,7 +100,7 @@ test('hidden pose requests begin after the visible cat is decoded',async({page})
   const times=await page.evaluate(()=>{
     const entries=performance.getEntriesByType('resource') as PerformanceResourceTiming[];
     const hero=entries.find(r=>r.name.endsWith('/hero-cat.webp'))!;
-    return {heroEnd:hero.responseEnd,poseStarts:entries.filter(r=>r.name.endsWith('/step-cat.webp')||r.name.endsWith('/peek-cat.webp')).map(r=>r.startTime)};
+    return {heroEnd:hero.responseEnd,poseStarts:entries.filter(r=>r.name.endsWith('/step-clean-paw.webp')||r.name.endsWith('/peek-cat.webp')).map(r=>r.startTime)};
   });
   expect(times.poseStarts.length).toBe(2);
   times.poseStarts.forEach(start=>expect(start).toBeGreaterThanOrEqual(times.heroEnd));

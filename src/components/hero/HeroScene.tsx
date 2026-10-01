@@ -139,7 +139,7 @@ export default function HeroScene({quiet}:{quiet:boolean}) {
       <div className="ground-shadow"/>
       <div className="cat-occlusion"><div className="cat-travel"><div className="cat-breathe"><div className="cat-glance">
         <picture><source media="(max-width:700px)" srcSet={failed?'/assets/character/hero-cat.png':'/assets/character/hero-cat-mobile.webp'}/><img className="standing-cat" src={failed?'/assets/character/hero-cat.png':site.assets.hero} onError={()=>setFailed(true)} alt="" width="750" height="1500" fetchPriority="high"/></picture>
-        <img className="stepping-cat" data-pose-src={site.assets.step} onError={e=>fallback(e,'/assets/character/step-cat.png')} alt="" width="750" height="1500" fetchPriority="low" decoding="async"/>
+        <img className="stepping-cat" data-pose-src={site.assets.step} onError={e=>fallback(e,'/assets/character/step-clean-paw.png')} alt="" width="750" height="1500" fetchPriority="low" decoding="async"/>
       </div></div></div></div>
       <img className="scene-front" src={site.assets.foreground} onError={e=>fallback(e,'/assets/environments/hideout-front.png')} alt="" width="1400" height="1400"/>
       <div className="peek-cat"><div className="peek-anchor">

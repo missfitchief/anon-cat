@@ -40,7 +40,7 @@ export default function LeaveNoTrace(){
   return <section ref={root} className="trace-section" id="artwork" aria-labelledby="trace-heading">
     <div ref={room} className="trace-room">
       <div className="trace-set" aria-hidden="true"><div className="trace-light"/><div className="trace-floor"/><div className="trace-wall"/>
-        <div className="trace-cat"><div className="trace-ground-shadow"/><div className="trace-breathe"><DeferredImage className="trace-stepping" src="/assets/character/step-cat.webp" alt="" width="800" height="1300"/></div></div>
+        <div className="trace-cat"><div className="trace-ground-shadow"/><div className="trace-breathe"><DeferredImage className="trace-stepping" src="/assets/character/step-clean-paw.webp" alt="" width="800" height="1300"/></div></div>
       </div>
       <h2 className="trace-heading" id="trace-heading">LEAVE<br/><em>NO TRACE.</em></h2>
       <p className="trace-copy">The cat stays.<br/>Nothing to follow.</p>

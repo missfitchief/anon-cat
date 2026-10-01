@@ -1,0 +1,17 @@
+{
+  "method": "Built-in imagegen edit",
+  "date": "2026-10-01",
+  "reference": "public/assets/character/step-cat.png",
+  "master": "art-source/character-bible/step-clean-paw-master.png",
+  "prompt": "Correct only the viewer-left paw and nearby tail junction: a clean relaxed feline mitten with natural grooves and a small thumb, no dangling digit, and a transparent gap between the paw and tail. Preserve character identity, eyes, gray knit suit, orange colors, walking pose, proportions, lighting, and transparent background.",
+  "originalPreserved": true,
+  "pngDimensions": [
+    822,
+    1600
+  ],
+  "webpDimensions": [
+    462,
+    900
+  ],
+  "webpBytes": 80836
+}

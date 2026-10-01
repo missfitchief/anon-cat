@@ -11,5 +11,5 @@ export const site = {
   purchaseUrl: null as string | null,
   assetIdentifier: 'H9pPKejchJ9LCWpb1P8p4BmrjzCFARUmA7XtJK4pVhCZ' as string | null,
   file: [{label:'Name',value:'Not volunteered.'},{label:'Occupation',value:'Cat.'},{label:'Address',value:'Somewhere comfortable.'},{label:'Current plans',value:'Unavailable.'},{label:'Favorite color',value:'That one is obvious.'}],
-  assets: {hero:'/assets/character/hero-cat.webp',step:'/assets/character/step-cat.webp',peek:'/assets/character/peek-cat.webp',seated:'/assets/character/seated-cat.webp',background:'/assets/environments/hideout-back.webp',foreground:'/assets/environments/hideout-front.webp',mobile:'/assets/environments/hideout-mobile.webp'},
+  assets: {hero:'/assets/character/hero-cat.webp',step:'/assets/character/step-clean-paw.webp',peek:'/assets/character/peek-cat.webp',seated:'/assets/character/seated-cat.webp',background:'/assets/environments/hideout-back.webp',foreground:'/assets/environments/hideout-front.webp',mobile:'/assets/environments/hideout-mobile.webp'},
 } as const;
