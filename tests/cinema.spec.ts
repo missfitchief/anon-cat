@@ -19,7 +19,7 @@ test('returning to the first screen replays visible character motion',async({pag
   const run=Number(await page.locator('.hero-scene').getAttribute('data-welcome-run'));
   await page.locator('#artwork').scrollIntoViewIfNeeded();
   await expect(page.locator('.hero-scene')).toHaveAttribute('data-welcome','paused');
-  await page.getByRole('link',{name:'ANON CAT, back to top'}).click();
+  await page.getByRole('link',{name:'MCAT, back to top'}).click();
   await expect.poll(async()=>Number(await page.locator('.hero-scene').getAttribute('data-welcome-run'))).toBeGreaterThan(run);
   await expect.poll(()=>page.locator('.peek-cat').evaluate(el=>Number(getComputedStyle(el).opacity)),{timeout:4000,intervals:[40]}).toBeGreaterThan(.8);
 });

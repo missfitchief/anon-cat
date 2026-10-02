@@ -1,6 +1,6 @@
-# ANON CAT — Private by instinct
+# MCAT — Private by instinct
 
-A complete one-page character experience built with Next.js App Router, React, strict TypeScript, local fonts, and GSAP. “ANON CAT” is a replaceable working name. The user-supplied official CA appears in the header and footer. This independent project is inspired by Monero's privacy ethos; no network, endorsement, social account, or purchase infrastructure is assumed.
+A complete one-page MCAT character experience built with Next.js App Router, React, strict TypeScript, local fonts, and GSAP. The user-supplied official CA appears in the header and footer. This independent project is inspired by Monero's privacy ethos; no network, endorsement, social account, or purchase infrastructure is assumed.
 
 ## Run
 

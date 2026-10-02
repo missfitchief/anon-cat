@@ -1,5 +1,5 @@
 export const site = {
-  name: 'ANON CAT',
+  name: 'MCAT',
   description: 'Nine lives. None of your business. A privacy-minded cat inspired by Monero.',
   headline: ['NINE LIVES.', 'NONE OF YOUR', 'BUSINESS.'],
   intro: 'You found the cat. That’s all you get.',
